@@ -81,7 +81,7 @@
                     <p class="lk-notification__request-meta">Заявка на консультацию от 17 октября 2021</p>
                     <p class="lk-notification__request-title">Информация о гос. программах и инструментах содействия занятости населения</p>
                   </div>
-                  <div class="lk-notification__request-btns"><a class="lk-button lk-button--consultation" href="/">Оценить консультацию</a></div>
+                  <div class="lk-notification__request-btns"><a class="lk-button lk-button--consultation" href="#" data-for-popup="consultation" data-tiket-number="12345">Оценить консультацию</a></div>
                 </div>
                 <div class="lk-notification__status">
                   <div class="lk-notification__status-head">
@@ -218,7 +218,7 @@
         </div>
       </div>
     </div>
-    <div class="lk-popup">
+    <div class="lk-popup fade" data-popup="consultation">
       <div class="lk-popup__wrapper">
         <div class="lk-popup__header">
           <h3 class="lk-popup__title">Оцените полученную консультацию</h3>
@@ -226,7 +226,7 @@
         </div>
         <div class="lk-popup__content">
           <form class="lk-popup__form" action="">
-            <p class="lk-popup__decs">На сколько вы удовлетворены по 5-ти бальной шкале?</p>
+            <p class="lk-popup__desc">На сколько вы удовлетворены по 5-ти бальной шкале?</p>
             <div class="lk-popup__evaluations">
               <input class="lk-popup__evaluations-input" type="radio" name="evaluations" value="1" id="popup-consuiltation-1"/>
               <label class="lk-popup__evaluations-label" for="popup-consuiltation-1">1</label>
@@ -239,10 +239,12 @@
               <input class="lk-popup__evaluations-input" type="radio" name="evaluations" value="5" id="popup-consuiltation-5"/>
               <label class="lk-popup__evaluations-label" for="popup-consuiltation-5">5</label>
             </div>
-            <label class="lk-popup__desc">Комментарий
-              <input class="lk-popup__textarea" type="textarea"/>
-            </label>
-            <button type="sumbit">Отправить оценку</button>
+            <div class="lk-popup__comment">
+              <p class="lk-popup__desc--small">Комментарий</p>
+              <textarea class="lk-popup__textarea" rows="6"></textarea>
+            </div>
+            <input class="lk-popup__consultation" type="text" value=""/>
+            <button class="lk-popup__btn lk-button--prime" type="sumbit"> Отправить оценку</button>
           </form>
         </div>
       </div>

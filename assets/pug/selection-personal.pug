@@ -75,7 +75,7 @@ html(lang="ru")
                     p.lk-notification__request-meta Заявка на консультацию от 17 октября 2021
                     p.lk-notification__request-title Информация о гос. программах и инструментах содействия занятости населения
                   .lk-notification__request-btns
-                    a.lk-button.lk-button--consultation(href='/') Оценить консультацию
+                    a.lk-button.lk-button--consultation(href='#' data-for-popup="consultation" data-tiket-number='12345') Оценить консультацию
                 .lk-notification__status
                   .lk-notification__status-head
                     p.lk-notification__status-meta Статус
@@ -168,14 +168,14 @@ html(lang="ru")
                 | 3
               .lk-tabs__content#tabs__condition-content_4
                 | 4
-    .lk-popup
+    .lk-popup.fade(data-popup='consultation')
       .lk-popup__wrapper
         .lk-popup__header
           h3.lk-popup__title Оцените полученную консультацию
           button.lk-popup__close(data-js="popup-close")
         .lk-popup__content
           form.lk-popup__form(action="")
-            p.lk-popup__decs На сколько вы удовлетворены по 5-ти бальной шкале?
+            p.lk-popup__desc На сколько вы удовлетворены по 5-ти бальной шкале?
             .lk-popup__evaluations
               input.lk-popup__evaluations-input(type="radio" name="evaluations" value="1" id="popup-consuiltation-1")
               label.lk-popup__evaluations-label(for="popup-consuiltation-1") 1
@@ -187,11 +187,11 @@ html(lang="ru")
               label.lk-popup__evaluations-label(for="popup-consuiltation-4") 4
               input.lk-popup__evaluations-input(type="radio" name="evaluations" value="5" id="popup-consuiltation-5")
               label.lk-popup__evaluations-label(for="popup-consuiltation-5") 5
-
-            label.lk-popup__desc Комментарий
-              input.lk-popup__textarea(type="textarea")
-            button(type="sumbit") Отправить оценку
-
+            .lk-popup__comment
+              p.lk-popup__desc--small Комментарий
+              textarea.lk-popup__textarea(rows=6)
+            input(type="text" value="").lk-popup__consultation
+            button(type="sumbit").lk-popup__btn.lk-button--prime  Отправить оценку
 
 
 

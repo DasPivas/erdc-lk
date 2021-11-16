@@ -138,4 +138,22 @@
     border-color: rgba(167, 167, 171, 1);
   }
   
+  &--prime {
+    background-color: #891D56;
+    color: #ffffff;
+    box-shadow: 0px 8px 32px 0px #A6296730;
+    box-shadow: 0px 2px 6px 0px #A6296730;
+    transition: .2s;
+    
+    &:hover {
+      background: #B8126A;
+    }
+    &:active {
+      background: #6A1A44;
+    }
+    &:focus {
+      box-shadow: 0 0 0 2px rgb(0 123 255 / 50%);
+    }
+  }
+  
 }
