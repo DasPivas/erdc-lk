@@ -1,0 +1,15 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Golos, sans-serif;
+}
+
+h1.lk-title {
+  font-weight: 600;
+  font-size: 36px;
+}

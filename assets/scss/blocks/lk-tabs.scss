@@ -1,0 +1,128 @@
+
+
+.lk-tabs {
+  
+  
+    display: flex;
+    flex-wrap: wrap;
+    &__nav {
+      display: flex;
+      flex: 100%;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #d9d9de;
+  
+      @media (max-width: 991px) {
+        display: none;
+        margin-top: -1px;
+        border: 1px solid #d9d9de;
+      }
+      &--fix {
+        .tabs__tab {
+          display: block;
+        }
+      }
+    }
+    &__mobile-select {
+      position: relative;
+      display: none;
+      width: 100%;
+      padding: 16px 40px 16px 12px;
+      overflow: hidden;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+      color: $violet;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      border: 1px solid #d9d9de;
+      &::before {
+        position: absolute;
+        top: 21px;
+        right: 22px;
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        content: '';
+        border-right: 2px solid;
+        border-bottom: 2px solid;
+        transition: transform 0.2s;
+        transform: rotate(45deg);
+      }
+  
+      @media (max-width: 991px) {
+        display: block;
+        background: #ffffff;
+      }
+      &--mob-visible {
+        &::before {
+          top: 25px;
+          transform: rotate(-135deg);
+        }
+        & + .lk-tabs__nav {
+          display: flex;
+        }
+      }
+    }
+  
+    &__radio {
+      display: none;
+    }
+  
+    &__tab {
+      position: relative;
+      padding: 0 0 18px;
+      margin: 10px 32px 0 0;
+      font-size: 16px;
+      color: $darkGray;
+      white-space: nowrap;
+      cursor: pointer;
+      
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        content: '';
+        background: rgba(126, 40, 85, 0.1);
+        transition: width 0.3s, background-color 0.3s;
+      }
+  
+      @media (max-width: 991px) {
+        flex: 100%;
+        float: left;
+        padding: 12px;
+        margin: 0;
+        font-size: 15px;
+        &::after {
+          display: none;
+        }
+      }
+    }
+  
+  
+    &__radio:checked + &__tab {
+      color: $blackOnyx;
+      &::after {
+        width: 100%;
+        background: $violet;
+      }
+      
+      @media (max-width: 991px) {
+        width: 100%;
+        overflow: hidden;
+        background: #eaeaec;
+      }
+    }
+  
+    &__content {
+      display: none;
+      flex: 100%;
+      width: 100%;
+      padding: 24px 0;
+      font-size: 16px;
+      &_active {
+        display: block;
+      }
+    }
+}

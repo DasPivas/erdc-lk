@@ -1,0 +1,208 @@
+html(lang="ru")
+  head
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="./lk.css" rel="stylesheet")
+    link(href="./main-lk.css" rel="stylesheet")
+
+  body
+    .lk-wrap
+      .container
+        .lk-row
+          .lk-aside.lk-col.lk-col_lg_3
+          .lk-content.lk-col.lk-col_lg_9
+            .lk-page-head
+              a.lk-page-head__breadcrumbs(href="/")
+                |Личный кабинет
+              h1.lk-page-head__title Подбор кадров
+            .lk-cards
+              h4.lk-cards__title [Услуги, оказываемые КРДВиА]
+              .lk-cards__container
+                .lk-cards__item
+                  a.lk-cards__link(href="/")
+                    .lk-cards__icon
+                      .lk-icon.lk-icon--64.lk-icon--badge.lk-bg--5
+                    h4.lk-cards__subtitle Привлечение персонала
+                    p.lk-cards__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                .lk-cards__item
+                  a.lk-cards__link(href="/")
+                    .lk-cards__icon
+                      .lk-icon.lk-icon--64.lk-icon--graduation-hat.lk-bg--5
+                    h4.lk-cards__subtitle Подготовка кадров, обучение
+                    p.lk-cards__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                .lk-cards__item
+                  a.lk-cards__link(href="/")
+                    .lk-cards__icon
+                      .lk-icon.lk-icon--64.lk-icon--tripod.lk-bg--5
+                    h4.lk-cards__subtitle Развитие управленческих компетенций
+                    p.lk-cards__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit
+
+            .lk-cards
+              h4.lk-cards__title [Информация]
+              .lk-cards__container
+                .lk-cards__item
+                  a.lk-cards__link(href="/")
+                    .lk-cards__icon
+                      .lk-icon.lk-icon--64.lk-icon--certificate.lk-bg--5
+                    h4.lk-cards__subtitle Гос. программы и инструменты содействия занятости населения
+                    p.lk-cards__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit
+
+            .lk-notification
+              .lk-notification__text
+                h4.lk-notification__text-title Подготовлен очёт
+                p.lk-notification__text-desc Мы подготовили отчёт о результатах работы, пожалуйста ознакомьтесь с ним. <br> Если в течении
+              .lk-notification__content.lk-notification__content--inserted
+                .lk-notification__request
+                  .lk-notification__request-head
+                    p.lk-notification__request-meta Заявка на оказание услуги от 13 октября 2021
+                    p.lk-notification__request-title Размещение вакансии в соц. сетях
+                  form.lk-notification__request-form
+                    a.lk-button.lk-button--accept(href="#") Утвердить
+                    a.lk-button.lk-button--cansel(href="#") Отклонить отчет
+                .lk-notification__status
+                  .lk-notification__status-head
+                    p.lk-notification__status-meta Статус
+                    p.lk-notification__status-title На утверждении
+                  .lk-notification__status-btns
+                    a.lk-button.lk-button--link(href='/' target="_blank") Открыть отчёт
+
+            .lk-notification
+              .lk-notification__text
+                h4.lk-notification__text-title Консультация проведена
+                p.lk-notification__text-desc Текст, призывающий оценить качество проведенной консультации, дабы в будующем улучшить её
+              .lk-notification__content.lk-notification__content--inserted
+                .lk-notification__request
+                  .lk-notification__request-head
+                    p.lk-notification__request-meta Заявка на консультацию от 17 октября 2021
+                    p.lk-notification__request-title Информация о гос. программах и инструментах содействия занятости населения
+                  .lk-notification__request-btns
+                    a.lk-button.lk-button--consultation(href='/') Оценить консультацию
+                .lk-notification__status
+                  .lk-notification__status-head
+                    p.lk-notification__status-meta Статус
+                    p.lk-notification__status-title Консультация проведена
+
+            .lk-tabs
+              .lk-tabs__mobile-select Все заявки
+              .lk-tabs__nav
+                INPUT.lk-tabs__radio#tabs__condition-nav_1(name="tabs__condition" type="radio" value="tabs__condition-content_1" )
+                LABEL.lk-tabs__tab(for="tabs__condition-nav_1") Все заявки
+                INPUT.lk-tabs__radio#tabs__condition-nav_2(name="tabs__condition" type="radio" value="tabs__condition-content_2")
+                LABEL.lk-tabs__tab(for="tabs__condition-nav_2") В работе
+                INPUT.lk-tabs__radio#tabs__condition-nav_3(name="tabs__condition" type="radio" value="tabs__condition-content_3")
+                LABEL.lk-tabs__tab(for="tabs__condition-nav_3") Подготовлен отчёт
+                INPUT.lk-tabs__radio#tabs__condition-nav_4(name="tabs__condition" type="radio" value="tabs__condition-content_4")
+                LABEL.lk-tabs__tab(for="tabs__condition-nav_4") un Selected
+              .lk-tabs__content#tabs__condition-content_1
+                .lk-notification--tabs
+                  .lk-notification__content.lk-notification__content--tabs
+                    .lk-notification__request
+                      .lk-notification__request-head
+                        p.lk-notification__request-meta Заявка на оказание услуги от 14 октября 2021
+                        p.lk-notification__request-title Размещение вакансии в соц. сетях
+                    .lk-notification__status
+                      .lk-notification__status-head
+                        p.lk-notification__status-meta Статус
+                        p.lk-notification__status-title В работе
+                  .lk-notification__content.lk-notification__content--tabs
+                    .lk-notification__request
+                      .lk-notification__request-head
+                        p.lk-notification__request-meta Заявка на оказание услуги от 14 октября 2021
+                        p.lk-notification__request-title Размещение вакансии в соц. сетях
+                    .lk-notification__status
+                      .lk-notification__status-head
+                        p.lk-notification__status-meta Статус
+                        p.lk-notification__status-title В работе
+                  .lk-notification__content.lk-notification__content--tabs
+                    .lk-notification__request
+                      .lk-notification__request-head
+                        p.lk-notification__request-meta Заявка на оказание услуги от 14 октября 2021
+                        p.lk-notification__request-title Размещение вакансии в соц. сетях
+                    .lk-notification__status
+                      .lk-notification__status-head
+                        p.lk-notification__status-meta Статус
+                        p.lk-notification__status-title В работе
+              .lk-tabs__content#tabs__condition-content_2
+                .lk-notification--tabs
+                  .lk-notification__content.lk-notification__content--tabs
+                    .lk-notification__request
+                      .lk-notification__request-head
+                        p.lk-notification__request-meta Заявка на оказание услуги от 14 октября 2021
+                        p.lk-notification__request-title Размещение вакансии в соц. сетях
+                    .lk-notification__status
+                      .lk-notification__status-head
+                        p.lk-notification__status-meta Статус
+                        p.lk-notification__status-title В работе
+                  .lk-notification__content.lk-notification__content--tabs
+                    .lk-notification__request
+                      .lk-notification__request-head
+                        p.lk-notification__request-meta Заявка на оказание услуги от 14 октября 2021
+                        p.lk-notification__request-title Размещение вакансии в соц. сетях
+                        form.lk-notification__request-form
+                          a.lk-button.lk-button--accept(href="#") Утвердить
+                          a.lk-button.lk-button--cansel(href="#") Отклонить отчет
+                    .lk-notification__status
+                      .lk-notification__status-head
+                        p.lk-notification__status-meta Статус
+                        p.lk-notification__status-title В работе
+                      .lk-notification__status-btns
+                        a.lk-button.lk-button--link(href='/' target="_blank") Открыть отчёт
+                  .lk-notification__content.lk-notification__content--tabs
+                    .lk-notification__request
+                      .lk-notification__request-head
+                        p.lk-notification__request-meta Заявка на оказание услуги от 14 октября 2021
+                        p.lk-notification__request-title Размещение вакансии в соц. сетях
+                    .lk-notification__status
+                      .lk-notification__status-head
+                        p.lk-notification__status-meta Статус
+                        p.lk-notification__status-title В работе
+                  .lk-notification__content.lk-notification__content--tabs
+                    .lk-notification__request
+                      .lk-notification__request-head
+                        p.lk-notification__request-meta Заявка на оказание услуги от 14 октября 2021
+                        p.lk-notification__request-title Размещение вакансии в соц. сетях
+                    .lk-notification__status
+                      .lk-notification__status-head
+                        p.lk-notification__status-meta Статус
+                        p.lk-notification__status-title В работе
+              .lk-tabs__content#tabs__condition-content_3
+                | 3
+              .lk-tabs__content#tabs__condition-content_4
+                | 4
+    .lk-popup
+      .lk-popup__wrapper
+        .lk-popup__header
+          h3.lk-popup__title Оцените полученную консультацию
+          button.lk-popup__close(data-js="popup-close")
+        .lk-popup__content
+          form.lk-popup__form(action="")
+            p.lk-popup__decs На сколько вы удовлетворены по 5-ти бальной шкале?
+            .lk-popup__evaluations
+              input.lk-popup__evaluations-input(type="radio" name="evaluations" value="1" id="popup-consuiltation-1")
+              label.lk-popup__evaluations-label(for="popup-consuiltation-1") 1
+              input.lk-popup__evaluations-input(type="radio" name="evaluations" value="2" id="popup-consuiltation-2")
+              label.lk-popup__evaluations-label(for="popup-consuiltation-2") 2
+              input.lk-popup__evaluations-input(type="radio" name="evaluations" value="3" id="popup-consuiltation-3")
+              label.lk-popup__evaluations-label(for="popup-consuiltation-3") 3
+              input.lk-popup__evaluations-input(type="radio" name="evaluations" value="4" id="popup-consuiltation-4")
+              label.lk-popup__evaluations-label(for="popup-consuiltation-4") 4
+              input.lk-popup__evaluations-input(type="radio" name="evaluations" value="5" id="popup-consuiltation-5")
+              label.lk-popup__evaluations-label(for="popup-consuiltation-5") 5
+
+            label.lk-popup__desc Комментарий
+              input.lk-popup__textarea(type="textarea")
+            button(type="sumbit") Отправить оценку
+
+
+
+
+    script(src='assets/js/lk-tabs.js')
+    script(src='assets/js/lk-popup.js')
+
+                          
+                            
+                            
+                  
+                  
+
+
+

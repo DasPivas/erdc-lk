@@ -1,0 +1,2 @@
+import './lk-tabs';
+

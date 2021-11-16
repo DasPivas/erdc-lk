@@ -1,0 +1,42 @@
+.lk-icon {
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background: no-repeat center center;
+  }
+  
+  &--64 {
+    width: 64px;
+    height: 64px;
+    
+    &:before {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  
+  &--badge:before {
+    background-image: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/icon-badge.svg');
+  }
+  
+  &--graduation-hat:before {
+    background-image: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/graduation-hat.svg');
+  }
+  
+  &--tripod:before {
+    background-image: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/tripod.svg');
+  }
+  
+  &--certificate:before {
+    background-image: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/certificate.svg');
+  }
+  
+}
