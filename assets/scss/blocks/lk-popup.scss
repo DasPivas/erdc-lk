@@ -28,7 +28,7 @@
   }
   
   &__title {
-    margin: 0;
+    margin: 0 24px 0 0;
     font-weight: 600;
     font-size: 22px;
     line-height: 28px;
@@ -137,23 +137,17 @@
     line-height: 28px;
     text-align: center;
     cursor: pointer;
-    
-  
-  }
-  
-}
-.fade {
-  opacity: 0;
-  transition: opacity .15s linear;
-}
-.fade.show {
-  opacity: 1;
-}
-.lk-popup .lk-popup__wrapper{
-  opacity: 0;
-  transition: opacity 3.9s linear;
-}
 
-.lk-popup.show .lk-popup__wrapper {
-  opacity: 1;
+  }
+
+  &__tiket-value {
+    display: none;
+  }
+
+  &__reqired {
+    margin-left: 4px;
+
+    color: #F52D00;
+    font-width: 500;
+  }
 }

@@ -1,0 +1,93 @@
+.lk-inform-card {
+  margin: 30px 0;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: $blackOnyx;
+
+  &__wrapper {
+    margin: 0 -12px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    width: 50%;
+    padding: 0 12px 24px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 24px 0px;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #333333;
+  }
+&__icon {
+  margin-right: 24px;
+}
+  &__item {
+    height: 100%;
+    padding: 24px;
+    display: flex;
+
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__subtitle {
+    margin: 0 0 4px;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: $blackOnyx;
+  }
+
+  &__desc {
+    margin: 0 0 24px;
+  }
+
+  &__link {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #8F1A50;
+    text-decoration: none;
+    transition: .2s;
+
+    &:after {
+      margin-left: 12px;
+      display: block;
+      content: '';
+      width: 24px;
+      height: 24px;
+      mask-image: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/link.svg');
+      background-color: #8F1A50;
+    }
+    
+    &:hover {
+      text-decoration: underline;
+      color: #962157;
+      
+      &:after {
+        background-color: #962157;
+      }
+    }
+  }
+}
