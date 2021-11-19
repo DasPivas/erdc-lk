@@ -9,10 +9,16 @@
   left: 0;
   z-index: 100;
   
+  font-family: Golos, sans-serif;
   background-color: rgba(0, 0, 0, 0.5);
   
   &--active {
     display: flex;
+  
+    @media (max-width: 375px) {
+      display: block;
+      overflow-y: auto;
+    }
   }
   
   &__wrapper {
@@ -21,6 +27,52 @@
     
     background-color: #ffffff;
     border-radius: 4px;
+    
+    &--large {
+      width: 840px;
+    }
+    
+    &--module {
+      display: flex;
+  
+      @media (max-width: 375px) {
+        flex-direction: column;
+      }
+    }
+  
+    @media (max-width: 375px) {
+      margin: 20px 0;
+      padding: 24px;
+      width: 100%;
+      
+      overflow-y: auto;
+    }
+  }
+  
+  &__icon {
+    margin-right: 32px;
+  
+    @media (max-width: 375px) {
+      margin: 0 auto 10px;
+    }
+  }
+  
+  &__row {
+    display: flex;
+    margin: 0 -12px;
+  
+    @media (max-width: 375px) {
+      flex-wrap: wrap;
+    }
+  }
+  
+  &__col-6 {
+    width: 50%;
+    padding: 0 12px;
+  
+    @media (max-width: 375px) {
+      width: 100%;
+    }
   }
   
   &__header {
@@ -33,6 +85,11 @@
     font-size: 22px;
     line-height: 28px;
     color: #333333;
+    
+    &--big {
+      font-size: 30px;
+      line-height: 36px;
+    }
   }
   
   &__close {
@@ -57,17 +114,50 @@
   
   &__desc {
     margin: 0 0 12px;
-  
+    
     font-size: 16px;
     line-height: 24px;
     color: #000000;
     
     &--small {
-      margin: 6px 0;
+      margin: 0 0 6px;
+      display: block;
       
       font-size: 14px;
       line-height: 20px;
       color: #000000;
+    }
+  }
+  
+  &__input {
+    width: 100%;
+    padding: 10px 8px;
+    
+    border-radius: 4px;
+    border: 1px solid #dcdfe4;
+    font-size: 16px;
+    line-height: 24px;
+    color: $blackOnyx;
+    
+    &:focus, &:active, &:focus-visible {
+      border-color: #891d56;
+      outline: #891d56;
+    }
+  }
+  
+  &__textarea {
+    width: 100%;
+    padding: 10px 8px;
+    
+    border-radius: 4px;
+    border-color: #dcdfe4;
+    font-family: Golos, sans-serif;
+    color: $blackOnyx;
+    resize: none;
+    
+    &:focus, &:active, &:focus-visible {
+      border-color: #891d56;
+      outline: #891d56;
     }
   }
   
@@ -80,7 +170,6 @@
     &-input {
       display: none;
     }
-    
     
     &-label {
       flex-grow: 1;
@@ -97,11 +186,10 @@
         border-right: none;
       }
       
-      
       &--selected {
         font-weight: 600;
-        color: #891D56;
-        background-color: #F5F5F7;
+        color: #891d56;
+        background-color: #f5f5f7;
       }
       
       &:hover {
@@ -111,43 +199,98 @@
     }
   }
   
-  &__comment {
-    margin-top: 20px;
-  }
-  
-  &__textarea {
+  &__option {
     width: 100%;
     padding: 10px 8px;
+  }
+  
+  &__service {
+    margin: 16px 0 32px;
     
-    border-radius: 4px;
-    border-color: #DCDFE4;
-    font-family: Golos, sans-serif;
-    color: $blackOnyx;
-    resize: none;
+    @media (max-width: 375px) {
+      margin: 8px 0 16px;
+    }
+  }
+  
+  &__name {
+    margin: 16px 0 32px;
+    
+    @media (max-width: 375px) {
+      margin: 8px 0 16px;
+    }
+  }
+  
+  &__phone {
+    margin: 0 0 12px;
+    
+    
+    &-input {
+      padding-left: 42px;
+      
+      background: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/phone.svg') left no-repeat;
+      background-size: auto 100%;
+    }
+  }
+  
+  &__email {
+    margin: 0 0 12px;
+  }
+  
+  &__comment {
+    margin-top: 20px;
+  
+    @media (max-width: 375px) {
+      margin-top: 10px;
+    }
+  }
+  
+  &__tiket-value {
+    display: none;
   }
   
   &__btn {
     width: 100%;
     padding: 18px 20px;
     margin-top: 46px;
-  
+    
     border: none;
     border-radius: 4px;
     font-size: 18px;
     line-height: 28px;
     text-align: center;
     cursor: pointer;
-
+  
+    @media (max-width: 375px) {
+      margin-top: 24px;
+    }
   }
-
-  &__tiket-value {
-    display: none;
-  }
-
+  
   &__reqired {
     margin-left: 4px;
-
-    color: #F52D00;
+    
+    color: #f52d00;
     font-width: 500;
   }
+  
+  &__link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8F1A50;
+    text-decoration: none;
+    transition: .2s;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  &__text {
+    margin-top: 0;
+    
+    font-size: 16px;
+    line-height: 24px;
+    color: $blackOnyx;
+  }
+  
 }

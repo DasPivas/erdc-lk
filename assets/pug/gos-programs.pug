@@ -2,7 +2,7 @@ html(lang="ru")
   head
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href="./lk.css" rel="stylesheet")
-    link(href="./main-lk.css" rel="stylesheet")
+    link(href="./style.css" rel="stylesheet")
 
   body
     .lk-wrap
@@ -18,8 +18,8 @@ html(lang="ru")
                 h2.lk-info-block__title Информация о государственных программах и инструментах содействия занятости населения
                 p.lk-info-block__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 .lk-info-block__btns
-                  a.lk-button.lk-button--link(href="#" data-for-popup="getConsultation") Получить консультацию специалиста
-                  a.lk-button.lk-button--link(href='#') Вопрос-ответ
+                  a.lk-button.lk-button--prime.lk-info-block__button(href="#" data-for-popup="getConsultation") Получить консультацию специалиста
+                  a.lk-button.lk-button--border.lk-info-block__button(href='#') Вопрос-ответ
               .lk-info-block__icon.lk-bg--5
                 .lk-icon.lk-icon--100.lk-icon--certificate
 
@@ -55,3 +55,32 @@ html(lang="ru")
                         p.lk-inform-card__desc портал является федеральной государственной информационной системой Федеральной службы по труду и занятости и создан для того, чтобы помочь гражданам найти работу, а работодателям - работников.
                       a.lk-inform-card__link(href="#") Подробнее о программе
 
+    .lk-popup(data-popup='getConsultation')
+      .lk-popup__wrapper.lk-popup__wrapper--large
+        .lk-popup__header
+          h3.lk-popup__title Заявка на получение услуги
+          button.lk-popup__close(data-js="popup-close")
+        .lk-popup__content
+          form.lk-popup__form( )
+            .lk-popup__name
+              label.lk-popup__desc--small(for="service-name") Контактное лицо
+                span.lk-popup__reqired *
+              input.lk-popup__input.lk-popup__name-input(id="service-name" type="text" required placeholder="Placeholder")
+            .lk-popup__row
+              .lk-popup__col-6
+                .lk-popup__phone
+                  label.lk-popup__desc--small(for="service-phone" ) Телефон
+                    span.lk-popup__reqired *
+                  input.lk-popup__input.lk-popup__phone-input(id="service-phone" type="tel" required autocomplete="off" pattern="[0-9]{10}" placeholder="Placeholder")
+              .lk-popup__col-6
+                .lk-popup__email
+                  label.lk-popup__desc--small(for="service-email") Email
+                    span.lk-popup__reqired *
+                  input.lk-popup__input.lk-popup__email-input(id="service-email" type="email" required placeholder="Placeholder")
+            .lk-popup__comment
+              label.lk-popup__desc--small(for="service-textarea") Комментарий
+              textarea.lk-popup__textarea(rows=6 id="service-textarea")
+            input(type="text" value="").lk-popup__tiket-value
+            input(type="submit" value="Отправить заявку").lk-popup__btn.lk-button--prime
+
+    script(src='assets/js/lk-popup.js')

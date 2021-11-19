@@ -1,6 +1,10 @@
 .lk-info-block {
   margin: 24px 0;
   display: flex;
+  
+  font-family: Golos, sans-serif;
+  border-radius: 4px;
+  overflow: hidden;
 
   &__content{
     background-color: $white;
@@ -27,8 +31,8 @@
     color: $blackOnyx;
 
     @media (max-width: 991px) {
-      font-size: 26px;
-      line-height: 32px;
+      font-size: 24px;
+      line-height: 30px;
     }
   }
 
@@ -45,6 +49,13 @@
     display: flex;
     flex-wrap: wrap;
   }
+  
+  &__button {
+    padding: 10px 17px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
 
   &__icon {
     min-width: 200px;
@@ -52,6 +63,16 @@
 
     @media (max-width: 768px) {
       display: none;
+    }
+    
+    &--small {
+      padding: 24px 24px 24px 8px;
+  
+      background-color: #ffffff;
+  
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
 

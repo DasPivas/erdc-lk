@@ -1,7 +1,5 @@
-
-
 .lk-tabs {
-  
+  font-family: Golos, sans-serif;
   
     display: flex;
     flex-wrap: wrap;
@@ -93,7 +91,9 @@
         float: left;
         padding: 12px;
         margin: 0;
+        
         font-size: 15px;
+        background-color: #ffffff;
         &::after {
           display: none;
         }

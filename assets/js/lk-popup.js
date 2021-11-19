@@ -27,11 +27,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
       const optionPopup = consultationBtn.dataset.forPopup
       const ticketNumber = consultationBtn.dataset.tiketNumber
+      const selectValue = consultationBtn.dataset.selectValue
       const popup = document.querySelector(`[data-popup=${optionPopup}]`)
       const inputTikcetNumber = popup.querySelector('.lk-popup__tiket-value')
+      const selectBlock = popup.querySelector('.lk-popup__service-select')
 
+      if (selectBlock) {
+        selectValue ? selectBlock.value = selectValue : selectBlock.value = ''
+      }
       popup.classList.add('lk-popup--active')
-      inputTikcetNumber.value = ticketNumber
+      if (inputTikcetNumber) {
+        inputTikcetNumber.value = ticketNumber
+      }
     })
   })
   
@@ -61,12 +68,18 @@ window.addEventListener('DOMContentLoaded', () => {
   
   const closePopup = () => {
     const activeForm = document.querySelector('.lk-popup--active')
+    const inputTiketNumber = activeForm.querySelectorAll('.lk-popup__tiket-value')
+    const inputName = activeForm.querySelectorAll('.lk-popup__name-input')
+    const inputPhone = activeForm.querySelectorAll('.lk-popup__phone-input')
+    const inputEmail = activeForm.querySelectorAll('.lk-popup__email-input')
+    const textareaComment = activeForm.querySelectorAll('.lk-popup__textarea')
     const labelEvaluations = activeForm.querySelectorAll('.lk-popup__evaluations-label')
     const inputEvaluations = activeForm.querySelectorAll('.lk-popup__evaluations-input')
-    const inputTiketNumber = activeForm.querySelectorAll('.lk-popup__tiket-value')
-    const textareaComment = activeForm.querySelectorAll('.lk-popup__textarea')
   
     removeAttr(inputTiketNumber, 'value', '')
+    removeAttr(inputName, 'value', '')
+    removeAttr(inputPhone, 'value', '')
+    removeAttr(inputEmail, 'value', '')
     removeAttr(textareaComment, 'value', '')
     removeAttr(labelEvaluations, 'class', 'lk-popup__evaluations-label--selected')
     removeAttr(inputEvaluations, 'checked', false)
@@ -87,4 +100,15 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     })
   })
+
+  // const alertSuccess = () => {
+  //   closePopup()
+  //
+  //   const successForm = document.querySelector('[data-popup=success]')
+  //   console.log(successForm)
+  //   if (successForm) {
+  //     successForm.classList.add('lk-popup--active')
+  //   }
+  //   return false;
+  // }
 })

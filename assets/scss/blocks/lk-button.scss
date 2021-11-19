@@ -8,6 +8,9 @@
   align-items: center;
   
   background: #ffffff;
+  font-family: Golos, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
   color: #962157;
   text-decoration: none;
   border: 1px solid #e5e5eb;
@@ -31,6 +34,17 @@
     
     &:active {
       color: #891d56;
+      background-color: #f5f5f7;
+    }
+  }
+  
+  &--border {
+    color: #891d56;
+    border-color: #891d56;
+    
+    &:hover, &:active {
+      color: #962157;
+      border-color: #962157;
       background-color: #f5f5f7;
     }
   }

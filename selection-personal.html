@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="./lk.css" rel="stylesheet"/>
-    <link href="./main-lk.css" rel="stylesheet"/>
+    <link href="./style.css" rel="stylesheet"/>
   </head>
   <body>
     <div class="lk-wrap">
@@ -59,7 +59,7 @@
                     <p class="lk-notification__request-meta">Заявка на оказание услуги от 13 октября 2021</p>
                     <p class="lk-notification__request-title">Размещение вакансии в соц. сетях</p>
                   </div>
-                  <form class="lk-notification__request-form"><a class="lk-button lk-button--accept" href="#" data-for-popup="confirm" data-tiket-number="123456">Утвердить</a><a class="lk-button lk-button--cansel" href="#" data-for-popup="rejection" data-tiket-number="123456">Отклонить отчет</a></form>
+                  <div class="lk-notification__request-form"><a class="lk-button lk-button--accept" href="#" data-for-popup="confirm" data-tiket-number="123456">Утвердить</a><a class="lk-button lk-button--cansel" href="#" data-for-popup="rejection" data-tiket-number="123456">Отклонить отчет</a></div>
                 </div>
                 <div class="lk-notification__status">
                   <div class="lk-notification__status-head">
@@ -170,7 +170,7 @@
                       <div class="lk-notification__request-head">
                         <p class="lk-notification__request-meta">Заявка на оказание услуги от 14 октября 2021</p>
                         <p class="lk-notification__request-title">Размещение вакансии в соц. сетях</p>
-                        <form class="lk-notification__request-form"><a class="lk-button lk-button--accept" href="#" data-for-popup="confirm" data-tiket-number="1234567">Утвердить</a><a class="lk-button lk-button--cansel" href="#" data-for-popup="rejection" data-tiket-number="1234567">Отклонить отчет</a></form>
+                        <div class="lk-notification__request-form"><a class="lk-button lk-button--accept" href="#" data-for-popup="confirm" data-tiket-number="1234567">Утвердить</a><a class="lk-button lk-button--cansel" href="#" data-for-popup="rejection" data-tiket-number="1234567">Отклонить отчет</a></div>
                       </div>
                     </div>
                     <div class="lk-notification__status">
@@ -244,7 +244,7 @@
               <textarea class="lk-popup__textarea" rows="6"></textarea>
             </div>
             <input class="lk-popup__tiket-value" type="text" value=""/>
-            <button class="lk-popup__btn lk-button--prime" type="sumbit"> Отправить оценку</button>
+            <input class="lk-popup__btn lk-button--prime" type="submit" value="Отправить оценку"/>
           </form>
         </div>
       </div>
@@ -271,11 +271,11 @@
               <label class="lk-popup__evaluations-label" for="popup-confirm-5">5</label>
             </div>
             <div class="lk-popup__comment">
-              <p class="lk-popup__desc--small">Комментарий</p>
-              <textarea class="lk-popup__textarea" rows="6"></textarea>
+              <label class="lk-popup__desc--small" for="confirm-textarea">Комментарий</label>
+              <textarea class="lk-popup__textarea" rows="6" id="confirm-textarea"></textarea>
             </div>
             <input class="lk-popup__tiket-value" type="text" value=""/>
-            <button class="lk-popup__btn lk-button--prime" type="sumbit"> Отправить оценку</button>
+            <input class="lk-popup__btn lk-button--prime" type="submit" value="Отправить оценку"/>
           </form>
         </div>
       </div>
@@ -288,13 +288,12 @@
         </div>
         <div class="lk-popup__content">
           <form class="lk-popup__form" action="">
-            <p class="lk-popup__desc">На сколько вы удовлетворены по 5-ти бальной шкале?</p>
             <div class="lk-popup__comment">
               <p class="lk-popup__desc--small">Укажите причину<span class="lk-popup__reqired">*</span></p>
               <textarea class="lk-popup__textarea" rows="6" required="required"></textarea>
             </div>
             <input class="lk-popup__tiket-value" type="text" value=""/>
-            <button class="lk-popup__btn lk-button--prime" type="sumbit"> Отправить оценку</button>
+            <input class="lk-popup__btn lk-button--prime" type="submit" value="Отправить "/>
           </form>
         </div>
       </div>
