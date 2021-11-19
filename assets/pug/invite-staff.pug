@@ -70,11 +70,11 @@ html(lang="ru")
           h3.lk-popup__title Заявка на получение услуги
           button.lk-popup__close(data-js="popup-close")
         .lk-popup__content
-          form.lk-popup__form( )
+          form.lk-popup__form(name="serviceForm" onsubmit="alertSuccess(arguments)")
             .lk-popup__service
               label.lk-popup__desc--small(for="service-select") Выбранная услуга
                 span.lk-popup__reqired *
-              select.lk-popup__input.lk-popup__service-select(id="service-select" required size="1")
+              select.lk-popup__input.lk-popup__service-select(id="service-select" required size="1" name="service-select")
                 option.lk-popup__option.lk-popup__service-option(value="") Выберете услугу
                 option.lk-popup__option.lk-popup__service-option(value="d11") Placeholder1
                 option.lk-popup__option.lk-popup__service-option(value="d12") Placeholder2
@@ -85,22 +85,22 @@ html(lang="ru")
             .lk-popup__name
               label.lk-popup__desc--small(for="service-name") Контактное лицо
                 span.lk-popup__reqired *
-              input.lk-popup__input.lk-popup__name-input(id="service-name" type="text" required placeholder="Placeholder")
+              input.lk-popup__input.lk-popup__name-input(id="service-name" name="service-name" type="text" required placeholder="Placeholder")
             .lk-popup__row
               .lk-popup__col-6
                 .lk-popup__phone
                   label.lk-popup__desc--small(for="service-phone" ) Телефон
                     span.lk-popup__reqired *
-                  input.lk-popup__input.lk-popup__phone-input(id="service-phone" type="tel" required autocomplete="off" pattern="[0-9]{10}" placeholder="Placeholder")
+                  input.lk-popup__input.lk-popup__phone-input(id="service-phone" name="service-phone" type="tel" required autocomplete="off" pattern="[0-9]{10}" placeholder="9999999999")
               .lk-popup__col-6
                 .lk-popup__email
                   label.lk-popup__desc--small(for="service-email") Email
                     span.lk-popup__reqired *
-                  input.lk-popup__input.lk-popup__email-input(id="service-email" type="email" required placeholder="Placeholder")
+                  input.lk-popup__input.lk-popup__email-input(id="service-email" name="service-email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+[a-z]{2,4}$" placeholder="email@address.com" )
             .lk-popup__comment
               label.lk-popup__desc--small(for="service-textarea") Комментарий
               textarea.lk-popup__textarea(rows=6 id="service-textarea")
-            input(type="text" value="").lk-popup__tiket-value
+            input(type="text" name="service-ticket" value="").lk-popup__tiket-value
             input(type="submit" value="Отправить заявку").lk-popup__btn.lk-button--prime
 
     .lk-popup(data-popup='success')

@@ -101,14 +101,33 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  // const alertSuccess = () => {
-  //   closePopup()
-  //
-  //   const successForm = document.querySelector('[data-popup=success]')
-  //   console.log(successForm)
-  //   if (successForm) {
-  //     successForm.classList.add('lk-popup--active')
-  //   }
-  //   return false;
-  // }
+  function getFormInputs (event) {
+    const inputsValues = {}
+    const formInputs = event.target.elements
+
+    Object.entries(formInputs).forEach(([inputName, input]) => {
+      inputsValues[inputName] = input.value
+    })
+
+    return inputsValues
+  }
+
+  window.alertSuccess = (arguments) => {
+    const event = arguments[0]
+    event.preventDefault()
+
+    const inputsValues = getFormInputs(event)
+
+    console.log(inputsValues)
+    return
+
+    closePopup()
+
+    const successForm = document.querySelector('[data-popup=success]')
+    console.log(successForm)
+    if (successForm) {
+      successForm.classList.add('lk-popup--active')
+    }
+    form.submit()
+  }
 })

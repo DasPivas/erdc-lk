@@ -76,7 +76,7 @@ html(lang="ru")
                 .lk-popup__email
                   label.lk-popup__desc--small(for="service-email") Email
                     span.lk-popup__reqired *
-                  input.lk-popup__input.lk-popup__email-input(id="service-email" type="email" required placeholder="Placeholder")
+                  input.lk-popup__input.lk-popup__email-input(id="service-email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+[a-z]{2,4}$" placeholder="Placeholder")
             .lk-popup__comment
               label.lk-popup__desc--small(for="service-textarea") Комментарий
               textarea.lk-popup__textarea(rows=6 id="service-textarea")
