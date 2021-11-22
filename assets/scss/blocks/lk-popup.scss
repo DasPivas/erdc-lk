@@ -14,7 +14,7 @@
   
   &--active {
     display: flex;
-  
+    
     @media (max-width: 375px) {
       display: block;
       overflow-y: auto;
@@ -34,12 +34,12 @@
     
     &--module {
       display: flex;
-  
+      
       @media (max-width: 375px) {
         flex-direction: column;
       }
     }
-  
+    
     @media (max-width: 375px) {
       margin: 20px 0;
       padding: 24px;
@@ -51,7 +51,7 @@
   
   &__icon {
     margin-right: 32px;
-  
+    
     @media (max-width: 375px) {
       margin: 0 auto 10px;
     }
@@ -60,7 +60,7 @@
   &__row {
     display: flex;
     margin: 0 -12px;
-  
+    
     @media (max-width: 375px) {
       flex-wrap: wrap;
     }
@@ -69,7 +69,7 @@
   &__col-6 {
     width: 50%;
     padding: 0 12px;
-  
+    
     @media (max-width: 375px) {
       width: 100%;
     }
@@ -152,6 +152,8 @@
     border-radius: 4px;
     border-color: #dcdfe4;
     font-family: Golos, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
     color: $blackOnyx;
     resize: none;
     
@@ -223,17 +225,35 @@
   &__phone {
     margin: 0 0 12px;
     
-    
-    :after {
-    
+     &-wrapper {
+       display: flex;
+       align-items: center;
+       
+       border: 1px solid #dcdfe4;
+       border-radius: 4px;
+       overflow: hidden;
+       
+       input {
+         height: 46px;
+         border: none;
+         border-radius: 0;
+       }
+     }
+    &-wrapper--hover {
+      border-color: #891d56;
+      outline: #891d56;
     }
     
-    &-input {
-      padding-left: 42px;
+    &-image {
+      height: 100%;
+      width: auto;
+      object-fit: cover;
       
-      background: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/phone.svg') left no-repeat;
-      background-size: auto 100%;
+      border-top: 3px solid #E8EAED;
+      border-bottom: 3px solid #E8EAED;
     }
+    
+    
   }
   
   &__email {
@@ -242,7 +262,7 @@
   
   &__comment {
     margin-top: 20px;
-  
+    
     @media (max-width: 375px) {
       margin-top: 10px;
     }
@@ -263,10 +283,15 @@
     line-height: 28px;
     text-align: center;
     cursor: pointer;
-  
+    
     @media (max-width: 375px) {
       margin-top: 24px;
     }
+  }
+  
+  input[type='submit']:disabled {
+    color: #333333;
+    background: rgba(0, 0, 0, .2);
   }
   
   &__reqired {
@@ -280,7 +305,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    color: #8F1A50;
+    color: #8f1a50;
     text-decoration: none;
     transition: .2s;
     

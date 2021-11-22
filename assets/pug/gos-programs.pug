@@ -71,16 +71,29 @@ html(lang="ru")
                 .lk-popup__phone
                   label.lk-popup__desc--small(for="service-phone" ) Телефон
                     span.lk-popup__reqired *
-                  input.lk-popup__input.lk-popup__phone-input(id="service-phone" type="tel" required autocomplete="off" pattern="[0-9]{10}" placeholder="Placeholder")
+                  .lk-popup__phone-wrapper
+                    img.lk-popup__phone-image(src='./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/phone.svg')
+                    input.lk-popup__input.lk-popup__phone-input(id="service-phone" name="service-phone" type="tel" required pattern="[0-9]{10}" placeholder="9999999999")
               .lk-popup__col-6
                 .lk-popup__email
                   label.lk-popup__desc--small(for="service-email") Email
                     span.lk-popup__reqired *
                   input.lk-popup__input.lk-popup__email-input(id="service-email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+[a-z]{2,4}$" placeholder="Placeholder")
             .lk-popup__comment
-              label.lk-popup__desc--small(for="service-textarea") Комментарий
-              textarea.lk-popup__textarea(rows=6 id="service-textarea")
+              label.lk-popup__desc--small(for="service-message") Комментарий
+              textarea.lk-popup__textarea(rows=6 id="service-message")
             input(type="text" value="").lk-popup__tiket-value
             input(type="submit" value="Отправить заявку").lk-popup__btn.lk-button--prime
+
+    .lk-popup(data-popup='success')
+      .lk-popup__wrapper.lk-popup__wrapper--large.lk-popup__wrapper--module
+        .lk-popup__icon
+          .lk-icon.lk-icon--80.lk-icon--done-color
+        .lk-popup__module
+          .lk-popup__header
+            h3.lk-popup__title.lk-popup__title--big Заявка успешно отправлена
+            button.lk-popup__close(data-js="popup-close")
+          .lk-popup__content
+            p.lk-popup__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
     script(src='assets/js/lk-popup.js')

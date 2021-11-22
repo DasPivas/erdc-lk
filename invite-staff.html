@@ -91,7 +91,7 @@
           <button class="lk-popup__close" data-js="popup-close"></button>
         </div>
         <div class="lk-popup__content">
-          <form class="lk-popup__form" name="serviceForm" onsubmit="alertSuccess(arguments)">
+          <form class="lk-popup__form" name="serviceForm">
             <div class="lk-popup__service">
               <label class="lk-popup__desc--small" for="service-select">Выбранная услуга<span class="lk-popup__reqired">*</span></label>
               <select class="lk-popup__input lk-popup__service-select" id="service-select" required="required" size="1" name="service-select">
@@ -111,7 +111,9 @@
               <div class="lk-popup__col-6">
                 <div class="lk-popup__phone">
                   <label class="lk-popup__desc--small" for="service-phone">Телефон<span class="lk-popup__reqired">*</span></label>
-                  <input class="lk-popup__input lk-popup__phone-input" id="service-phone" name="service-phone" type="tel" required="required" autocomplete="off" pattern="[0-9]{10}" placeholder="9999999999"/>
+                  <div class="lk-popup__phone-wrapper"><img class="lk-popup__phone-image" src="./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/phone.svg"/>
+                    <input class="lk-popup__input lk-popup__phone-input" id="service-phone" name="service-phone" type="tel" required="required" pattern="[0-9]{10}" placeholder="9999999999"/>
+                  </div>
                 </div>
               </div>
               <div class="lk-popup__col-6">
@@ -122,8 +124,8 @@
               </div>
             </div>
             <div class="lk-popup__comment">
-              <label class="lk-popup__desc--small" for="service-textarea">Комментарий</label>
-              <textarea class="lk-popup__textarea" rows="6" id="service-textarea"></textarea>
+              <label class="lk-popup__desc--small" for="service-message">Комментарий</label>
+              <textarea class="lk-popup__textarea" rows="6" id="service-message"></textarea>
             </div>
             <input class="lk-popup__tiket-value" type="text" name="service-ticket" value=""/>
             <input class="lk-popup__btn lk-button--prime" type="submit" value="Отправить заявку"/>

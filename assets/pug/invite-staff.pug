@@ -70,7 +70,7 @@ html(lang="ru")
           h3.lk-popup__title Заявка на получение услуги
           button.lk-popup__close(data-js="popup-close")
         .lk-popup__content
-          form.lk-popup__form(name="serviceForm" onsubmit="alertSuccess(arguments)")
+          form.lk-popup__form(name="serviceForm")
             .lk-popup__service
               label.lk-popup__desc--small(for="service-select") Выбранная услуга
                 span.lk-popup__reqired *
@@ -91,15 +91,17 @@ html(lang="ru")
                 .lk-popup__phone
                   label.lk-popup__desc--small(for="service-phone" ) Телефон
                     span.lk-popup__reqired *
-                  input.lk-popup__input.lk-popup__phone-input(id="service-phone" name="service-phone" type="tel" required autocomplete="off" pattern="[0-9]{10}" placeholder="9999999999")
+                  .lk-popup__phone-wrapper
+                    img.lk-popup__phone-image(src='./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/phone.svg')
+                    input.lk-popup__input.lk-popup__phone-input(id="service-phone" name="service-phone" type="tel" required pattern="[0-9]{10}" placeholder="9999999999")
               .lk-popup__col-6
                 .lk-popup__email
                   label.lk-popup__desc--small(for="service-email") Email
                     span.lk-popup__reqired *
                   input.lk-popup__input.lk-popup__email-input(id="service-email" name="service-email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+[a-z]{2,4}$" placeholder="email@address.com" )
             .lk-popup__comment
-              label.lk-popup__desc--small(for="service-textarea") Комментарий
-              textarea.lk-popup__textarea(rows=6 id="service-textarea")
+              label.lk-popup__desc--small(for="service-message") Комментарий
+              textarea.lk-popup__textarea(rows=6 id="service-message")
             input(type="text" name="service-ticket" value="").lk-popup__tiket-value
             input(type="submit" value="Отправить заявку").lk-popup__btn.lk-button--prime
 
