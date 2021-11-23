@@ -20,84 +20,57 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  document.querySelectorAll('[data-for-popup]').forEach(consultationBtn => {
+  document.querySelectorAll('[data-for-popup]').forEach(button => {
 
-    consultationBtn.addEventListener('click', e => {
+    button.addEventListener('click', e => {
       e.preventDefault()
 
-      const optionPopup = consultationBtn.dataset.forPopup
-      const ticketNumber = consultationBtn.dataset.tiketNumber
-      const selectValue = consultationBtn.dataset.selectValue
-      const popup = document.querySelector(`[data-popup=${optionPopup}]`)
+      const popupType = button.dataset.forPopup
+      const ticketNumber = button.dataset.tiketNumber
+      const selectValue = button.dataset.selectValue
+      const popup = document.querySelector(`[data-popup=${popupType}]`)
+      const form = popup.querySelector('form')
       const inputTikcetNumber = popup.querySelector('.lk-popup__tiket-value')
       const selectBlock = popup.querySelector('.lk-popup__service-select')
+
+      popup.classList.add('lk-popup--active')
+
+      if (popupType === 'service' || popupType === 'getConsultation') {
+        form.addEventListener('submit', sendForm)
+      }
 
       if (selectBlock) {
         selectValue ? selectBlock.value = selectValue : selectBlock.value = ''
       }
-      popup.classList.add('lk-popup--active')
+
       if (inputTikcetNumber) {
         inputTikcetNumber.value = ticketNumber
-      }
-
-      if (optionPopup === 'service' || 'getConsultation') {
-        const form = popup.querySelector('form')
-        form.addEventListener('submit', (event) => {
-          sendForm(event, form)
-        })
       }
     })
   })
 
-  const removeAttr = (collection, option, value) => {
-    switch (option) {
-      case 'class':
-        collection.forEach(el => {
-          if (el.classList.contains(value)) {
-            el.classList.remove(value)
-          }
-        })
-        break;
-      case 'checked':
-        collection.forEach(el => {
-          if (el.checked) {
-            el.checked = value
-          }
-        })
-        break;
-      case 'value':
-        collection.forEach(el => {
-          el.value = ''
-        })
-        break;
-    }
-  }
-
   const closePopup = () => {
     const activeForm = document.querySelector('.lk-popup--active')
-    const inputTiketNumber = activeForm.querySelectorAll('.lk-popup__tiket-value')
-    const inputName = activeForm.querySelectorAll('.lk-popup__name-input')
-    const inputPhone = activeForm.querySelectorAll('.lk-popup__phone-input')
-    const inputEmail = activeForm.querySelectorAll('.lk-popup__email-input')
-    const textareaComment = activeForm.querySelectorAll('.lk-popup__textarea')
+    const form = activeForm.querySelector('form')
     const labelEvaluations = activeForm.querySelectorAll('.lk-popup__evaluations-label')
-    const inputEvaluations = activeForm.querySelectorAll('.lk-popup__evaluations-input')
-
-    removeAttr(inputTiketNumber, 'value', '')
-    removeAttr(inputName, 'value', '')
-    removeAttr(inputPhone, 'value', '')
-    removeAttr(inputEmail, 'value', '')
-    removeAttr(textareaComment, 'value', '')
-    removeAttr(labelEvaluations, 'class', 'lk-popup__evaluations-label--selected')
-    removeAttr(inputEvaluations, 'checked', false)
 
     activeForm.classList.remove('lk-popup--active')
+
+    if (!form) {
+      return
+    }
+
+    form.reset()
+
+    labelEvaluations.forEach(el => {
+      if (el.classList.contains('lk-popup__evaluations-label--selected')) {
+        el.classList.remove('lk-popup__evaluations-label--selected')
+      }
+    })
   }
 
   document.querySelectorAll('[data-js=popup-close]').forEach(closeBtn => {
-    closeBtn.addEventListener('click', e => {
-      closePopup()
-    })
+    closeBtn.addEventListener('click', closePopup)
   })
 
   document.querySelectorAll('.lk-popup').forEach(el => {
@@ -108,17 +81,6 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  function getFormInputs(form) {
-    const inputsValues = {}
-    const formInputs = form.elements
-
-    Object.entries(formInputs).forEach(([inputName, input]) => {
-      inputsValues[inputName] = input.value
-    })
-
-    return inputsValues
-  }
-
   function successAlert() {
     const successForm = document.querySelector('[data-popup=success]')
     if (successForm) {
@@ -126,38 +88,36 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  async function requestFormApi(url, data = {}) {
-    let result
+  async function requestFormApi(url, data) {
+    let response, result
 
     try {
-      result = await fetch(url, {
+      response = await fetch(url, {
         method: 'POST',
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify(data)
+        body: new FormData(data)
       })
+      result = await response.json()
     } catch (e) {
       throw e
     }
 
-    if (!result.ok) {
+    if (!response.ok) {
       throw new Error('Ответ сети был не ok.');
     }
 
     return result;
   }
 
-  function sendForm(event, form) {
+  function sendForm(event) {
     event.preventDefault();
 
+    const form = event.target;
     const submitBtn = form.querySelector('input[type=submit]')
-    const url = 'https://jsonplaceholder.typicode.com/posts';
-    const data = getFormInputs(form);
+    const url = 'http://lk.erdc.kistin.sitesoft.ru/recruitment/ajax.php';
 
     submitBtn.disabled = true
 
-    requestFormApi(url, data)
+    requestFormApi(url, form)
       .then(response => {
         closePopup()
         successAlert()
