@@ -75,9 +75,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.lk-popup').forEach(el => {
     el.addEventListener('click', e => {
-      if (e.target.classList.contains('lk-popup--active')) {
-        closePopup()
+      const activeElement = document.activeElement;
+      const inputs = ['input', 'select', 'button', 'textarea'];
+
+      if (!e.target.classList.contains('lk-popup--active')) {
+        return
       }
+
+      if (activeElement && inputs.indexOf(activeElement.tagName.toLowerCase()) !== -1) {
+        return
+      }
+
+      closePopup()
     })
   })
 
