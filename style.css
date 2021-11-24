@@ -939,13 +939,15 @@ body {
   border-color: #891d56;
   outline: #891d56;
 }
-.lk-popup__phone-image {
+.lk-popup__phone-code {
+  padding: 11px 6px 6px;
   height: 100%;
-  width: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-top: 3px solid #E8EAED;
-  border-bottom: 3px solid #E8EAED;
+  min-width: 30px;
+  min-height: 46px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #505968;
+  background-color: #E8EAED;
 }
 .lk-popup__email {
   margin: 0 0 12px;
@@ -1015,11 +1017,12 @@ body {
   overflow: hidden;
 }
 .lk-info-block__content {
-  background-color: #ffffff;
+  width: 100%;
   padding: 32px;
   font-size: 16px;
   line-height: 24px;
   color: #333333;
+  background-color: #ffffff;
 }
 .lk-info-block__content h2 {
   margin-top: 0;

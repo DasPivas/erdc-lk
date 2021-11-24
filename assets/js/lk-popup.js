@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const selectValue = button.dataset.selectValue
       const popup = document.querySelector(`[data-popup=${popupType}]`)
       const form = popup.querySelector('form')
-      const inputTikcetNumber = popup.querySelector('.lk-popup__tiket-value')
+      const inputTicketNumber = popup.querySelector('.lk-popup__tiket-value')
       const selectBlock = popup.querySelector('.lk-popup__service-select')
 
       popup.classList.add('lk-popup--active')
@@ -43,8 +43,8 @@ window.addEventListener('DOMContentLoaded', () => {
         selectValue ? selectBlock.value = selectValue : selectBlock.value = ''
       }
 
-      if (inputTikcetNumber) {
-        inputTikcetNumber.value = ticketNumber
+      if (inputTicketNumber) {
+        inputTicketNumber.value = ticketNumber
       }
     })
   })
@@ -113,7 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const form = event.target;
     const submitBtn = form.querySelector('input[type=submit]')
-    const url = 'http://lk.erdc.kistin.sitesoft.ru/recruitment/ajax.php';
+    const url = '/recruitment/ajax.php';
 
     submitBtn.disabled = true
 

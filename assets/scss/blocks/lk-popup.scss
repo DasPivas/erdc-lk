@@ -244,13 +244,16 @@
       outline: #891d56;
     }
     
-    &-image {
+    &-code {
+      padding: 11px 6px 6px;
       height: 100%;
-      width: auto;
-      object-fit: cover;
+      min-width: 30px;
+      min-height: 46px;
       
-      border-top: 3px solid #E8EAED;
-      border-bottom: 3px solid #E8EAED;
+      font-size: 16px;
+      line-height: 20px;
+      color: #505968;
+      background-color: #E8EAED;
     }
     
     

@@ -5,46 +5,47 @@
   font-family: Golos, sans-serif;
   border-radius: 4px;
   overflow: hidden;
-
-  &__content{
+  
+  &__content {
     width: 100%;
     padding: 32px;
-
+    
     font-size: 16px;
     line-height: 24px;
     color: #333333;
     background-color: $white;
-  
+    
     h2 {
       margin-top: 0;
       margin-bottom: 0;
     }
+    
     p {
       margin-bottom: 0;
     }
-
+    
   }
-
+  
   &__title {
     font-size: 30px;
     font-weight: 600;
     line-height: 36px;
     color: $blackOnyx;
-
+    
     @media (max-width: 991px) {
       font-size: 24px;
       line-height: 30px;
     }
   }
-
+  
   &__desc {
     margin: 24px 0 0;
-
+    
     font-size: 16px;
     line-height: 24px;
     color: #333333;
   }
-
+  
   &__btns {
     margin-top: 14px;
     display: flex;
@@ -57,25 +58,25 @@
     font-size: 16px;
     line-height: 24px;
   }
-
+  
   &__icon {
     min-width: 200px;
     padding: 50px;
-
+    
     @media (max-width: 768px) {
       display: none;
     }
     
     &--small {
       padding: 24px 24px 24px 8px;
-  
+      
       background-color: #ffffff;
-  
+      
       @media (max-width: 768px) {
         display: none;
       }
     }
   }
-
-
+  
+  
 }
