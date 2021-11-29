@@ -13,6 +13,16 @@
     background: no-repeat center center;
   }
   
+  &--40 {
+    width: 40px;
+    height: 40px;
+    
+    &:before {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
   &--64 {
     width: 64px;
     height: 64px;
@@ -22,6 +32,17 @@
       height: 32px;
     }
   }
+  
+  &--60 {
+    width: 60px;
+    height: 60px;
+    
+    &:before {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
   &--80 {
     width: 80px;
     height: 80px;
@@ -81,5 +102,13 @@
   
   &--obrazovaniye:before {
     background-image: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/obrazovaniye.svg');
+  }
+  
+  &--warning:before {
+    background-image: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/warning.svg');
+  }
+  
+  &--info-red:before {
+    background-image: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/info-red.svg');
   }
 }

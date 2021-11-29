@@ -45,7 +45,7 @@ html(lang="ru")
                       .lk-icon.lk-icon--64.lk-icon--certificate.lk-bg--5
                     h4.lk-cards__subtitle Гос. программы и инструменты содействия занятости населения
                     p.lk-cards__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit
-
+                                //="{"TASK_ID":114, "approve":"Y"}"
             .lk-notification
               .lk-notification__text
                 h4.lk-notification__text-title Подготовлен очёт
@@ -56,8 +56,8 @@ html(lang="ru")
                     p.lk-notification__request-meta Заявка на оказание услуги от 13 октября 2021
                     p.lk-notification__request-title Размещение вакансии в соц. сетях
                   .lk-notification__request-form
-                    a.lk-button.lk-button--accept(href="#" data-for-popup="confirm" data-tiket-number='123456') Утвердить
-                    a.lk-button.lk-button--cansel(href="#" data-for-popup="rejection" data-tiket-number='123456') Отклонить отчет
+                    a.lk-button.lk-button--accept(href="#" data-for-popup="confirm" data-tiket-number='123456' data-action-property='{"TASK_ID":114, "approve":"Y"}' ) Утвердить
+                    a.lk-button.lk-button--cansel(href="#" data-for-popup="rejection" data-tiket-number='123456' data-action-property='{"TASK_ID":114, "reject":"Y"}') Отклонить отчет
                 .lk-notification__status
                   .lk-notification__status-head
                     p.lk-notification__status-meta Статус
@@ -75,7 +75,7 @@ html(lang="ru")
                     p.lk-notification__request-meta Заявка на консультацию от 17 октября 2021
                     p.lk-notification__request-title Информация о гос. программах и инструментах содействия занятости населения
                   .lk-notification__request-btns
-                    a.lk-button.lk-button--consultation(href='#' data-for-popup="consultation" data-tiket-number='12345') Оценить консультацию
+                    a.lk-button.lk-button--consultation(href='#' data-for-popup="consultation" data-tiket-number='12345' data-action-property='{"TASK_ID":114, "consultation":"Y"}') Оценить консультацию
                 .lk-notification__status
                   .lk-notification__status-head
                     p.lk-notification__status-meta Статус
@@ -138,8 +138,8 @@ html(lang="ru")
                         p.lk-notification__request-meta Заявка на оказание услуги от 14 октября 2021
                         p.lk-notification__request-title Размещение вакансии в соц. сетях
                         .lk-notification__request-form
-                          a.lk-button.lk-button--accept(href="#" data-for-popup="confirm" data-tiket-number='1234567') Утвердить
-                          a.lk-button.lk-button--cansel(href="#" data-for-popup="rejection" data-tiket-number='1234567') Отклонить отчет
+                          a.lk-button.lk-button--accept(href="#" data-for-popup="confirm" data-tiket-number='1234567' data-action-property='{"TASK_ID":114, "approve":"Y"}') Утвердить
+                          a.lk-button.lk-button--cansel(href="#" data-for-popup="rejection" data-tiket-number='1234567' data-action-property='{"TASK_ID":114, "reject":"Y"}') Отклонить отчет
                     .lk-notification__status
                       .lk-notification__status-head
                         p.lk-notification__status-meta Статус
@@ -191,6 +191,8 @@ html(lang="ru")
               p.lk-popup__desc--small Комментарий
               textarea.lk-popup__textarea(rows=6)
             input(type="text" value="").lk-popup__tiket-value
+            input(type="text" value="" data-action-property='').d-none
+            input(type="hidden" value="consultationForm" name='form')
             input(type="submit" value="Отправить оценку").lk-popup__btn.lk-button--prime
     .lk-popup(data-popup='confirm')
       .lk-popup__wrapper
@@ -215,6 +217,8 @@ html(lang="ru")
               label.lk-popup__desc--small(for="confirm-textarea") Комментарий
               textarea.lk-popup__textarea(rows=6 id="confirm-textarea")
             input(type="text" value="").lk-popup__tiket-value
+            input(type="text" value="" data-action-property='').d-none
+            input(type="hidden" value="serviceForm" name='form')
             input(type="submit" value="Отправить оценку").lk-popup__btn.lk-button--prime
     .lk-popup(data-popup='rejection')
       .lk-popup__wrapper
@@ -228,6 +232,8 @@ html(lang="ru")
                 span.lk-popup__reqired *
               textarea.lk-popup__textarea(rows=6 required minlength="50")
             input(type="text" value="").lk-popup__tiket-value
+            input(type="text" value="" data-action-property='').d-none
+            input(type="hidden" value="rejectionForm" name='form')
             input(type="submit" value="Отправить ").lk-popup__btn.lk-button--prime
 
 

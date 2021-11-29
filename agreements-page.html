@@ -1,0 +1,56 @@
+
+<html lang="ru">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="./lk.css" rel="stylesheet"/>
+    <link href="./style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="lk-wrap">
+      <div class="container">
+        <div class="lk-row">
+          <div class="lk-aside lk-col lk-col_lg_3"></div>
+          <div class="lk-content lk-col lk-col_lg_9">
+            <div class="lk-page-head"><a class="lk-page-head__breadcrumbs" href="/">Все соглашения</a>
+              <h1 class="lk-page-head__title">Соглашение от 14.09.2021</h1>
+            </div>
+            <div class="lk-warning-card">
+              <div class="lk-warning-card__icon">
+                <div class="lk-icon lk-icon--40 lk-icon--warning"></div>
+              </div>
+              <div class="lk-warning-card__content">
+                <div class="lk-warning-card__title">Подписывать документы может только заявитель!</div>
+                <div class="lk-warning-card__desc">Подписать выбранный документ можно только электронной подписью, принадлежащей заявителю. Попытки подписания документа иной подписью будут отклонены.</div>
+                <ul class="lk-warning-card__inform-list">
+                  <li class="lk-warning-card__inform-item">ФИО: {ФИО подписанта};</li>
+                  <li class="lk-warning-card__inform-item">ИНН: {ИНН}.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lk-popup" data-popup="signature-warning">
+      <div class="lk-popup__wrapper lk-popup__wrapper--720 lk-popup__wrapper--module">
+        <div class="lk-popup__icon">
+          <div class="lk-icon lk-icon--60 lk-icon--info-red"></div>
+        </div>
+        <div class="lk-popup__module">
+          <div class="lk-popup__header">
+            <h3 class="lk-popup__title">Неверная электронная подпись!</h3>
+            <button class="lk-popup__close" data-js="popup-close"></button>
+          </div>
+          <div class="lk-popup__content">
+            <p class="lk-popup__text lk-popup__text--18">Подписать документ выбранной ЭЦП невозможно. Выберите ЭЦП принадлежащую заявителю:</p>
+            <ul class="lk-popup__list">
+              <li class="lk-popup__list-item">ФИО: {ФИО подписанта};</li>
+              <li class="lk-popup__list-item">ИНН: {ИНН}.</li>
+            </ul><a class="lk-popup__link lk-popup__link--border" href="#" data-js="popup-close">Выбрать другую подпись</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/lk-popup.js"></script>
+  </body>
+</html>

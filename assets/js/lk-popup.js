@@ -32,11 +32,14 @@ window.addEventListener('DOMContentLoaded', () => {
       const form = popup.querySelector('form')
       const inputTicketNumber = popup.querySelector('.lk-popup__tiket-value')
       const selectBlock = popup.querySelector('.lk-popup__service-select')
+      const actionProperty = button.dataset.actionProperty
+      const inputActionProperty = popup.querySelector('[data-action-property]')
 
       popup.classList.add('lk-popup--active')
 
-      if (popupType === 'service' || popupType === 'getConsultation') {
+      if (form) {
         form.addEventListener('submit', sendForm)
+
       }
 
       if (selectBlock) {
@@ -46,19 +49,25 @@ window.addEventListener('DOMContentLoaded', () => {
       if (inputTicketNumber) {
         inputTicketNumber.value = ticketNumber
       }
+
+      if (actionProperty && inputActionProperty) {
+        inputActionProperty.dataset.actionProperty = actionProperty
+      }
     })
   })
 
   const closePopup = () => {
-    const activeForm = document.querySelector('.lk-popup--active')
-    const form = activeForm.querySelector('form')
-    const labelEvaluations = activeForm.querySelectorAll('.lk-popup__evaluations-label')
+    const activePopup = document.querySelector('.lk-popup--active')
+    const form = activePopup.querySelector('form')
+    const labelEvaluations = activePopup.querySelectorAll('.lk-popup__evaluations-label')
 
-    activeForm.classList.remove('lk-popup--active')
+    activePopup.classList.remove('lk-popup--active')
 
     if (!form) {
       return
     }
+    const inputActionProperty = form.querySelector('[data-action-property]')
+
 
     form.reset()
 
@@ -67,6 +76,10 @@ window.addEventListener('DOMContentLoaded', () => {
         el.classList.remove('lk-popup__evaluations-label--selected')
       }
     })
+
+    if (inputActionProperty) {
+      inputActionProperty.dataset.actionProperty = ''
+    }
   }
 
   document.querySelectorAll('[data-js=popup-close]').forEach(closeBtn => {
@@ -91,15 +104,11 @@ window.addEventListener('DOMContentLoaded', () => {
   })
 
   function successAlert() {
-    const successForm = document.querySelector('[data-popup=success]')
-    if (successForm) {
-      successForm.classList.add('lk-popup--active')
-    }
+    openPopup('success')
   }
 
   async function requestFormApi(url, data) {
     let response, result
-
     try {
       response = await fetch(url, {
         method: 'POST',
@@ -117,17 +126,26 @@ window.addEventListener('DOMContentLoaded', () => {
     return result;
   }
 
+  function sendAction(property) {
+    property = JSON.parse(property);
+    BX.Bizproc.doInlineTask(property, function(){window.location.reload()})
+  }
+
   function sendForm(event) {
     event.preventDefault();
 
     const form = event.target;
     const submitBtn = form.querySelector('input[type=submit]')
-    const url = '/recruitment/ajax.php';
+    const url = 'local/components/bitrix/bizproc.task.list/ajax.php';
+    const actionProperty = form.querySelector('[data-action-property]')
 
     submitBtn.disabled = true
 
     requestFormApi(url, form)
       .then(response => {
+        if (actionProperty) {
+          sendAction(actionProperty.dataset.actionProperty)
+        }
         closePopup()
         successAlert()
       }).catch(err => {
@@ -151,3 +169,10 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   })
 })
+
+const openPopup = (dataPopup) => {
+  const popup = document.querySelector(`[data-popup="${dataPopup}"]`)
+  if (popup) {
+    popup.classList.add('lk-popup--active')
+  }
+}

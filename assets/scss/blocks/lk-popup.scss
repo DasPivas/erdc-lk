@@ -21,6 +21,7 @@
     }
   }
   
+  
   &__wrapper {
     width: 650px;
     padding: 32px;
@@ -30,6 +31,10 @@
     
     &--large {
       width: 840px;
+    }
+    
+    &--720 {
+      width: 720px;
     }
     
     &--module {
@@ -176,6 +181,7 @@
     &-label {
       flex-grow: 1;
       text-align: center;
+      margin: 0;
       padding: 6px;
       
       font-size: 18px;
@@ -225,20 +231,21 @@
   &__phone {
     margin: 0 0 12px;
     
-     &-wrapper {
-       display: flex;
-       align-items: center;
-       
-       border: 1px solid #dcdfe4;
-       border-radius: 4px;
-       overflow: hidden;
-       
-       input {
-         height: 46px;
-         border: none;
-         border-radius: 0;
-       }
-     }
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      
+      border: 1px solid #dcdfe4;
+      border-radius: 4px;
+      overflow: hidden;
+      
+      input {
+        height: 46px;
+        border: none;
+        border-radius: 0;
+      }
+    }
+    
     &-wrapper--hover {
       border-color: #891d56;
       outline: #891d56;
@@ -253,7 +260,7 @@
       font-size: 16px;
       line-height: 20px;
       color: #505968;
-      background-color: #E8EAED;
+      background-color: #e8eaed;
     }
     
     
@@ -315,7 +322,21 @@
     &:hover {
       text-decoration: underline;
     }
+    
+    &--border {
+      padding: 10px 20px;
+      
+      border: 1px solid #891d56;;
+      border-radius: 4px;
+      
+      &:hover, &:active {
+        color: #962157;
+        border-color: #962157;
+        background-color: #f5f5f7;
+      }
+    }
   }
+  
   
   &__text {
     margin-top: 0;
@@ -323,6 +344,31 @@
     font-size: 16px;
     line-height: 24px;
     color: $blackOnyx;
+    
+    &--18 {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+  
+  &__list {
+    margin: 0 0 24px;
+    padding: 0;
+    
+    font-size: 18px;
+    line-height: 28px;
+    color: #333333;
+    list-style: none;
+    
+    &-item {
+      margin-left: 10px;
+      
+      &:before {
+        content: '\2022';
+        margin-right: 10px;
+        display: inline-block;
+      }
+    }
   }
   
 }
