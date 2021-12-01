@@ -1,5 +1,6 @@
 html(lang="ru")
   head
+    meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href="./lk.css" rel="stylesheet")
     link(href="./style.css" rel="stylesheet")
@@ -33,7 +34,7 @@ html(lang="ru")
                       .lk-icon.lk-icon--64.lk-icon--chair.lk-bg--5
                     .lk-inform-card__content
                       .lk-inform-card__text
-                        a.lk-inform-card__subtitle.lk-inform-card__subtitle--link(href="#") Ярмарка вакансий
+                        a.lk-inform-card__subtitle(href="#") Ярмарка вакансий
                         p.lk-inform-card__desc мероприятие, проводимое в субъекте ДФО или Арктики с целью привлечения трудовых ресурсов
                       a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='12334' data-select-value='d14') Заказать услугу
                 .lk-inform-card__col
@@ -42,7 +43,7 @@ html(lang="ru")
                       .lk-icon.lk-icon--64.lk-icon--social-media.lk-bg--5
                     .lk-inform-card__content
                       .lk-inform-card__text
-                        h4.lk-inform-card__subtitle Размещение вакансий в социальных сетях
+                        a.lk-inform-card__subtitle(href="#") Размещение вакансий в социальных сетях
                         p.lk-inform-card__desc публикации вакансий в группах КРДВ в социальных сетях ВКонтакте, OK, Фейсбук, Инстаграм и Телеграмм
                       a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='12345' data-select-value='d13') Заказать услугу
                 .lk-inform-card__col
@@ -51,7 +52,7 @@ html(lang="ru")
                       .lk-icon.lk-icon--64.lk-icon--recruiter.lk-bg--5
                     .lk-inform-card__content
                       .lk-inform-card__text
-                        h4.lk-inform-card__subtitle Оргнабор
+                        a.lk-inform-card__subtitle(href="#") Оргнабор
                         p.lk-inform-card__desc мероприятие, проводимое в регионах за пределами ДФО и Арктики с целью привлечения трудовых ресурсов
                       a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='1234' data-select-value='d12') Заказать услугу
                 .lk-inform-card__col
@@ -60,7 +61,7 @@ html(lang="ru")
                       .lk-icon.lk-icon--64.lk-icon--graduation-hat.lk-bg--5
                     .lk-inform-card__content
                       .lk-inform-card__text
-                        h4.lk-inform-card__subtitle Дни компании в ВУЗах
+                        a.lk-inform-card__subtitle(href="#") Дни компании в ВУЗах
                         p.lk-inform-card__desc целевая презентация деятельности компании для студентов
                       a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='123' data-select-value='') Заказать услугу
 
@@ -72,33 +73,32 @@ html(lang="ru")
         .lk-popup__content
           form.lk-popup__form(name="serviceForm")
             .lk-popup__service
-              label.lk-popup__desc--small(for="service-select") Выбранная услуга
+              .lk-popup__desc--small Выбранная услуга
                 span.lk-popup__reqired *
-              select.lk-popup__input.lk-popup__service-select(id="service-select" required size="1" name="service-select")
-                option.lk-popup__option.lk-popup__service-option(value="") Выберете услугу
-                option.lk-popup__option.lk-popup__service-option(value="d11") Placeholder1
-                option.lk-popup__option.lk-popup__service-option(value="d12") Placeholder2
-                option.lk-popup__option.lk-popup__service-option(value="d13") Placeholder3
-                option.lk-popup__option.lk-popup__service-option(value="d14") Placeholder4
-                option.lk-popup__option.lk-popup__service-option(value="d15") Placeholder5
+              select.lk-popup__select(name="service-select")
+                option(value="0") Выберете услугу
+                option(value="1") Целевая презентация деятельности компании для студентов целевая презентация деятельности компании для студентов
+                option(value="2") Презентация
+                option(value="3") Placeholder3
+                option(value="4") Placeholder4
+                option(value="5") Placeholder5
 
             .lk-popup__name
-              label.lk-popup__desc--small(for="service-name") Контактное лицо
+              label.lk-popup__desc--small(for="name") Контактное лицо
                 span.lk-popup__reqired *
-              input.lk-popup__input.lk-popup__name-input(id="service-name" name="service-name" type="text" required placeholder="Placeholder")
+              input.lk-popup__input.lk-popup__name-input(id="name" name="name" type="text" required placeholder="Имя")
             .lk-popup__row
               .lk-popup__col-6
-                .lk-popup__phone
-                  label.lk-popup__desc--small(for="service-phone" ) Телефон
-                    span.lk-popup__reqired *
-                  .lk-popup__phone-wrapper
-                    .lk-popup__phone-code +7
-                    input.lk-popup__input.lk-popup__phone-input(id="service-phone" name="service-phone" type="tel" required pattern="[0-9]{10}" placeholder="9999999999")
+                .lk-popup__desc--small Телефон
+                  span.lk-popup__reqired *
+                .lk-popup__tel
+                  input.lk-popup__phone(id="service-phone" name="service-phone" type="tel" placeholder="(999) 999-99-99")
+                  label(for="service-phone")
               .lk-popup__col-6
                 .lk-popup__email
                   label.lk-popup__desc--small(for="service-email") Email
                     span.lk-popup__reqired *
-                  input.lk-popup__input.lk-popup__email-input(id="service-email" name="service-email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+[a-z]{2,4}$" placeholder="email@address.com" )
+                  input.lk-popup__input.lk-popup__email-input(id="service-email" name="email" type="email" required placeholder="email@address.com" )
             .lk-popup__comment
               label.lk-popup__desc--small(for="service-message") Комментарий
               textarea.lk-popup__textarea(rows=6 id="service-message")
@@ -118,5 +118,9 @@ html(lang="ru")
             a.lk-popup__link(href='#') Смотреть другие услуги
 
 
+    script(src='assets/js/jquery-3.2.1.min.js')
+    script(src='assets/js/jquery.validate.min.js')
+    script(src='assets/js/jquery.inputmask.min.js')
+    script(src='assets/js/select.min.js')
     script(src='assets/js/lk-popup.js')
 

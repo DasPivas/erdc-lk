@@ -1,4 +1,6 @@
 .lk-popup {
+  $this: &;
+
   display: none;
   justify-content: center;
   align-items: center;
@@ -8,7 +10,6 @@
   bottom: 0;
   left: 0;
   z-index: 100;
-  
   font-family: Golos, sans-serif;
   background-color: rgba(0, 0, 0, 0.5);
   
@@ -21,11 +22,9 @@
     }
   }
   
-  
   &__wrapper {
     width: 650px;
     padding: 32px;
-    
     background-color: #ffffff;
     border-radius: 4px;
     
@@ -49,7 +48,6 @@
       margin: 20px 0;
       padding: 24px;
       width: 100%;
-      
       overflow-y: auto;
     }
   }
@@ -103,7 +101,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    mask-image: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/close.svg');
+    mask-image: url('/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/close.svg');
     background-color: #a7a7ab;
     cursor: pointer;
     transition: .2s;
@@ -119,7 +117,6 @@
   
   &__desc {
     margin: 0 0 12px;
-    
     font-size: 16px;
     line-height: 24px;
     color: #000000;
@@ -127,7 +124,6 @@
     &--small {
       margin: 0 0 6px;
       display: block;
-      
       font-size: 14px;
       line-height: 20px;
       color: #000000;
@@ -137,34 +133,83 @@
   &__input {
     width: 100%;
     padding: 10px 8px;
-    
     border-radius: 4px;
     border: 1px solid #dcdfe4;
     font-size: 16px;
-    line-height: 24px;
+    transition: all .2s;
+    height: 45px;
     color: $blackOnyx;
     
-    &:focus, &:active, &:focus-visible {
-      border-color: #891d56;
-      outline: #891d56;
+    &#{$this}__input--error {
+      color: inherit;
+      border: 2px solid $red;
+      &:focus, &:focus-visible {
+        border-color: $red;
+      }
+    }
+
+    &--error {
+      color: $red;
+      font-size: 13px;
+    }
+    
+    &:focus, &:focus-visible {
+      border-color: $bviolet;
+      border-width: 2px;
+      outline: $bviolet;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &::placeholder {
+      font-size: 16px;
+      color: $blackOnyx;
+      transition: all .2s;
     }
   }
   
   &__textarea {
     width: 100%;
     padding: 10px 8px;
-    
+    min-height: 160px;
     border-radius: 4px;
     border-color: #dcdfe4;
     font-family: Golos, sans-serif;
     font-size: 16px;
-    line-height: 24px;
+    transition: all .2s;
     color: $blackOnyx;
     resize: none;
+    line-height: 24px;
     
-    &:focus, &:active, &:focus-visible {
-      border-color: #891d56;
-      outline: #891d56;
+    &:focus, &:focus-visible {
+      border-color: $bviolet;
+      border-width: 2px;
+      outline: $bviolet;
+    }
+  }
+
+  &__phone {
+    @extend #{$this}__input;
+    position: relative;
+    & + label {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0;
+      transition: all .2s;
+      left: 0;
+      top:0;
+      border: 2px solid $bviolet;
+      border-radius: 4px;
+    }
+    &:focus, &:focus-visible {
+      & + label {
+        opacity: 1;
+      }
     }
   }
   
@@ -183,7 +228,6 @@
       text-align: center;
       margin: 0;
       padding: 6px;
-      
       font-size: 18px;
       line-height: 28px;
       color: #a7a7ab;
@@ -227,43 +271,29 @@
       margin: 8px 0 16px;
     }
   }
-  
-  &__phone {
-    margin: 0 0 12px;
-    
-    &-wrapper {
+  &__tel {
+    position: relative;
+    z-index: 1;
+
+    #{$this}__input {
+      padding-left: 42px;
+    }
+    &:before {
       display: flex;
       align-items: center;
-      
-      border: 1px solid #dcdfe4;
-      border-radius: 4px;
-      overflow: hidden;
-      
-      input {
-        height: 46px;
-        border: none;
-        border-radius: 0;
-      }
+      justify-content: center;
+      content: '+7';
+      width: 30px;
+      position: absolute;
+      z-index: 1;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      color: $gray3;
+      left: 1px;
+      top: 1px;
+      background-color: $gray2;
+      height: calc(100% - 2px);
     }
-    
-    &-wrapper--hover {
-      border-color: #891d56;
-      outline: #891d56;
-    }
-    
-    &-code {
-      padding: 11px 6px 6px;
-      height: 100%;
-      min-width: 30px;
-      min-height: 46px;
-      
-      font-size: 16px;
-      line-height: 20px;
-      color: #505968;
-      background-color: #e8eaed;
-    }
-    
-    
   }
   
   &__email {
@@ -286,7 +316,6 @@
     width: 100%;
     padding: 18px 20px;
     margin-top: 46px;
-    
     border: none;
     border-radius: 4px;
     font-size: 18px;
@@ -306,9 +335,7 @@
   
   &__reqired {
     margin-left: 4px;
-    
     color: #f52d00;
-    font-width: 500;
   }
   
   &__link {
@@ -325,7 +352,6 @@
     
     &--border {
       padding: 10px 20px;
-      
       border: 1px solid #891d56;;
       border-radius: 4px;
       
@@ -340,7 +366,6 @@
   
   &__text {
     margin-top: 0;
-    
     font-size: 16px;
     line-height: 24px;
     color: $blackOnyx;
@@ -354,7 +379,6 @@
   &__list {
     margin: 0 0 24px;
     padding: 0;
-    
     font-size: 18px;
     line-height: 28px;
     color: #333333;
@@ -370,5 +394,42 @@
       }
     }
   }
-  
+}
+
+.choices {
+  $this: &;
+  &.is-focused {
+    #{$this}__inner {
+      border-color: $bviolet;
+      border-width: 2px;
+    }
+  }
+  &__list--dropdown {
+    z-index: 100;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  &__inner {
+    border-radius: 4px;
+    border-color: $gray;
+    min-height: 45px;
+    background-color: $white;
+    padding: 10px 8px;
+    &.error {
+      border-color: $red;
+      border-width: 2px;
+    }
+  }
+  &__placeholder {
+    font-size: 16px;
+    opacity: 1;
+  }
+  &__item {
+    &--selectable {
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 16px;
+      text-overflow: ellipsis;
+    }
+  }
 }

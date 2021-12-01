@@ -1,6 +1,7 @@
 
 <html lang="ru">
   <head>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="./lk.css" rel="stylesheet"/>
     <link href="./style.css" rel="stylesheet"/>
@@ -33,7 +34,7 @@
                       <div class="lk-icon lk-icon--64 lk-icon--chair lk-bg--5"></div>
                     </div>
                     <div class="lk-inform-card__content">
-                      <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle lk-inform-card__subtitle--link" href="#">Ярмарка вакансий</a>
+                      <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Ярмарка вакансий</a>
                         <p class="lk-inform-card__desc">мероприятие, проводимое в субъекте ДФО или Арктики с целью привлечения трудовых ресурсов</p>
                       </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="12334" data-select-value="d14">Заказать услугу</a>
                     </div>
@@ -45,8 +46,7 @@
                       <div class="lk-icon lk-icon--64 lk-icon--social-media lk-bg--5"></div>
                     </div>
                     <div class="lk-inform-card__content">
-                      <div class="lk-inform-card__text">
-                        <h4 class="lk-inform-card__subtitle">Размещение вакансий в социальных сетях</h4>
+                      <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Размещение вакансий в социальных сетях</a>
                         <p class="lk-inform-card__desc">публикации вакансий в группах КРДВ в социальных сетях ВКонтакте, OK, Фейсбук, Инстаграм и Телеграмм</p>
                       </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="12345" data-select-value="d13">Заказать услугу</a>
                     </div>
@@ -58,8 +58,7 @@
                       <div class="lk-icon lk-icon--64 lk-icon--recruiter lk-bg--5"></div>
                     </div>
                     <div class="lk-inform-card__content">
-                      <div class="lk-inform-card__text">
-                        <h4 class="lk-inform-card__subtitle">Оргнабор</h4>
+                      <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Оргнабор</a>
                         <p class="lk-inform-card__desc">мероприятие, проводимое в регионах за пределами ДФО и Арктики с целью привлечения трудовых ресурсов</p>
                       </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="1234" data-select-value="d12">Заказать услугу</a>
                     </div>
@@ -71,8 +70,7 @@
                       <div class="lk-icon lk-icon--64 lk-icon--graduation-hat lk-bg--5"></div>
                     </div>
                     <div class="lk-inform-card__content">
-                      <div class="lk-inform-card__text">
-                        <h4 class="lk-inform-card__subtitle">Дни компании в ВУЗах</h4>
+                      <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Дни компании в ВУЗах</a>
                         <p class="lk-inform-card__desc">целевая презентация деятельности компании для студентов</p>
                       </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="123" data-select-value="">Заказать услугу</a>
                     </div>
@@ -93,34 +91,32 @@
         <div class="lk-popup__content">
           <form class="lk-popup__form" name="serviceForm">
             <div class="lk-popup__service">
-              <label class="lk-popup__desc--small" for="service-select">Выбранная услуга<span class="lk-popup__reqired">*</span></label>
-              <select class="lk-popup__input lk-popup__service-select" id="service-select" required="required" size="1" name="service-select">
-                <option class="lk-popup__option lk-popup__service-option" value="">Выберете услугу</option>
-                <option class="lk-popup__option lk-popup__service-option" value="d11">Placeholder1</option>
-                <option class="lk-popup__option lk-popup__service-option" value="d12">Placeholder2</option>
-                <option class="lk-popup__option lk-popup__service-option" value="d13">Placeholder3</option>
-                <option class="lk-popup__option lk-popup__service-option" value="d14">Placeholder4</option>
-                <option class="lk-popup__option lk-popup__service-option" value="d15">Placeholder5</option>
+              <div class="lk-popup__desc--small">Выбранная услуга<span class="lk-popup__reqired">*</span></div>
+              <select class="lk-popup__select" name="service-select">
+                <option value="0">Выберете услугу</option>
+                <option value="1">Целевая презентация деятельности компании для студентов целевая презентация деятельности компании для студентов</option>
+                <option value="2">Презентация</option>
+                <option value="3">Placeholder3</option>
+                <option value="4">Placeholder4</option>
+                <option value="5">Placeholder5</option>
               </select>
             </div>
             <div class="lk-popup__name">
-              <label class="lk-popup__desc--small" for="service-name">Контактное лицо<span class="lk-popup__reqired">*</span></label>
-              <input class="lk-popup__input lk-popup__name-input" id="service-name" name="service-name" type="text" required="required" placeholder="Placeholder"/>
+              <label class="lk-popup__desc--small" for="name">Контактное лицо<span class="lk-popup__reqired">*</span></label>
+              <input class="lk-popup__input lk-popup__name-input" id="name" name="name" type="text" required="required" placeholder="Имя"/>
             </div>
             <div class="lk-popup__row">
               <div class="lk-popup__col-6">
-                <div class="lk-popup__phone">
-                  <label class="lk-popup__desc--small" for="service-phone">Телефон<span class="lk-popup__reqired">*</span></label>
-                  <div class="lk-popup__phone-wrapper">
-                    <div class="lk-popup__phone-code">+7</div>
-                    <input class="lk-popup__input lk-popup__phone-input" id="service-phone" name="service-phone" type="tel" required="required" pattern="[0-9]{10}" placeholder="9999999999"/>
-                  </div>
+                <div class="lk-popup__desc--small">Телефон<span class="lk-popup__reqired">*</span></div>
+                <div class="lk-popup__tel">
+                  <input class="lk-popup__phone" id="service-phone" name="service-phone" type="tel" placeholder="(999) 999-99-99"/>
+                  <label for="service-phone"></label>
                 </div>
               </div>
               <div class="lk-popup__col-6">
                 <div class="lk-popup__email">
                   <label class="lk-popup__desc--small" for="service-email">Email<span class="lk-popup__reqired">*</span></label>
-                  <input class="lk-popup__input lk-popup__email-input" id="service-email" name="service-email" type="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+[a-z]{2,4}$" placeholder="email@address.com"/>
+                  <input class="lk-popup__input lk-popup__email-input" id="service-email" name="email" type="email" required="required" placeholder="email@address.com"/>
                 </div>
               </div>
             </div>
@@ -150,6 +146,10 @@
         </div>
       </div>
     </div>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery.inputmask.min.js"></script>
+    <script src="assets/js/select.min.js"></script>
     <script src="assets/js/lk-popup.js"></script>
   </body>
 </html>

@@ -1,15 +1,37 @@
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 body {
   padding: 0;
   margin: 0;
-  
   font-family: Golos, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+}
+
+p {
+  margin: 0;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 .d-none {

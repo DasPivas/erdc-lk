@@ -1,0 +1,68 @@
+.lk-step {
+  $this: &;
+  background-color: $white;
+  border-radius: 4px;
+  padding: 24px;
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+  }
+  &__down {
+    display: flex;
+    justify-content: center;
+    width: 45px;
+    flex: 0 0 auto;
+    margin-right: 28px;
+  }
+  &__top {
+    @extend #{$this}__head;
+  }
+  &__text {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  &__body {
+    position: relative;
+    padding: 4px 0 4px 73px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 22.5px;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, #b691a5 20%, #891d56 100%);
+    }
+  }
+  &__count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    flex: 0 0 auto;
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 28px;
+    border-radius: 100%;
+    border: 2px solid $violet;
+  }
+  &__item {
+    &#{$this}--success {
+      #{$this}__count { background-color: $violet; }
+      #{$this}__body {
+        &:before { display: none; }
+      }
+    }
+  }
+}
