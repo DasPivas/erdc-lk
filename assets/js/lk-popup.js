@@ -21,41 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  document.querySelectorAll('[data-for-popup]').forEach(button => {
-
-    button.addEventListener('click', e => {
-      e.preventDefault()
-
-      const popupType = button.dataset.forPopup
-      const ticketNumber = button.dataset.tiketNumber
-      const selectValue = button.dataset.selectValue
-      const popup = document.querySelector(`[data-popup=${popupType}]`)
-      const form = popup.querySelector('form')
-      const inputTicketNumber = popup.querySelector('.lk-popup__tiket-value')
-      const selectBlock = popup.querySelector('.lk-popup__service-select')
-      const actionProperty = button.dataset.actionProperty
-      const inputActionProperty = popup.querySelector('[data-action-property]')
-
-      popup.classList.add('lk-popup--active')
-
-      if (form) {
-        form.addEventListener('submit', sendForm)
-
-      }
-
-      if (selectBlock) {
-        selectValue ? selectBlock.value = selectValue : selectBlock.value = ''
-      }
-
-      if (inputTicketNumber) {
-        inputTicketNumber.value = ticketNumber
-      }
-
-      if (actionProperty && inputActionProperty) {
-        inputActionProperty.dataset.actionProperty = actionProperty
-      }
-    })
-  })
+ 
 
   const closePopup = () => {
     const activePopup = document.querySelector('.lk-popup--active')
@@ -136,9 +102,9 @@ window.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
 
     const form = event.target;
-    const submitBtn = form.querySelector('input[type=submit]')
-    const url = 'local/components/bitrix/bizproc.task.list/ajax.php';
-    const actionProperty = form.querySelector('[data-action-property]')
+    const submitBtn = form.querySelector('input[type=submit]');
+    const url = '/recruitment/ajax.php';
+    const actionProperty = form.querySelector('[data-action-property]');
 
     submitBtn.disabled = true
 
@@ -157,27 +123,69 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const element = document.querySelectorAll('.lk-popup__select');
-  element.forEach(function(item){
-    new Choices(item, {
+  element.forEach(item => {
+    const sel = new Choices(item, {
       searchChoices: false,
       searchEnabled: false,
-      itemSelectText:''
+      itemSelectText:'',
+      shouldSort: false
     });
+
+    // const selectValue = button.dataset.value;
+    // sel.setChoiceByValue(selectValue);
+
+    item.addEventListener('addItem',
+    function(event) {
+      if (event.detail.value < 1) {
+        this.closest('.choices__inner').classList.add('error');
+      }else {
+        this.closest('.choices__inner').classList.remove('error');
+      }
+      
+      },false);
+    });
+
+  
+
+
+
+document.querySelectorAll('[data-for-popup]').forEach(button => {
+  button.addEventListener('click', e => {
+    e.preventDefault();
     
-    item.addEventListener(
-      'addItem',
-      function(event) {
-        if (event.detail.value < 1) {
-          this.closest('.choices__inner').classList.add('error');
-        }else {
-          this.closest('.choices__inner').classList.remove('error');
-        }
-        
-      },
-      false,
-    );
-  });
-});
+    const popupType = button.dataset.forPopup;
+    const ticketNumber = button.dataset.tiketNumber;
+    const popup = document.querySelector(`[data-popup=${popupType}]`);
+    const form = popup.querySelector('form');
+    const inputTicketNumber = popup.querySelector('.lk-popup__tiket-value');
+    const selectBlock = popup.querySelector('.lk-popup__service-select');
+    const actionProperty = button.dataset.actionProperty;
+    const inputActionProperty = popup.querySelector('[data-action-property]');
+
+    const example = document.querySelector('.lk-popup__select');
+    const selectValue = button.dataset.value;
+    
+    popup.classList.add('lk-popup--active')
+
+
+    if (form) {
+      form.addEventListener('submit', sendForm)
+
+    }
+
+    if (selectBlock) {
+      selectValue ? selectBlock.value = selectValue : selectBlock.value = ''
+    }
+
+    if (inputTicketNumber) {
+      inputTicketNumber.value = ticketNumber
+    }
+
+    if (actionProperty && inputActionProperty) {
+      inputActionProperty.dataset.actionProperty = actionProperty
+    }
+  })
+})
 
 $('.lk-popup__form').validate({
   errorElement: 'div',
@@ -211,3 +219,5 @@ const openPopup = (dataPopup) => {
     popup.classList.add('lk-popup--active')
   }
 }
+
+});

@@ -101,14 +101,10 @@
     position: absolute;
     top: 0;
     right: 0;
-    mask-image: url('/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/close.svg');
-    background-color: #a7a7ab;
+    border: none;
+    box-shadow: none;
+    background: url('./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/close.svg');
     cursor: pointer;
-    transition: .2s;
-    
-    &:hover {
-      background-color: #333333;
-    }
   }
   
   &__content {

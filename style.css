@@ -489,6 +489,7 @@ table {
 
 .lk-cards {
   font-family: Golos, sans-serif;
+  margin-bottom: 20px;
 }
 .lk-cards__title {
   margin-bottom: 24px;
@@ -536,8 +537,8 @@ table {
   background: #ffffff;
   border-radius: 4px;
   text-decoration: none;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 .lk-cards__link:hover {
   text-decoration: none;
@@ -546,6 +547,7 @@ table {
 }
 .lk-cards__link:hover .lk-cards__subtitle {
   text-decoration: underline;
+  color: #891D56;
 }
 .lk-cards__icon {
   display: block;
@@ -740,6 +742,24 @@ table {
 }
 .lk-icon--info-red:before {
   background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/info-red.svg");
+}
+.lk-icon--moving:before {
+  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/moving.svg");
+}
+.lk-icon--graduation-hat-black:before {
+  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/graduation-hat-black.svg");
+}
+.lk-icon--internship:before {
+  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/internship.svg");
+}
+.lk-icon--educational-program:before {
+  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/educational-program.svg");
+}
+.lk-icon--school:before {
+  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/school.svg");
+}
+.lk-icon--management:before {
+  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/management.svg");
 }
 
 .lk-bg--5 {
@@ -1316,15 +1336,11 @@ table {
   position: absolute;
   top: 0;
   right: 0;
-  -webkit-mask-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/close.svg");
-          mask-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/close.svg");
-  background-color: #a7a7ab;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/close.svg");
   cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-.lk-popup__close:hover {
-  background-color: #333333;
 }
 .lk-popup__content {
   margin-top: 24px;
@@ -1817,7 +1833,6 @@ table {
   text-decoration: underline;
 }
 .lk-inform-card__subtitle--link {
-  color: #891D56;
   text-decoration: underline;
 }
 .lk-inform-card__subtitle--link:hover, .lk-inform-card__subtitle--link:active {

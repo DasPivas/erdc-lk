@@ -1,5 +1,8 @@
 .lk-cards {
+  $this: &;
+
   font-family: Golos, sans-serif;
+  margin-bottom: 20px;
   
   &__title {
     margin-bottom: 24px;
@@ -43,15 +46,15 @@
     background: $white;
     border-radius: 4px;
     text-decoration: none;
-    transition: .2s;
+    transition: color .2s;
     
     &:hover {
       text-decoration: none;
       box-shadow: 0px 14px 54px 0px rgb(143 26 80 / 21%);
-    }
-    
-    &:hover .lk-cards__subtitle{
-    text-decoration: underline;
+      #{$this}__subtitle {
+        text-decoration: underline;
+        color: $violet;
+      }
     }
   }
   

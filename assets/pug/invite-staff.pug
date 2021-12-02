@@ -36,7 +36,7 @@ html(lang="ru")
                       .lk-inform-card__text
                         a.lk-inform-card__subtitle(href="#") Ярмарка вакансий
                         p.lk-inform-card__desc мероприятие, проводимое в субъекте ДФО или Арктики с целью привлечения трудовых ресурсов
-                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='12334' data-select-value='d14') Заказать услугу
+                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-value="job" data-tiket-number='12334' data-select-value='d14') Заказать услугу
                 .lk-inform-card__col
                   .lk-inform-card__item
                     .lk-inform-card__icon
@@ -45,7 +45,7 @@ html(lang="ru")
                       .lk-inform-card__text
                         a.lk-inform-card__subtitle(href="#") Размещение вакансий в социальных сетях
                         p.lk-inform-card__desc публикации вакансий в группах КРДВ в социальных сетях ВКонтакте, OK, Фейсбук, Инстаграм и Телеграмм
-                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='12345' data-select-value='d13') Заказать услугу
+                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-value="posting" data-tiket-number='12345' data-select-value='d13') Заказать услугу
                 .lk-inform-card__col
                   .lk-inform-card__item
                     .lk-inform-card__icon
@@ -54,16 +54,16 @@ html(lang="ru")
                       .lk-inform-card__text
                         a.lk-inform-card__subtitle(href="#") Оргнабор
                         p.lk-inform-card__desc мероприятие, проводимое в регионах за пределами ДФО и Арктики с целью привлечения трудовых ресурсов
-                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='1234' data-select-value='d12') Заказать услугу
+                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-value="org" data-tiket-number='1234' data-select-value='d12') Заказать услугу
                 .lk-inform-card__col
                   .lk-inform-card__item
                     .lk-inform-card__icon
-                      .lk-icon.lk-icon--64.lk-icon--graduation-hat.lk-bg--5
+                      .lk-icon.lk-icon--64.lk-icon--graduation-hat-black.lk-bg--5
                     .lk-inform-card__content
                       .lk-inform-card__text
                         a.lk-inform-card__subtitle(href="#") Дни компании в ВУЗах
                         p.lk-inform-card__desc целевая презентация деятельности компании для студентов
-                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='123' data-select-value='') Заказать услугу
+                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-value="univer" data-tiket-number='123' data-select-value='') Заказать услугу
 
     .lk-popup(data-popup='service')
       .lk-popup__wrapper.lk-popup__wrapper--large
@@ -76,12 +76,12 @@ html(lang="ru")
               .lk-popup__desc--small Выбранная услуга
                 span.lk-popup__reqired *
               select.lk-popup__select(name="service-select")
-                option(value="0") Выберете услугу
-                option(value="1") Целевая презентация деятельности компании для студентов целевая презентация деятельности компании для студентов
-                option(value="2") Презентация
-                option(value="3") Placeholder3
-                option(value="4") Placeholder4
-                option(value="5") Placeholder5
+                option(value="" selected disabled) Выберете услугу
+                option(value="personal") Привлечение персонала
+                option(value="job") Ярмарка вакансий
+                option(value="posting") Размещение вакансий в социальных сетях
+                option(value="org") Оргнабор
+                option(value="univer") Дни компании в ВУЗах
 
             .lk-popup__name
               label.lk-popup__desc--small(for="name") Контактное лицо

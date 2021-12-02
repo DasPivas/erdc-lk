@@ -36,7 +36,7 @@
                     <div class="lk-inform-card__content">
                       <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Ярмарка вакансий</a>
                         <p class="lk-inform-card__desc">мероприятие, проводимое в субъекте ДФО или Арктики с целью привлечения трудовых ресурсов</p>
-                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="12334" data-select-value="d14">Заказать услугу</a>
+                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-value="job" data-tiket-number="12334" data-select-value="d14">Заказать услугу</a>
                     </div>
                   </div>
                 </div>
@@ -48,7 +48,7 @@
                     <div class="lk-inform-card__content">
                       <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Размещение вакансий в социальных сетях</a>
                         <p class="lk-inform-card__desc">публикации вакансий в группах КРДВ в социальных сетях ВКонтакте, OK, Фейсбук, Инстаграм и Телеграмм</p>
-                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="12345" data-select-value="d13">Заказать услугу</a>
+                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-value="posting" data-tiket-number="12345" data-select-value="d13">Заказать услугу</a>
                     </div>
                   </div>
                 </div>
@@ -60,19 +60,19 @@
                     <div class="lk-inform-card__content">
                       <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Оргнабор</a>
                         <p class="lk-inform-card__desc">мероприятие, проводимое в регионах за пределами ДФО и Арктики с целью привлечения трудовых ресурсов</p>
-                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="1234" data-select-value="d12">Заказать услугу</a>
+                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-value="org" data-tiket-number="1234" data-select-value="d12">Заказать услугу</a>
                     </div>
                   </div>
                 </div>
                 <div class="lk-inform-card__col">
                   <div class="lk-inform-card__item">
                     <div class="lk-inform-card__icon">
-                      <div class="lk-icon lk-icon--64 lk-icon--graduation-hat lk-bg--5"></div>
+                      <div class="lk-icon lk-icon--64 lk-icon--graduation-hat-black lk-bg--5"></div>
                     </div>
                     <div class="lk-inform-card__content">
                       <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Дни компании в ВУЗах</a>
                         <p class="lk-inform-card__desc">целевая презентация деятельности компании для студентов</p>
-                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="123" data-select-value="">Заказать услугу</a>
+                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-value="univer" data-tiket-number="123" data-select-value="">Заказать услугу</a>
                     </div>
                   </div>
                 </div>
@@ -93,12 +93,12 @@
             <div class="lk-popup__service">
               <div class="lk-popup__desc--small">Выбранная услуга<span class="lk-popup__reqired">*</span></div>
               <select class="lk-popup__select" name="service-select">
-                <option value="0">Выберете услугу</option>
-                <option value="1">Целевая презентация деятельности компании для студентов целевая презентация деятельности компании для студентов</option>
-                <option value="2">Презентация</option>
-                <option value="3">Placeholder3</option>
-                <option value="4">Placeholder4</option>
-                <option value="5">Placeholder5</option>
+                <option value="" selected="selected" disabled="disabled">Выберете услугу</option>
+                <option value="personal">Привлечение персонала</option>
+                <option value="job">Ярмарка вакансий</option>
+                <option value="posting">Размещение вакансий в социальных сетях</option>
+                <option value="org">Оргнабор</option>
+                <option value="univer">Дни компании в ВУЗах</option>
               </select>
             </div>
             <div class="lk-popup__name">
