@@ -89,10 +89,10 @@
           <button class="lk-popup__close" data-js="popup-close"></button>
         </div>
         <div class="lk-popup__content">
-          <form class="lk-popup__form" name="serviceForm">
+          <form class="lk-popup__form">
             <div class="lk-popup__service">
               <div class="lk-popup__desc--small">Выбранная услуга<span class="lk-popup__reqired">*</span></div>
-              <select class="lk-popup__select" name="service-select">
+              <select class="lk-popup__select" name="select">
                 <option value="" selected="selected" disabled="disabled">Выберете услугу</option>
                 <option value="personal">Привлечение персонала</option>
                 <option value="job">Ярмарка вакансий</option>
@@ -109,7 +109,7 @@
               <div class="lk-popup__col-6">
                 <div class="lk-popup__desc--small">Телефон<span class="lk-popup__reqired">*</span></div>
                 <div class="lk-popup__tel">
-                  <input class="lk-popup__phone" id="service-phone" name="service-phone" type="tel" placeholder="(999) 999-99-99"/>
+                  <input class="lk-popup__phone" id="service-phone" name="phone" type="tel" placeholder="(999) 999-99-99"/>
                   <label for="service-phone"></label>
                 </div>
               </div>
@@ -121,11 +121,11 @@
               </div>
             </div>
             <div class="lk-popup__comment">
-              <label class="lk-popup__desc--small" for="service-message">Комментарий</label>
-              <textarea class="lk-popup__textarea" rows="6" id="service-message"></textarea>
+              <div class="lk-popup__desc--small" for="service-message">Комментарий</div>
+              <textarea class="lk-popup__textarea" rows="6" id="service-message" name="message"></textarea>
             </div>
             <input class="lk-popup__tiket-value" type="text" name="service-ticket" value=""/>
-            <input class="lk-popup__btn lk-button--prime" type="submit" value="Отправить заявку"/>
+            <button class="lk-popup__btn lk-button--prime" type="submit">Отправить заявку</button>
           </form>
         </div>
       </div>

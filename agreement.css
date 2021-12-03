@@ -457,7 +457,7 @@ table {
   position: relative;
   z-index: 1;
 }
-.lk-popup__tel .lk-popup__input, .lk-popup__tel .lk-popup__phone {
+.lk-popup__tel h45px .lk-popup__input, .lk-popup__tel h45px .lk-popup__phone {
   padding-left: 42px;
 }
 .lk-popup__tel:before {

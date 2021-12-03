@@ -3,8 +3,8 @@
 /* Font Golos Text: Copyright ? ParaType, 2018. All rights reserved.*/
 @font-face {
   font-family: "Golos";
-  src: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosBold/GolosBold.eot");
-  src: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosBold/GolosBold.eot?#iefix") format("embedded-opentype"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosBold/GolosBold.woff2") format("woff2"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosBold/GolosBold.woff") format("woff"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosBold/GolosBold.ttf") format("truetype");
+  src: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosBold/GolosBold.eot");
+  src: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosBold/GolosBold.eot?#iefix") format("embedded-opentype"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosBold/GolosBold.woff2") format("woff2"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosBold/GolosBold.woff") format("woff"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosBold/GolosBold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -12,8 +12,8 @@
 /* Font Golos: Copyright ? ParaType, 2018. All rights reserved.*/
 @font-face {
   font-family: "Golos";
-  src: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosDemiBold/GolosDemiBold.eot");
-  src: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosDemiBold/GolosDemiBold.eot?#iefix") format("embedded-opentype"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosDemiBold/GolosDemiBold.woff2") format("woff2"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosDemiBold/GolosDemiBold.woff") format("woff"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosDemiBold/GolosDemiBold.ttf") format("truetype");
+  src: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosDemiBold/GolosDemiBold.eot");
+  src: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosDemiBold/GolosDemiBold.eot?#iefix") format("embedded-opentype"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosDemiBold/GolosDemiBold.woff2") format("woff2"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosDemiBold/GolosDemiBold.woff") format("woff"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosDemiBold/GolosDemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
@@ -21,8 +21,8 @@
 /* Font Golos Text: Copyright ? ParaType, 2018. All rights reserved.*/
 @font-face {
   font-family: "Golos";
-  src: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosMedium/GolosMedium.eot");
-  src: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosMedium/GolosMedium.eot?#iefix") format("embedded-opentype"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosMedium/GolosMedium.woff2") format("woff2"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosMedium/GolosMedium.woff") format("woff"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosMedium/GolosMedium.ttf") format("truetype");
+  src: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosMedium/GolosMedium.eot");
+  src: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosMedium/GolosMedium.eot?#iefix") format("embedded-opentype"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosMedium/GolosMedium.woff2") format("woff2"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosMedium/GolosMedium.woff") format("woff"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosMedium/GolosMedium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
@@ -30,8 +30,8 @@
 /* Font Golos Text: Copyright ? ParaType, 2018. All rights reserved.*/
 @font-face {
   font-family: "Golos";
-  src: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosRegular/GolosRegular.eot");
-  src: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosRegular/GolosRegular.eot?#iefix") format("embedded-opentype"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosRegular/GolosRegular.woff2") format("woff2"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosRegular/GolosRegular.woff") format("woff"), url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosRegular/GolosRegular.ttf") format("truetype");
+  src: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosRegular/GolosRegular.eot");
+  src: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosRegular/GolosRegular.eot?#iefix") format("embedded-opentype"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosRegular/GolosRegular.woff2") format("woff2"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosRegular/GolosRegular.woff") format("woff"), url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/font/GolosRegular/GolosRegular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -471,7 +471,7 @@ table {
   display: block;
   width: 24px;
   height: 24px;
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/back.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/back.svg");
 }
 .lk-page-head__title {
   margin: 32px 0;
@@ -708,58 +708,58 @@ table {
   background-size: cover;
 }
 .lk-icon--badge:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/icon-badge.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/icon-badge.svg");
 }
 .lk-icon--graduation-hat:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/graduation-hat.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/graduation-hat.svg");
 }
 .lk-icon--tripod:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/tripod.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/tripod.svg");
 }
 .lk-icon--certificate:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/certificate.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/certificate.svg");
 }
 .lk-icon--done:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/icon-done-24.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/icon-done-24.svg");
 }
 .lk-icon--done-color:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/icon-done-color.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/icon-done-color.svg");
 }
 .lk-icon--chair:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/chair.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/chair.svg");
 }
 .lk-icon--social-media:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/social-media.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/social-media.svg");
 }
 .lk-icon--recruiter:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/recruiter.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/recruiter.svg");
 }
 .lk-icon--obrazovaniye:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/obrazovaniye.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/obrazovaniye.svg");
 }
 .lk-icon--warning:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/warning.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/warning.svg");
 }
 .lk-icon--info-red:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/info-red.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/info-red.svg");
 }
 .lk-icon--moving:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/moving.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/moving.svg");
 }
 .lk-icon--graduation-hat-black:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/graduation-hat-black.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/graduation-hat-black.svg");
 }
 .lk-icon--internship:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/internship.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/internship.svg");
 }
 .lk-icon--educational-program:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/educational-program.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/educational-program.svg");
 }
 .lk-icon--school:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/school.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/school.svg");
 }
 .lk-icon--management:before {
-  background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/management.svg");
+  background-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/management.svg");
 }
 
 .lk-bg--5 {
@@ -990,8 +990,8 @@ table {
   display: inline-block;
   width: 24px;
   height: 24px;
-  -webkit-mask-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/bx_bx-comment-check.svg");
-          mask-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/bx_bx-comment-check.svg");
+  -webkit-mask-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/bx_bx-comment-check.svg");
+          mask-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/bx_bx-comment-check.svg");
   background-color: #21965e;
 }
 .lk-button--accept:hover {
@@ -1016,8 +1016,8 @@ table {
   display: inline-block;
   width: 24px;
   height: 24px;
-  -webkit-mask-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/ic_outline-cancel.svg");
-          mask-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/ic_outline-cancel.svg");
+  -webkit-mask-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/ic_outline-cancel.svg");
+          mask-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/ic_outline-cancel.svg");
   background-color: #d51a1a;
 }
 .lk-button--cansel:hover {
@@ -1042,8 +1042,8 @@ table {
   display: inline-block;
   width: 24px;
   height: 24px;
-  -webkit-mask-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/bx_bx-comment-check.svg");
-          mask-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/bx_bx-comment-check.svg");
+  -webkit-mask-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/bx_bx-comment-check.svg");
+          mask-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/bx_bx-comment-check.svg");
   background-color: #962157;
 }
 .lk-button--consultation:hover {
@@ -1339,7 +1339,7 @@ table {
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-  background: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/close.svg");
+  background: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/close.svg");
   cursor: pointer;
 }
 .lk-popup__content {
@@ -1530,6 +1530,7 @@ table {
 .lk-popup__tel {
   position: relative;
   z-index: 1;
+  height: 45px;
 }
 .lk-popup__tel .lk-popup__input, .lk-popup__tel .lk-popup__phone {
   padding-left: 42px;
@@ -1865,8 +1866,8 @@ table {
   content: "";
   width: 24px;
   height: 24px;
-  -webkit-mask-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/link.svg");
-          mask-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/link.svg");
+  -webkit-mask-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/link.svg");
+          mask-image: url("./local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/link.svg");
   background-color: #8f1a50;
 }
 .lk-inform-card__link:hover {

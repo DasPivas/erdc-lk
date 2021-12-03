@@ -270,6 +270,7 @@
   &__tel {
     position: relative;
     z-index: 1;
+    height: 45px;
 
     #{$this}__input {
       padding-left: 42px;

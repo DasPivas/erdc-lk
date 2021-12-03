@@ -71,11 +71,11 @@ html(lang="ru")
           h3.lk-popup__title Заявка на получение услуги
           button.lk-popup__close(data-js="popup-close")
         .lk-popup__content
-          form.lk-popup__form(name="serviceForm")
+          form.lk-popup__form
             .lk-popup__service
               .lk-popup__desc--small Выбранная услуга
                 span.lk-popup__reqired *
-              select.lk-popup__select(name="service-select")
+              select.lk-popup__select(name="select")
                 option(value="" selected disabled) Выберете услугу
                 option(value="personal") Привлечение персонала
                 option(value="job") Ярмарка вакансий
@@ -92,7 +92,7 @@ html(lang="ru")
                 .lk-popup__desc--small Телефон
                   span.lk-popup__reqired *
                 .lk-popup__tel
-                  input.lk-popup__phone(id="service-phone" name="service-phone" type="tel" placeholder="(999) 999-99-99")
+                  input.lk-popup__phone(id="service-phone" name="phone" type="tel" placeholder="(999) 999-99-99")
                   label(for="service-phone")
               .lk-popup__col-6
                 .lk-popup__email
@@ -100,10 +100,10 @@ html(lang="ru")
                     span.lk-popup__reqired *
                   input.lk-popup__input.lk-popup__email-input(id="service-email" name="email" type="email" required placeholder="email@address.com" )
             .lk-popup__comment
-              label.lk-popup__desc--small(for="service-message") Комментарий
-              textarea.lk-popup__textarea(rows=6 id="service-message")
+              .lk-popup__desc--small(for="service-message") Комментарий
+              textarea.lk-popup__textarea(rows=6 id="service-message" name="message")
             input(type="text" name="service-ticket" value="").lk-popup__tiket-value
-            input(type="submit" value="Отправить заявку").lk-popup__btn.lk-button--prime
+            button(type="submit").lk-popup__btn.lk-button--prime Отправить заявку
 
     .lk-popup(data-popup='success')
       .lk-popup__wrapper.lk-popup__wrapper--large.lk-popup__wrapper--module
