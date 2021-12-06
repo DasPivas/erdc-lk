@@ -1675,6 +1675,10 @@ table {
   text-overflow: ellipsis;
 }
 
+.input--error {
+  margin-top: -24px;
+}
+
 .lk-info-block {
   margin: 24px 0 54px;
   display: -webkit-box;

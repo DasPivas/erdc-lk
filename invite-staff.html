@@ -92,7 +92,7 @@
           <form class="lk-popup__form">
             <div class="lk-popup__service">
               <div class="lk-popup__desc--small">Выбранная услуга<span class="lk-popup__reqired">*</span></div>
-              <select class="lk-popup__select" name="select">
+              <select class="lk-popup__select required" name="select" id="select-service" data-js="select">
                 <option value="" selected="selected" disabled="disabled">Выберете услугу</option>
                 <option value="personal">Привлечение персонала</option>
                 <option value="job">Ярмарка вакансий</option>
@@ -100,6 +100,7 @@
                 <option value="org">Оргнабор</option>
                 <option value="univer">Дни компании в ВУЗах</option>
               </select>
+              <div class="input--error"></div>
             </div>
             <div class="lk-popup__name">
               <label class="lk-popup__desc--small" for="name">Контактное лицо<span class="lk-popup__reqired">*</span></label>

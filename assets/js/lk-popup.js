@@ -21,7 +21,6 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   })
 
- 
 
   const closePopup = () => {
     const activePopup = document.querySelector('.lk-popup--active')
@@ -95,7 +94,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function sendAction(property) {
     property = JSON.parse(property);
-    BX.Bizproc.doInlineTask(property, function(){window.location.reload()})
+    BX.Bizproc.doInlineTask(property, function () {
+      window.location.reload()
+    })
   }
 
   function sendForm(event) {
@@ -124,109 +125,131 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const element = document.querySelectorAll('.lk-popup__select');
 
-    document.querySelectorAll('[data-for-popup]').forEach(button => {
-      button.addEventListener('click', e => {
-        e.preventDefault();
-        setTimeout(() => {
+  document.querySelectorAll('[data-for-popup]').forEach(button => {
+    button.addEventListener('click', e => {
+      e.preventDefault();
+      setTimeout(() => {
         element.forEach(item => {
           const sel = new Choices(item, {
             searchChoices: false,
             searchEnabled: false,
-            itemSelectText:'',
+            itemSelectText: '',
             shouldSort: false
           });
+          //
+          // // const selectValue = button.dataset.value;
+          // // sel.setChoiceByValue(selectValue);
+          //
+          // item.addEventListener('addItem',
+          //   function (event) {
+          //     if (event.detail.value < 1) {
+          //       this.closest('.choices__inner').classList.add('error');
+          //     } else {
+          //       this.closest('.choices__inner').classList.remove('error');
+          //     }
+          //
+          //   }, false);
+        });
+      }, 0);
 
-          // const selectValue = button.dataset.value;
-          // sel.setChoiceByValue(selectValue);
-          
-          item.addEventListener('addItem',
-          function(event) {
-            if (event.detail.value < 1) {
-              this.closest('.choices__inner').classList.add('error');
-            }else {
-              this.closest('.choices__inner').classList.remove('error');
-            }
-            
-          },false);
-      });
-    },0);
-        
 
-      },false);
+    }, false);
+  });
+
+
+  document.querySelectorAll('[data-for-popup]').forEach(button => {
+    button.addEventListener('click', e => {
+      e.preventDefault();
+
+      const popupType = button.dataset.forPopup;
+      const ticketNumber = button.dataset.tiketNumber;
+      const popup = document.querySelector(`[data-popup=${popupType}]`);
+      const form = popup.querySelector('form');
+      const inputTicketNumber = popup.querySelector('.lk-popup__tiket-value');
+      const selectBlock = popup.querySelector('.lk-popup__service-select');
+      const actionProperty = button.dataset.actionProperty;
+      const inputActionProperty = popup.querySelector('[data-action-property]');
+
+      const example = document.querySelector('.lk-popup__select');
+      const selectValue = button.dataset.value;
+
+
+      // example.setChoices((e)=> {
+
+      //   e.detail.value = selectValue;
+      //   console.log(e.detail.value);
+      // });
+
+      // if (popup.dataset.popup === 'service') {
+      //   const select = document.querySelector('.lk-popup__select');
+      //   select.addEventListener('addItem', function(e) {
+      //     const selectValue = button.dataset.value;
+      //     e.detail.value = selectValue;
+      //     console.log(e.detail.value);
+      //   },false);
+
+      //   }else {
+      //     console.log('нет');
+      //   }
+
+      popup.classList.add('lk-popup--active')
+
+
+      if (selectBlock) {
+        selectValue ? selectBlock.value = selectValue : selectBlock.value = ''
+      }
+
+      if (inputTicketNumber) {
+        inputTicketNumber.value = ticketNumber
+      }
+
+      if (actionProperty && inputActionProperty) {
+        inputActionProperty.dataset.actionProperty = actionProperty
+      }
     });
-  
-
-
-
-document.querySelectorAll('[data-for-popup]').forEach(button => {
-  button.addEventListener('click', e => {
-    e.preventDefault();
-    
-    const popupType = button.dataset.forPopup;
-    const ticketNumber = button.dataset.tiketNumber;
-    const popup = document.querySelector(`[data-popup=${popupType}]`);
-    const form = popup.querySelector('form');
-    const inputTicketNumber = popup.querySelector('.lk-popup__tiket-value');
-    const selectBlock = popup.querySelector('.lk-popup__service-select');
-    const actionProperty = button.dataset.actionProperty;
-    const inputActionProperty = popup.querySelector('[data-action-property]');
-
-    const example = document.querySelector('.lk-popup__select');
-    const selectValue = button.dataset.value;
-
-
-    // example.setChoices((e)=> {
-      
-    //   e.detail.value = selectValue;
-    //   console.log(e.detail.value);
-    // });
-
-    // if (popup.dataset.popup === 'service') {
-    //   const select = document.querySelector('.lk-popup__select');
-    //   select.addEventListener('addItem', function(e) {
-    //     const selectValue = button.dataset.value;
-    //     e.detail.value = selectValue;
-    //     console.log(e.detail.value);
-    //   },false);
-      
-    //   }else {
-    //     console.log('нет');
-    //   }
-    
-    popup.classList.add('lk-popup--active')
-
-
-    
-
-    if (selectBlock) {
-      selectValue ? selectBlock.value = selectValue : selectBlock.value = ''
-    }
-
-    if (inputTicketNumber) {
-      inputTicketNumber.value = ticketNumber
-    }
-
-    if (actionProperty && inputActionProperty) {
-      inputActionProperty.dataset.actionProperty = actionProperty
-    }
-  });
-});
-
-$('form').on('click','button[type="submit"]',function(e) {
-  let $forms = $(this).closest('form');
-  $.validator.addMethod("selectnot", function(value, element, arg){
-    return arg !== value;
   });
 
-  $.validator.addMethod("phonemask", function (value) {
-    return value.replace(/\D+/g, '').length > 9;
-  });
-  $($forms).validate({
-    errorElement: 'div',
-    errorClass: 'lk-popup__input--error',
+  $('form').on('click', 'button[type="submit"]', function (e) {
+    let $forms = $(this).closest('form');
+    var validateForm = false;
+
+    $.validator.setDefaults({ignore: ":hidden:not(select)"});
+
+    $.validator.addMethod("phonemask", function (value) {
+      return value.replace(/\D+/g, '').length > 9;
+    });
+    $($forms).validate({
+      errorElement: 'div',
+      errorClass: 'lk-popup__input--error',
+      errorPlacement: function (error, element) {
+        //Custom position: first name
+        if (element.data("js") == "select") {
+          // $('.choices__inner').addClass('error');
+          $(".input--error").html(error);
+        }
+        // Default position: if no match is met (other fields)
+        else {
+          element.parent().append(error)
+        }
+      },
+      highlight: function (element) {
+        if (element.getAttribute('data-js')) {
+          $('.choices__inner').addClass('error');
+        } else {
+          console.log(element)
+          element.classList.add('lk-popup__input--error')
+        }
+      },
+      unhighlight: function (element) {
+        if (element.getAttribute('data-js')) {
+          $('.choices__inner').removeClass('error');
+        }else {
+          element.classList.remove('lk-popup__input--error')
+        }
+      },
       rules: {
-        select: { 
-          selectnot: "default" 
+        select: {
+          required: true
         },
         name: {
           required: true,
@@ -255,43 +278,47 @@ $('form').on('click','button[type="submit"]',function(e) {
           required: "Поле обязательно к заполнению",
           phonemask: "Введите телефон"
         },
-        select: { 
-          selectnot: "Поле обязательно к заполнению" 
+        select: {
+          required: "Поле обязательно к заполнению"
         },
       },
 
-      submitHandler: function(form) {
+      submitHandler: function (form) {
         $(this).on('submit', sendForm);
         $(this).find('input[type=submit], button[type=submit]').prop('disabled', false);
       },
 
-      invalidHandler: function(event, validator) {
+      invalidHandler: function (event, validator) {
+        validateForm = true;
         $(this).find('input[type=submit], button[type=submit]').prop('disabled', true);
-      }
-    
+      },
     });
-});
+    $('[data-js="select"]').change(function () {
+      if (validateForm) {
+        $('[data-js="select"]').valid();
+      }
+    });
+  });
 
 
-
-function validateForm(id) {
-  let valid = $(id).validate().form();
+  function validateForm(id) {
+    let valid = $(id).validate().form();
     if (valid) {
       $('.form-save').prop('disabled', false);
-        $('.form-save').removeClass('isDisabled');
+      $('.form-save').removeClass('isDisabled');
     } else {
       $('.form-save').prop('disabled', 'disabled');
       $('.form-save').addClass('isDisabled');
     }
-}
-
-$('input[type="tel"]').inputmask("(999) 999-99-99");
-
-const openPopup = (dataPopup) => {
-  const popup = document.querySelector(`[data-popup="${dataPopup}"]`)
-  if (popup) {
-    popup.classList.add('lk-popup--active')
   }
-}
+
+  $('input[type="tel"]').inputmask("(999) 999-99-99");
+
+  const openPopup = (dataPopup) => {
+    const popup = document.querySelector(`[data-popup="${dataPopup}"]`)
+    if (popup) {
+      popup.classList.add('lk-popup--active')
+    }
+  }
 
 });
