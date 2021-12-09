@@ -1,0 +1,55 @@
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="./lk.css" rel="stylesheet")
+    link(href="./kistin-dev/style.css" rel="stylesheet")
+
+  body
+    .lk-wrap
+      .container
+        .lk-row
+          .lk-aside.lk-col.lk-col_lg_3
+          .lk-content.lk-col.lk-col_lg_9
+            .lk-page-head
+              a.lk-page-head__breadcrumbs(href="/")
+                | Подбор кадров
+
+        a.lk-button.lk-button--prime.lk-button--small(href="#" data-for-popup="certificate") Подписать
+
+    .lk-popup(data-popup='certificate')
+      .lk-popup__wrapper
+        .lk-popup__header
+          h3.lk-popup__title Выберите сертификат
+          button.lk-popup__close(data-js="popup-close")
+        .lk-popup__content
+          form.lk-popup__form
+            div(id='CertListBox')
+              label.lk-popup__certificate-label(data-js="certificate-label" data-state='unchecked')
+                .lk-popup__certificate-label-icon
+                  svg(width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(fill-rule="evenodd" clip-rule="evenodd" d="M15.4468 2.04255L5.48936 12L0 6.51064L2.04255 4.46809L5.48936 7.91489L13.4043 0L15.4468 2.04255Z" fill="#891D56")
+                .lk-popup__certificate-label-content
+                  .lk-popup__certificate-label-desc «АО «КРДВ»», выдан: 13.09.2021 06:34:46
+                  .lk-popup__certificate-label-name Константинопольский Константин Константинович
+                input.lk-popup__certificate-input(type="radio" name="certificate" value="1" data-js="certificate-input")
+              label.lk-popup__certificate-label(data-js="certificate-label" data-state='unchecked')
+                .lk-popup__certificate-label-icon
+                  svg(width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(fill-rule="evenodd" clip-rule="evenodd" d="M15.4468 2.04255L5.48936 12L0 6.51064L2.04255 4.46809L5.48936 7.91489L13.4043 0L15.4468 2.04255Z" fill="#891D56")
+                .lk-popup__certificate-label-content
+                  .lk-popup__certificate-label-desc «АО «КРДВ»», выдан: 13.09.2021 06:34:46
+                  .lk-popup__certificate-label-name Константинопольский Константин
+                input.lk-popup__certificate-input(type="radio" name="certificate" value="2" data-js="certificate-input")
+              label.lk-popup__certificate-label(data-js="certificate-label" data-state='unchecked')
+                .lk-popup__certificate-label-icon
+                  svg(width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(fill-rule="evenodd" clip-rule="evenodd" d="M15.4468 2.04255L5.48936 12L0 6.51064L2.04255 4.46809L5.48936 7.91489L13.4043 0L15.4468 2.04255Z" fill="#891D56")
+                .lk-popup__certificate-label-content
+                  .lk-popup__certificate-label-desc «АО «КРДВ»», выдан: 13.09.2021 06:34:46
+                  .lk-popup__certificate-label-name Константинопольский
+                input.lk-popup__certificate-input(type="radio" name="certificate" value="3" data-js="certificate-input")
+            .lk-popup__certificate-button
+              input.lk-button.lk-button--prime.lk-button--small(type="submit" value="Подписать")
+
+    script(src='./kistin-dev/script.js')

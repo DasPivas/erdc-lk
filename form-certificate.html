@@ -1,0 +1,75 @@
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="./lk.css" rel="stylesheet"/>
+    <link href="./kistin-dev/style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="lk-wrap">
+      <div class="container">
+        <div class="lk-row">
+          <div class="lk-aside lk-col lk-col_lg_3"></div>
+          <div class="lk-content lk-col lk-col_lg_9">
+            <div class="lk-page-head"><a class="lk-page-head__breadcrumbs" href="/">Подбор кадров</a></div>
+          </div>
+        </div><a class="lk-button lk-button--prime lk-button--small" href="#" data-for-popup="certificate">Подписать</a>
+      </div>
+    </div>
+    <div class="lk-popup" data-popup="certificate">
+      <div class="lk-popup__wrapper">
+        <div class="lk-popup__header">
+          <h3 class="lk-popup__title">Выберите сертификат</h3>
+          <button class="lk-popup__close" data-js="popup-close"></button>
+        </div>
+        <div class="lk-popup__content">
+          <form class="lk-popup__form">
+            <div id="CertListBox">
+              <label class="lk-popup__certificate-label" data-js="certificate-label" data-state="unchecked">
+                <div class="lk-popup__certificate-label-icon">
+                  <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4468 2.04255L5.48936 12L0 6.51064L2.04255 4.46809L5.48936 7.91489L13.4043 0L15.4468 2.04255Z" fill="#891D56"></path>
+                  </svg>
+                </div>
+                <div class="lk-popup__certificate-label-content">
+                  <div class="lk-popup__certificate-label-desc">«АО «КРДВ»», выдан: 13.09.2021 06:34:46</div>
+                  <div class="lk-popup__certificate-label-name">Константинопольский Константин Константинович</div>
+                </div>
+                <input class="lk-popup__certificate-input" type="radio" name="certificate" value="1" data-js="certificate-input"/>
+              </label>
+              <label class="lk-popup__certificate-label" data-js="certificate-label" data-state="unchecked">
+                <div class="lk-popup__certificate-label-icon">
+                  <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4468 2.04255L5.48936 12L0 6.51064L2.04255 4.46809L5.48936 7.91489L13.4043 0L15.4468 2.04255Z" fill="#891D56"></path>
+                  </svg>
+                </div>
+                <div class="lk-popup__certificate-label-content">
+                  <div class="lk-popup__certificate-label-desc">«АО «КРДВ»», выдан: 13.09.2021 06:34:46</div>
+                  <div class="lk-popup__certificate-label-name">Константинопольский Константин</div>
+                </div>
+                <input class="lk-popup__certificate-input" type="radio" name="certificate" value="2" data-js="certificate-input"/>
+              </label>
+              <label class="lk-popup__certificate-label" data-js="certificate-label" data-state="unchecked">
+                <div class="lk-popup__certificate-label-icon">
+                  <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4468 2.04255L5.48936 12L0 6.51064L2.04255 4.46809L5.48936 7.91489L13.4043 0L15.4468 2.04255Z" fill="#891D56"></path>
+                  </svg>
+                </div>
+                <div class="lk-popup__certificate-label-content">
+                  <div class="lk-popup__certificate-label-desc">«АО «КРДВ»», выдан: 13.09.2021 06:34:46</div>
+                  <div class="lk-popup__certificate-label-name">Константинопольский</div>
+                </div>
+                <input class="lk-popup__certificate-input" type="radio" name="certificate" value="3" data-js="certificate-input"/>
+              </label>
+            </div>
+            <div class="lk-popup__certificate-button">
+              <input class="lk-button lk-button--prime lk-button--small" type="submit" value="Подписать"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./kistin-dev/script.js"></script>
+  </body>
+</html>
