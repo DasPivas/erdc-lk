@@ -48,6 +48,10 @@ const closePopup = () => {
 
     activeForm.classList.remove('lk-popup--active');
 
+    if (activeForm.getAttribute('data-popup') === 'signature-warning') {
+        window.location.reload()
+    }
+
     if (!form) {
         return
     }
@@ -74,6 +78,7 @@ const openPopup = (dataPopup) => {
     if ( dataPopup === 'certificate') {
         form.addEventListener('submit', approveCertificate)
     }
+
 };
 // Потом удалить
 
@@ -89,10 +94,8 @@ certificateSwitch = () => {
         }
 
         certificateInputs.forEach((input) => {
-            console.log(input);
             input.addEventListener("change", function (event) {
                 uncheckedLabels()
-                console.log('clicckkk');
                 const label = event.target.parentNode
                 label.dataset.state = 'checked';
                 // eds.setSelectCertificat(event.target.value);
@@ -154,15 +157,27 @@ $(document).ready(function() {
     window.getStateOfCheckboxInSigningForm = getStateOfCheckboxInSigningForm;
 
     $('#signinig').click(function () {
-        // window.toggleSigningAcceptPopup();
         if(!window.getStateOfCheckboxInSigningForm()){
-            alert(' Подтвердите, что вы просмотрели все подписываемые документы');
+            // alert(' Подтвердите, что вы просмотрели все подписываемые документы');
             window.closeSigningAcceptPopup();
             return false;
         }
 
         openPopup('certificate');
-        certificateSwitch()
+        // certificateSwitch()
+    });
+
+    certificateSwitchEvent = function (a) {
+        certificateSwitch();
+        $('#waiting-certificate').hide();
+    };
+
+    $('input[name="assept-viewing"]').change(function () {
+        if (this.checked){
+            $('#signinig').removeAttr('disabled');
+        }else{
+            $('#signinig').attr('disabled', 'disabled');
+        }
     });
 
     window.popUpOpen = 0;
@@ -180,9 +195,11 @@ $(document).ready(function() {
     singingFileException  = function (sign) {
         window.closeSigningAcceptPopup();
         if (sign){
-            $('#exceptions').html('Текст ошибки: ' + sign);
+            $('#exceptions').html('Ошибка: ' + sign);
         }
-        $('.lk-warning-card-exception').show();
+        $('.lk-warning-card-exception').css('display', 'flex');
+
+        $('#button-panel').hide();
     };
 
     checkFIO = function(certInfo){

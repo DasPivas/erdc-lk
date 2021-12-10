@@ -330,6 +330,12 @@
     background: rgba(0, 0, 0, .2);
   }
   
+  button:disabled {
+    color: #333333 !important;
+    background: rgba(0, 0, 0, .2) !important;
+    cursor: default;
+  }
+  
   &__reqired {
     margin-left: 4px;
     color: #f52d00;

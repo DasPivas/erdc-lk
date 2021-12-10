@@ -261,7 +261,7 @@ body {
     background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/obrazovaniye.svg");
 }
 .lk-icon--warning:before {
-    background-image: url("/local/components/erdc/agreement.detail/templates/.default/warning.svg");
+    background-image: url("/local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/warning.svg");
 }
 .lk-icon--info-red:before {
     background-image: url("/local/components/erdc/agreement.detail/templates/.default/info-red.svg");
@@ -1321,6 +1321,7 @@ body {
 /*kistin*/
 .lk-warning-card-exception{
     background-color: #8f1a50;
+    display: none;
 }
 .lk-warning-card-exception .lk-warning-card__content .lk-warning-card__title{
     color: #ffffff;
@@ -1346,8 +1347,21 @@ body {
     color: #8F1A50;
     font-size: 16px;
 }
+.support-link:hover {
+    text-decoration: underline;
+    color: rgb(150, 33, 87);
+}
 .lk-icon--warning2:before{
     background-image: url("/local/components/erdc/agreement.detail/templates/.default/warning.svg");
+}
+
+button:disabled {
+    color: #333333 !important;
+    background: rgba(0, 0, 0, .2) !important;
+    cursor: default;
+}
+button:disabled:hover {
+    box-shadow: none !important;
 }
 
 /*Pryadun*/
@@ -1367,6 +1381,10 @@ body {
     display: flex;
     border: 1px solid #D9D9DE;
     border-top: none;
+    transition: .1s background-color;
+}
+.lk-popup__certificate-label:hover{
+    background-color: #891d5629;
 }
 
 .lk-popup__certificate-label:first-child {

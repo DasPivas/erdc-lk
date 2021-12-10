@@ -1591,6 +1591,11 @@ table {
   color: #333333;
   background: rgba(0, 0, 0, 0.2);
 }
+.lk-popup button:disabled {
+  color: #333333 !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  cursor: default;
+}
 .lk-popup__reqired {
   margin-left: 4px;
   color: #f52d00;
