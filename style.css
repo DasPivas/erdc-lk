@@ -1932,3 +1932,21 @@ table {
   margin-right: 10px;
   display: inline-block;
 }
+
+.grid_services__item a {
+  overflow: hidden;
+}
+.grid_services__item--new {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 10px;
+  background-color: #ffffff;
+  font-family: Golos;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  text-transform: uppercase;
+  border-radius: 0 4px;
+}

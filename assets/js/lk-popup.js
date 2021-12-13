@@ -21,7 +21,6 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-
   const closePopup = () => {
     const activePopup = document.querySelector('.lk-popup--active')
     const form = activePopup.querySelector('form')
@@ -101,10 +100,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function sendForm(event) {
     event.preventDefault();
-
     const form = event.target;
     const submitBtn = form.querySelector('button[type=submit]');
     const url = '/recruitment/ajax.php';
+    // const url = 'http://lk.erdc.kistin.sitesoft.ru/recruitment/ajax.php';
     const actionProperty = form.querySelector('[data-action-property]');
 
     submitBtn.disabled = true
@@ -123,40 +122,6 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  const element = document.querySelectorAll('.lk-popup__select');
-
-  document.querySelectorAll('[data-for-popup]').forEach(button => {
-    button.addEventListener('click', e => {
-      e.preventDefault();
-      setTimeout(() => {
-        element.forEach(item => {
-          const sel = new Choices(item, {
-            searchChoices: false,
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false
-          });
-          //
-          // // const selectValue = button.dataset.value;
-          // // sel.setChoiceByValue(selectValue);
-          //
-          // item.addEventListener('addItem',
-          //   function (event) {
-          //     if (event.detail.value < 1) {
-          //       this.closest('.choices__inner').classList.add('error');
-          //     } else {
-          //       this.closest('.choices__inner').classList.remove('error');
-          //     }
-          //
-          //   }, false);
-        });
-      }, 0);
-
-
-    }, false);
-  });
-
-
   document.querySelectorAll('[data-for-popup]').forEach(button => {
     button.addEventListener('click', e => {
       e.preventDefault();
@@ -166,37 +131,24 @@ window.addEventListener('DOMContentLoaded', () => {
       const popup = document.querySelector(`[data-popup=${popupType}]`);
       const form = popup.querySelector('form');
       const inputTicketNumber = popup.querySelector('.lk-popup__tiket-value');
-      const selectBlock = popup.querySelector('.lk-popup__service-select');
       const actionProperty = button.dataset.actionProperty;
       const inputActionProperty = popup.querySelector('[data-action-property]');
+      const selectService = form.querySelector('[data-js=select]');
+      const selectValue = button.dataset.selectValue;
 
-      const example = document.querySelector('.lk-popup__select');
-      const selectValue = button.dataset.value;
+      openPopup(popupType)
 
-
-      // example.setChoices((e)=> {
-
-      //   e.detail.value = selectValue;
-      //   console.log(e.detail.value);
-      // });
-
-      // if (popup.dataset.popup === 'service') {
-      //   const select = document.querySelector('.lk-popup__select');
-      //   select.addEventListener('addItem', function(e) {
-      //     const selectValue = button.dataset.value;
-      //     e.detail.value = selectValue;
-      //     console.log(e.detail.value);
-      //   },false);
-
-      //   }else {
-      //     console.log('нет');
-      //   }
-
-      popup.classList.add('lk-popup--active')
-
-
-      if (selectBlock) {
-        selectValue ? selectBlock.value = selectValue : selectBlock.value = ''
+      if (selectService && selectValue) {
+        if (!window.choicesInstance) {
+          window.choicesInstance = new Choices(selectService, {
+              searchChoices: false,
+              searchEnabled: false,
+              itemSelectText: '',
+              shouldSort: false
+            }
+          );
+        }
+        window.choicesInstance.setChoiceByValue(selectValue);
       }
 
       if (inputTicketNumber) {
@@ -206,111 +158,109 @@ window.addEventListener('DOMContentLoaded', () => {
       if (actionProperty && inputActionProperty) {
         inputActionProperty.dataset.actionProperty = actionProperty
       }
+
     });
   });
 
+  $.validator.setDefaults({ignore: ":hidden:not(select)"});
+
+  $.validator.addMethod("phonemask", function (value) {
+    return value.replace(/\D+/g, '').length > 9;
+  });
+
+  const validateOption = {
+    errorElement: 'div',
+    errorClass: 'lk-popup__input--error',
+    errorPlacement: function (error, element) {
+      if (element.data("js") == "select") {
+        $(".input--error").html(error);
+      } else {
+        element.parent().append(error)
+      }
+    },
+    highlight: function (element) {
+      if (element.getAttribute('data-js') === 'select') {
+        $('.choices__inner').addClass('error');
+      } else {
+        element.classList.add('lk-popup__input--error')
+      }
+    },
+    unhighlight: function (element) {
+      if (element.getAttribute('data-js') === 'select') {
+        $('.choices__inner').removeClass('error');
+      } else {
+        element.classList.remove('lk-popup__input--error')
+      }
+    },
+    rules: {
+      select: {
+        required: true
+      },
+      name: {
+        required: true,
+        minlength: 3
+      },
+      email: {
+        required: true,
+        minlength: 6
+      },
+      phone: {
+        required: true,
+        phonemask: true,
+        minlength: 10
+      }
+    },
+    messages: {
+      name: {
+        required: "Поле обязательно к заполнению",
+        minlength: "Введите мин. 3 символа"
+      },
+      email: {
+        required: "Поле обязательно к заполнению",
+        email: "Введите корректный e-mail адрес"
+      },
+      phone: {
+        required: "Поле обязательно к заполнению",
+        phonemask: "Введите телефон"
+      },
+      select: {
+        required: "Поле обязательно к заполнению"
+      },
+    },
+
+    submitHandler: function (form, event) {
+      console.log(event)
+      sendForm(event)
+    },
+
+    invalidHandler: function (event, validator) {
+      $(this).find('input[type=submit], button[type=submit]').prop('disabled', true);
+    },
+  }
+
   $('form').on('click', 'button[type="submit"]', function (e) {
     let $forms = $(this).closest('form');
-    var validateForm = false;
+    console.log(1)
 
-    $.validator.setDefaults({ignore: ":hidden:not(select)"});
+    $($forms).validate(validateOption);
 
-    $.validator.addMethod("phonemask", function (value) {
-      return value.replace(/\D+/g, '').length > 9;
-    });
-    $($forms).validate({
-      errorElement: 'div',
-      errorClass: 'lk-popup__input--error',
-      errorPlacement: function (error, element) {
-        //Custom position: first name
-        if (element.data("js") == "select") {
-          // $('.choices__inner').addClass('error');
-          $(".input--error").html(error);
-        }
-        // Default position: if no match is met (other fields)
-        else {
-          element.parent().append(error)
-        }
-      },
-      highlight: function (element) {
-        if (element.getAttribute('data-js')) {
-          $('.choices__inner').addClass('error');
-        } else {
-          console.log(element)
-          element.classList.add('lk-popup__input--error')
-        }
-      },
-      unhighlight: function (element) {
-        if (element.getAttribute('data-js')) {
-          $('.choices__inner').removeClass('error');
-        }else {
-          element.classList.remove('lk-popup__input--error')
-        }
-      },
-      rules: {
-        select: {
-          required: true
-        },
-        name: {
-          required: true,
-          minlength: 3
-        },
-        email: {
-          required: true,
-          minlength: 6
-        },
-        phone: {
-          required: true,
-          phonemask: true,
-          minlength: 10
-        }
-      },
-      messages: {
-        name: {
-          required: "Поле обязательно к заполнению",
-          minlength: "Введите мин. 3 символа"
-        },
-        email: {
-          required: "Поле обязательно к заполнению",
-          email: "Введите корректный e-mail адрес"
-        },
-        phone: {
-          required: "Поле обязательно к заполнению",
-          phonemask: "Введите телефон"
-        },
-        select: {
-          required: "Поле обязательно к заполнению"
-        },
-      },
-
-      submitHandler: function (form) {
-        $(this).on('submit', sendForm);
-        $(this).find('input[type=submit], button[type=submit]').prop('disabled', false);
-      },
-
-      invalidHandler: function (event, validator) {
-        validateForm = true;
-        $(this).find('input[type=submit], button[type=submit]').prop('disabled', true);
-      },
-    });
     $('[data-js="select"]').change(function () {
-      if (validateForm) {
+      if (true) {
         $('[data-js="select"]').valid();
       }
     });
   });
 
+  $('[data-popup=service] input[required], [data-popup=service] select[required]').bind('keyup blur click change', function () { // fires on every keyup & blur
+    const form = $('[data-popup=service] form')
+    const submitBtn = form.find('input[type=submit], button[type=submit]')
 
-  function validateForm(id) {
-    let valid = $(id).validate().form();
-    if (valid) {
-      $('.form-save').prop('disabled', false);
-      $('.form-save').removeClass('isDisabled');
+    if (form.validate(validateOption).checkForm()) {                   // checks form for validity
+      submitBtn.removeClass('button_disabled').prop('disabled', false); // enables button
     } else {
-      $('.form-save').prop('disabled', 'disabled');
-      $('.form-save').addClass('isDisabled');
+      submitBtn.addClass('button_disabled').prop('disabled', true);   // disables button
     }
-  }
+  });
 
   $('input[type="tel"]').inputmask("(999) 999-99-99");
 
@@ -320,5 +270,4 @@ window.addEventListener('DOMContentLoaded', () => {
       popup.classList.add('lk-popup--active')
     }
   }
-
 });

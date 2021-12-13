@@ -17,7 +17,7 @@
               <div class="lk-info-block__content">
                 <h2 class="lk-info-block__title">Привлечение персонала</h2>
                 <p class="lk-info-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="lk-info-block__btns"><a class="lk-button lk-button--prime lk-info-block__button" href="#" data-for-popup="service" data-tiket-number="123455" data-select-value="d15">[Заказать услугу]</a><a class="lk-button lk-button--border lk-info-block__button" href="#">Вопрос-ответ</a></div>
+                <div class="lk-info-block__btns"><a class="lk-button lk-button--prime lk-info-block__button" href="#" data-for-popup="service" data-tiket-number="123455" data-select-value="personal">[Заказать услугу]</a><a class="lk-button lk-button--border lk-info-block__button" href="#">Вопрос-ответ</a></div>
               </div>
               <div class="lk-info-block__icon lk-bg--5">
                 <div class="lk-icon lk-icon--100 lk-icon--badge"></div>
@@ -36,7 +36,7 @@
                     <div class="lk-inform-card__content">
                       <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Ярмарка вакансий</a>
                         <p class="lk-inform-card__desc">мероприятие, проводимое в субъекте ДФО или Арктики с целью привлечения трудовых ресурсов</p>
-                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-value="job" data-tiket-number="12334" data-select-value="d14">Заказать услугу</a>
+                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="12334" data-select-value="job">Заказать услугу</a>
                     </div>
                   </div>
                 </div>
@@ -48,7 +48,7 @@
                     <div class="lk-inform-card__content">
                       <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Размещение вакансий в социальных сетях</a>
                         <p class="lk-inform-card__desc">публикации вакансий в группах КРДВ в социальных сетях ВКонтакте, OK, Фейсбук, Инстаграм и Телеграмм</p>
-                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-value="posting" data-tiket-number="12345" data-select-value="d13">Заказать услугу</a>
+                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="12345" data-select-value="posting">Заказать услугу</a>
                     </div>
                   </div>
                 </div>
@@ -60,7 +60,7 @@
                     <div class="lk-inform-card__content">
                       <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Оргнабор</a>
                         <p class="lk-inform-card__desc">мероприятие, проводимое в регионах за пределами ДФО и Арктики с целью привлечения трудовых ресурсов</p>
-                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-value="org" data-tiket-number="1234" data-select-value="d12">Заказать услугу</a>
+                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="1234" data-select-value="org">Заказать услугу</a>
                     </div>
                   </div>
                 </div>
@@ -72,7 +72,7 @@
                     <div class="lk-inform-card__content">
                       <div class="lk-inform-card__text"><a class="lk-inform-card__subtitle" href="#">Дни компании в ВУЗах</a>
                         <p class="lk-inform-card__desc">целевая презентация деятельности компании для студентов</p>
-                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-value="univer" data-tiket-number="123" data-select-value="">Заказать услугу</a>
+                      </div><a class="lk-button lk-button--border" href="#" data-for-popup="service" data-tiket-number="123" data-select-value="univer">Заказать услугу</a>
                     </div>
                   </div>
                 </div>
@@ -92,7 +92,7 @@
           <form class="lk-popup__form">
             <div class="lk-popup__service">
               <div class="lk-popup__desc--small">Выбранная услуга<span class="lk-popup__reqired">*</span></div>
-              <select class="lk-popup__select required" name="select" id="select-service" data-js="select">
+              <select class="lk-popup__select" name="select" id="select-service" required="required" data-js="select">
                 <option value="" selected="selected" disabled="disabled">Выберете услугу</option>
                 <option value="personal">Привлечение персонала</option>
                 <option value="job">Ярмарка вакансий</option>
@@ -110,7 +110,7 @@
               <div class="lk-popup__col-6">
                 <div class="lk-popup__desc--small">Телефон<span class="lk-popup__reqired">*</span></div>
                 <div class="lk-popup__tel">
-                  <input class="lk-popup__phone" id="service-phone" name="phone" type="tel" placeholder="(999) 999-99-99"/>
+                  <input class="lk-popup__phone" id="service-phone" name="phone" type="tel" required="required" placeholder="(999) 999-99-99"/>
                   <label for="service-phone"></label>
                 </div>
               </div>

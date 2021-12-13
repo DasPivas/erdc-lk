@@ -19,7 +19,7 @@ html(lang="ru")
                 h2.lk-info-block__title Привлечение персонала
                 p.lk-info-block__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 .lk-info-block__btns
-                  a.lk-button.lk-button--prime.lk-info-block__button(href="#" data-for-popup="service" data-tiket-number='123455' data-select-value='d15') [Заказать услугу]
+                  a.lk-button.lk-button--prime.lk-info-block__button(href="#" data-for-popup="service" data-tiket-number='123455' data-select-value='personal') [Заказать услугу]
                   a.lk-button.lk-button--border.lk-info-block__button(href='#') Вопрос-ответ
               .lk-info-block__icon.lk-bg--5
                 .lk-icon.lk-icon--100.lk-icon--badge
@@ -36,7 +36,7 @@ html(lang="ru")
                       .lk-inform-card__text
                         a.lk-inform-card__subtitle(href="#") Ярмарка вакансий
                         p.lk-inform-card__desc мероприятие, проводимое в субъекте ДФО или Арктики с целью привлечения трудовых ресурсов
-                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-value="job" data-tiket-number='12334' data-select-value='d14') Заказать услугу
+                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='12334' data-select-value='job') Заказать услугу
                 .lk-inform-card__col
                   .lk-inform-card__item
                     .lk-inform-card__icon
@@ -45,7 +45,7 @@ html(lang="ru")
                       .lk-inform-card__text
                         a.lk-inform-card__subtitle(href="#") Размещение вакансий в социальных сетях
                         p.lk-inform-card__desc публикации вакансий в группах КРДВ в социальных сетях ВКонтакте, OK, Фейсбук, Инстаграм и Телеграмм
-                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-value="posting" data-tiket-number='12345' data-select-value='d13') Заказать услугу
+                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='12345' data-select-value='posting') Заказать услугу
                 .lk-inform-card__col
                   .lk-inform-card__item
                     .lk-inform-card__icon
@@ -54,7 +54,7 @@ html(lang="ru")
                       .lk-inform-card__text
                         a.lk-inform-card__subtitle(href="#") Оргнабор
                         p.lk-inform-card__desc мероприятие, проводимое в регионах за пределами ДФО и Арктики с целью привлечения трудовых ресурсов
-                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-value="org" data-tiket-number='1234' data-select-value='d12') Заказать услугу
+                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='1234' data-select-value='org') Заказать услугу
                 .lk-inform-card__col
                   .lk-inform-card__item
                     .lk-inform-card__icon
@@ -63,7 +63,7 @@ html(lang="ru")
                       .lk-inform-card__text
                         a.lk-inform-card__subtitle(href="#") Дни компании в ВУЗах
                         p.lk-inform-card__desc целевая презентация деятельности компании для студентов
-                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-value="univer" data-tiket-number='123' data-select-value='') Заказать услугу
+                      a.lk-button.lk-button--border(href="#" data-for-popup="service" data-tiket-number='123' data-select-value='univer') Заказать услугу
 
     .lk-popup(data-popup='service')
       .lk-popup__wrapper.lk-popup__wrapper--large
@@ -75,7 +75,7 @@ html(lang="ru")
             .lk-popup__service
               .lk-popup__desc--small Выбранная услуга
                 span.lk-popup__reqired *
-              select.lk-popup__select(name="select" id="select-service" class="required" data-js="select")
+              select.lk-popup__select(name="select" id="select-service" required  data-js="select")
                 option(value="" selected disabled) Выберете услугу
                 option(value="personal") Привлечение персонала
                 option(value="job") Ярмарка вакансий
@@ -93,7 +93,7 @@ html(lang="ru")
                 .lk-popup__desc--small Телефон
                   span.lk-popup__reqired *
                 .lk-popup__tel
-                  input.lk-popup__phone(id="service-phone" name="phone" type="tel" placeholder="(999) 999-99-99")
+                  input.lk-popup__phone(id="service-phone" name="phone" type="tel" required placeholder="(999) 999-99-99")
                   label(for="service-phone")
               .lk-popup__col-6
                 .lk-popup__email
