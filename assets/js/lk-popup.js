@@ -45,6 +45,50 @@ window.addEventListener('DOMContentLoaded', () => {
     if (inputActionProperty) {
       inputActionProperty.dataset.actionProperty = ''
     }
+
+    if (form.getAttribute('novalidate')) {
+      clearFormError(form)
+    }
+  }
+
+  const clearFormError = (form) => {
+    const choiceErr = form.querySelectorAll('.choices__inner.error')
+    const inputErr = form.querySelectorAll('.lk-popup__input.lk-popup__input--error')
+    const inputPhoneErr = form.querySelectorAll('.lk-popup__input--error.lk-popup__phone')
+    const btnDisabled = form.querySelector('button[disabled]')
+
+    if (choiceErr) {
+      removeClassList(choiceErr, 'error')
+      const inputErrBlock = form.querySelectorAll('.input--error')
+      if (inputPhoneErr) {
+        removeNode(inputErrBlock)
+      }
+    }
+    if (inputPhoneErr) {
+      removeClassList(inputPhoneErr, 'lk-popup__input--error')
+    }
+    if (inputErr) {
+      removeClassList(inputErr, 'lk-popup__input--error')
+      const phoneErrBlock = form.querySelectorAll('.lk-popup__input--error')
+      if (phoneErrBlock) {
+        removeNode(phoneErrBlock)
+      }
+    }
+    if (btnDisabled) {
+      btnDisabled.disabled = false
+    }
+  }
+
+  const removeClassList = (collection, className) => {
+    collection.forEach((el) => {
+      el.classList.remove(className)
+    })
+  }
+
+  const removeNode = (collection) => {
+    collection.forEach((el) => {
+      el.remove()
+    })
   }
 
   document.querySelectorAll('[data-js=popup-close]').forEach(closeBtn => {
@@ -138,7 +182,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       openPopup(popupType)
 
-      if (selectService && selectValue) {
+      if (selectService) {
         if (!window.choicesInstance) {
           window.choicesInstance = new Choices(selectService, {
               searchChoices: false,
@@ -148,7 +192,9 @@ window.addEventListener('DOMContentLoaded', () => {
             }
           );
         }
-        window.choicesInstance.setChoiceByValue(selectValue);
+        if (selectValue) {
+          window.choicesInstance.setChoiceByValue(selectValue);
+        } else window.choicesInstance.setChoiceByValue('');
       }
 
       if (inputTicketNumber) {
@@ -229,7 +275,6 @@ window.addEventListener('DOMContentLoaded', () => {
     },
 
     submitHandler: function (form, event) {
-      console.log(event)
       sendForm(event)
     },
 
@@ -240,7 +285,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   $('form').on('click', 'button[type="submit"]', function (e) {
     let $forms = $(this).closest('form');
-    console.log(1)
 
     $($forms).validate(validateOption);
 
