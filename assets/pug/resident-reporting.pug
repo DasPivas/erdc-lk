@@ -1,0 +1,79 @@
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="./lk.css" rel="stylesheet")
+    link(href="./style.css" rel="stylesheet")
+    link(href="./assets/css/airdatepicker.css" rel="stylesheet")
+    link(href="./assets/css/request-form.css" rel="stylesheet")
+    link(href="./assets/css/tooltipster.css" rel="stylesheet")
+
+  body
+    .lk-wrap
+      .container
+        .lk-row.lk-body
+          .lk-aside.lk-col.lk-col_lg_3
+          .lk-content.lk-col.lk-col_lg_9
+            .lk-content__header.is-flexbox.is-flexbox_center.is-flexbox_justify
+              h1.lk-page-head__title Отчётность резидента
+            DIV
+              a.down-link(download title='Инструкция по заполнению отчетности' href="/upload/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B0.pdf")
+                span.down-link__img_inv
+                span.down-link__text(style='max-width: 96%')
+                  span.down-link__name Инструкция по заполнению отчетности
+                  span.down-link__info PDF 638 КБ
+              DIV(style='float: right')
+                a.lk-btn.lk-btn_w.lk-btn-disabled(href='#' title='Печать возможна только при статусе отчёта "Обработан"') Распечатать
+
+            form.lk-form--request(action method="post" id="request-residency")
+              .lk-box
+                .lk-form
+                  .lk-box__body
+                    fieldset
+                      .lk-row
+                        .lk-field.lk-col.lk-col_md_12
+                          label Проект:
+                          p Строительство холодильного склада
+                          input(type="hidden" name="PROJECT_ID" value="79951")
+                    fieldset
+                      .lk-row
+                        .lk-field.lk-col.lk-col_md_12
+                          label Компания:
+                          table
+                            tbody
+                              tr
+                                td(style='width=150px') Наименование:
+                                td ОББРФ ООО
+                              tr
+                                td ИНН:
+                                td 2508002788
+              #request-residency-fields
+                .lk-box.lk-box_odd
+                  .lk-form
+                    .lk-box__header.lk-box__header_plain
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        .lk-title.lk-ttu Период отчетности
+                    .lk-box__body
+                      fieldset
+                        .lk-row
+                          .lk-field.lk-col.lk-col_md_6(xmlns="http://www.w3.org/1999/html")
+                            label
+                              span(style='color:red') *
+                              |  Отчетный квартал
+                            input(type="text" name="quarter" value="4" placeholder='' pattern="^.*$" required readonly)
+                          .lk-field.lk-col.lk-col_md_6(xmlns="http://www.w3.org/1999/html")
+                            label
+                              span(style='color:red') *
+                              |  Отчетный год
+                            input(type="text" name="year" value="2021" placeholder="гггг" pattern="^.*$" required readonly)
+
+
+
+
+
+
+
+    script(src='./assets/js/airdatepicker.js')
+    script(src='./assets/js/quarter-report-form-validation.js')
+    script(src='./assets/js/request-form.js')
+    script(src='./assets/js/tooltipster.js')

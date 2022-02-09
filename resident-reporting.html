@@ -1,0 +1,94 @@
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="./lk.css" rel="stylesheet"/>
+    <link href="./style.css" rel="stylesheet"/>
+    <link href="./assets/css/airdatepicker.css" rel="stylesheet"/>
+    <link href="./assets/css/request-form.css" rel="stylesheet"/>
+    <link href="./assets/css/tooltipster.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="lk-wrap">
+      <div class="container">
+        <div class="lk-row lk-body">
+          <div class="lk-aside lk-col lk-col_lg_3"></div>
+          <div class="lk-content lk-col lk-col_lg_9">
+            <div class="lk-content__header is-flexbox is-flexbox_center is-flexbox_justify">
+              <h1 class="lk-page-head__title">Отчётность резидента</h1>
+            </div>
+            <DIV><a class="down-link" download="download" title="Инструкция по заполнению отчетности" href="/upload/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%80%D0%B5%D0%B7%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B0.pdf"><span class="down-link__img_inv"></span><span class="down-link__text" style="max-width: 96%"><span class="down-link__name">Инструкция по заполнению отчетности</span><span class="down-link__info">PDF 638 КБ</span></span></a>
+              <DIV style="float: right"><a class="lk-btn lk-btn_w lk-btn-disabled" href="#" title="Печать возможна только при статусе отчёта &quot;Обработан&quot;">Распечатать</a></DIV>
+            </DIV>
+            <form class="lk-form--request" action="action" method="post" id="request-residency">
+              <div class="lk-box">
+                <div class="lk-form">
+                  <div class="lk-box__body">
+                    <fieldset>
+                      <div class="lk-row">
+                        <div class="lk-field lk-col lk-col_md_12">
+                          <label>Проект:</label>
+                          <p>Строительство холодильного склада</p>
+                          <input type="hidden" name="PROJECT_ID" value="79951"/>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <div class="lk-row">
+                        <div class="lk-field lk-col lk-col_md_12">
+                          <label>Компания:</label>
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td style="width=150px">Наименование:</td>
+                                <td>ОББРФ ООО</td>
+                              </tr>
+                              <tr>
+                                <td>ИНН:</td>
+                                <td>2508002788</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+              <div id="request-residency-fields">
+                <div class="lk-box lk-box_odd">
+                  <div class="lk-form">
+                    <div class="lk-box__header lk-box__header_plain">
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div class="lk-title lk-ttu">Период отчетности</div>
+                      </div>
+                    </div>
+                    <div class="lk-box__body">
+                      <fieldset>
+                        <div class="lk-row">
+                          <div class="lk-field lk-col lk-col_md_6" xmlns="http://www.w3.org/1999/html">
+                            <label><span style="color:red">*</span> Отчетный квартал</label>
+                            <input type="text" name="quarter" value="4" placeholder="" pattern="^.*$" required="required" readonly="readonly"/>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_6" xmlns="http://www.w3.org/1999/html">
+                            <label><span style="color:red">*</span> Отчетный год</label>
+                            <input type="text" name="year" value="2021" placeholder="гггг" pattern="^.*$" required="required" readonly="readonly"/>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/airdatepicker.js"></script>
+    <script src="./assets/js/quarter-report-form-validation.js"></script>
+    <script src="./assets/js/request-form.js"></script>
+    <script src="./assets/js/tooltipster.js"></script>
+  </body>
+</html>
