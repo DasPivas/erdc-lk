@@ -3,10 +3,17 @@ html(lang="ru")
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href="./lk.css" rel="stylesheet")
-    link(href="./style.css" rel="stylesheet")
+    //link(href="./style.css" rel="stylesheet")
+    link(href="./assets/css/app.min.css" rel="stylesheet")
     link(href="./assets/css/airdatepicker.css" rel="stylesheet")
     link(href="./assets/css/request-form.css" rel="stylesheet")
     link(href="./assets/css/tooltipster.css" rel="stylesheet")
+    style(type='text/css').
+      input:read-only, select:read-only, textarea:read-only, .chosen-disabled {
+        opacity: 0.5;
+        border: 1px solid #cdd9e8 !important;
+        }
+      input[type="text"]::placeholder { color: #000;!important; }
 
   body
     .lk-wrap
@@ -42,7 +49,7 @@ html(lang="ru")
                           table
                             tbody
                               tr
-                                td(style='width=150px') Наименование:
+                                td(style='width: 150px') Наименование:
                                 td ОББРФ ООО
                               tr
                                 td ИНН:
@@ -66,6 +73,54 @@ html(lang="ru")
                               span(style='color:red') *
                               |  Отчетный год
                             input(type="text" name="year" value="2021" placeholder="гггг" pattern="^.*$" required readonly)
+                .lk-box.lk-box_odd
+                  .lk-form
+                    .lk-box__header.lk-box__header_plain
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        .lk-title.lk-ttu 1. Контактная информация
+                    .lk-box__body
+                      fieldset
+                        .lk-row
+                          .lk-field.lk-col.lk-col_md_12(xmlns="http://www.w3.org/1999/html")
+                            label
+                              span(style='color:red') *
+                              |  ФИО представителя
+                            input(type="text" name="applicantFullName" value="Крылова Алена Шарипчановна" placeholder='' pattern="^.*$" required readonly)
+                          .lk-field.lk-col.lk-col_md_12(xmlns="http://www.w3.org/1999/html")
+                            label
+                              span(style='color:red') *
+                              |  Должность представителя
+                            input(type="text" name="applicantPosition" value="Главный бухгалтер" placeholder='' pattern="^.*$" required readonly)
+                          .lk-field.lk-col.lk-col_md_12(xmlns="http://www.w3.org/1999/html")
+                            label
+                              span(style='color:red') *
+                              |  Контактный номер телефона
+                            input(type="text" name="applicantPhone" value="8(4236)999999" placeholder='' pattern="^.*$" required readonly)
+                .lk-box.lk-box_odd
+                  .lk-form
+                    .lk-box__header.lk-box__header_plain
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        .lk-title.lk-ttu 2. Общая информация о проекте
+                    .lk-box__body
+                      fieldset
+                        .lk-row
+                          .lk-field.lk-col.lk-col_md_12(xmlns="http://www.w3.org/1999/html")
+                            label
+                              span(style='color:red') *
+                              |  Режим налогообложения
+                            select.js-select.chosen_wide(name="taxRegime" data-entity="TAX_REGIME" required style="display: none;")
+                              option
+                              option(value='1') Общий
+                              option(value='2') УСН
+                              option(value='3') ЕСХН
+                              option(value='4') ЕНВД
+                              option(value='5') Другое
+                              option(value='6') ПСН
+                          .lk-field.lk-col.lk-col_md_12(xmlns="http://www.w3.org/1999/html")
+                            label
+                              |  Таможенная процедура: свободная таможенная зона
+                            input#radio_freeCustomsZone_1(type="checkbox" name="freeCustomsZone[]" value="1")
+                            label(for='radio_freeCustomsZone_1') Применяется
 
 
 

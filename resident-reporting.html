@@ -4,10 +4,19 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="./lk.css" rel="stylesheet"/>
-    <link href="./style.css" rel="stylesheet"/>
+    <!--link(href="./style.css" rel="stylesheet")-->
+    <link href="./assets/css/app.min.css" rel="stylesheet"/>
     <link href="./assets/css/airdatepicker.css" rel="stylesheet"/>
     <link href="./assets/css/request-form.css" rel="stylesheet"/>
     <link href="./assets/css/tooltipster.css" rel="stylesheet"/>
+    <style type="text/css">
+      input:read-only, select:read-only, textarea:read-only, .chosen-disabled {
+        opacity: 0.5;
+        border: 1px solid #cdd9e8 !important;
+        }
+      input[type="text"]::placeholder { color: #000;!important; }
+      
+    </style>
   </head>
   <body>
     <div class="lk-wrap">
@@ -41,7 +50,7 @@
                           <table>
                             <tbody>
                               <tr>
-                                <td style="width=150px">Наименование:</td>
+                                <td style="width: 150px">Наименование:</td>
                                 <td>ОББРФ ООО</td>
                               </tr>
                               <tr>
@@ -74,6 +83,65 @@
                           <div class="lk-field lk-col lk-col_md_6" xmlns="http://www.w3.org/1999/html">
                             <label><span style="color:red">*</span> Отчетный год</label>
                             <input type="text" name="year" value="2021" placeholder="гггг" pattern="^.*$" required="required" readonly="readonly"/>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-box lk-box_odd">
+                  <div class="lk-form">
+                    <div class="lk-box__header lk-box__header_plain">
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div class="lk-title lk-ttu">1. Контактная информация</div>
+                      </div>
+                    </div>
+                    <div class="lk-box__body">
+                      <fieldset>
+                        <div class="lk-row">
+                          <div class="lk-field lk-col lk-col_md_12" xmlns="http://www.w3.org/1999/html">
+                            <label><span style="color:red">*</span> ФИО представителя</label>
+                            <input type="text" name="applicantFullName" value="Крылова Алена Шарипчановна" placeholder="" pattern="^.*$" required="required" readonly="readonly"/>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12" xmlns="http://www.w3.org/1999/html">
+                            <label><span style="color:red">*</span> Должность представителя</label>
+                            <input type="text" name="applicantPosition" value="Главный бухгалтер" placeholder="" pattern="^.*$" required="required" readonly="readonly"/>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12" xmlns="http://www.w3.org/1999/html">
+                            <label><span style="color:red">*</span> Контактный номер телефона</label>
+                            <input type="text" name="applicantPhone" value="8(4236)999999" placeholder="" pattern="^.*$" required="required" readonly="readonly"/>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-box lk-box_odd">
+                  <div class="lk-form">
+                    <div class="lk-box__header lk-box__header_plain">
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div class="lk-title lk-ttu">2. Общая информация о проекте</div>
+                      </div>
+                    </div>
+                    <div class="lk-box__body">
+                      <fieldset>
+                        <div class="lk-row">
+                          <div class="lk-field lk-col lk-col_md_12" xmlns="http://www.w3.org/1999/html">
+                            <label><span style="color:red">*</span> Режим налогообложения</label>
+                            <select class="js-select chosen_wide" name="taxRegime" data-entity="TAX_REGIME" required="required" style="display: none;">
+                              <option></option>
+                              <option value="1">Общий</option>
+                              <option value="2">УСН</option>
+                              <option value="3">ЕСХН</option>
+                              <option value="4">ЕНВД</option>
+                              <option value="5">Другое</option>
+                              <option value="6">ПСН</option>
+                            </select>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12" xmlns="http://www.w3.org/1999/html">
+                            <label> Таможенная процедура: свободная таможенная зона</label>
+                            <input id="radio_freeCustomsZone_1" type="checkbox" name="freeCustomsZone[]" value="1"/>
+                            <label for="radio_freeCustomsZone_1">Применяется</label>
                           </div>
                         </div>
                       </fieldset>
