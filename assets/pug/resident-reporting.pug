@@ -63,12 +63,12 @@ html(lang="ru")
                     .lk-box__body
                       fieldset
                         .lk-row
-                          .lk-field.lk-col.lk-col_md_6(xmlns="http://www.w3.org/1999/html")
+                          .lk-field.lk-col.lk-col_md_6 
                             label
                               span(style='color:red') *
                               |  Отчетный квартал
                             input(type="text" name="quarter" value="4" placeholder='' pattern="^.*$" required readonly)
-                          .lk-field.lk-col.lk-col_md_6(xmlns="http://www.w3.org/1999/html")
+                          .lk-field.lk-col.lk-col_md_6 
                             label
                               span(style='color:red') *
                               |  Отчетный год
@@ -81,21 +81,22 @@ html(lang="ru")
                     .lk-box__body
                       fieldset
                         .lk-row
-                          .lk-field.lk-col.lk-col_md_12(xmlns="http://www.w3.org/1999/html")
+                          .lk-field.lk-col.lk-col_md_12 
                             label
                               span(style='color:red') *
                               |  ФИО представителя
                             input(type="text" name="applicantFullName" value="Крылова Алена Шарипчановна" placeholder='' pattern="^.*$" required readonly)
-                          .lk-field.lk-col.lk-col_md_12(xmlns="http://www.w3.org/1999/html")
+                          .lk-field.lk-col.lk-col_md_12 
                             label
                               span(style='color:red') *
                               |  Должность представителя
                             input(type="text" name="applicantPosition" value="Главный бухгалтер" placeholder='' pattern="^.*$" required readonly)
-                          .lk-field.lk-col.lk-col_md_12(xmlns="http://www.w3.org/1999/html")
+                          .lk-field.lk-col.lk-col_md_12 
                             label
                               span(style='color:red') *
                               |  Контактный номер телефона
                             input(type="text" name="applicantPhone" value="8(4236)999999" placeholder='' pattern="^.*$" required readonly)
+
                 .lk-box.lk-box_odd
                   .lk-form
                     .lk-box__header.lk-box__header_plain
@@ -104,7 +105,7 @@ html(lang="ru")
                     .lk-box__body
                       fieldset
                         .lk-row
-                          .lk-field.lk-col.lk-col_md_12(xmlns="http://www.w3.org/1999/html")
+                          .lk-field.lk-col.lk-col_md_12 
                             label
                               span(style='color:red') *
                               |  Режим налогообложения
@@ -116,19 +117,245 @@ html(lang="ru")
                               option(value='4') ЕНВД
                               option(value='5') Другое
                               option(value='6') ПСН
-                          .lk-field.lk-col.lk-col_md_12(xmlns="http://www.w3.org/1999/html")
+                          .lk-field.lk-col.lk-col_md_12 
                             label
                               |  Таможенная процедура: свободная таможенная зона
                             input#radio_freeCustomsZone_1(type="checkbox" name="freeCustomsZone[]" value="1")
                             label(for='radio_freeCustomsZone_1') Применяется
 
+                .lk-box.lk-box_odd
+                  .lk-form
+                    .lk-box__header.lk-box__header_plain
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        .lk-title.lk-ttu 3. ИНФОРМАЦИЯ О ХОДЕ РЕАЛИЗАЦИИ ПРОЕКТА
+                    .lk-box__body
+                      fieldset
+                        .lk-row
+                          .lk-field.lk-col.lk-col_md_12()
+                            label
+                              span(style='color:red') *
+                              |  Подбор земельного участка
+                            select.js-select.chosen_wide(name="landSearchStatus" data-entity="STAGE_STATUS" required )
+                              option
+                              option(value='1') Не начато
+                              option(value='2') Выполняется
+                              option(value='3') Завершено
+                              option(value='4') Не требуется
+                          .lk-field.lk-col.lk-col_md_12()
+                            label
+                              span(style='color:red') *
+                              |  Подготовка и оформление земельного участка, зданий/ сооружений
+                            select.js-select.chosen_wide(name="landRegistrationStatus" data-entity="STAGE_STATUS" required )
+                              option
+                              option(value='1') Не начато
+                              option(value='2') Выполняется
+                              option(value='3') Завершено
+                              option(value='4') Не требуется
+                          .lk-field.lk-col.lk-col_md_12()
+                            label
+                              span(style='color:red') *
+                              |  Проектно-изыскательские работы
+                            select.js-select.chosen_wide(name="geotechnicalWorksStatus" data-entity="STAGE_STATUS" required )
+                              option
+                              option(value='1') Не начато
+                              option(value='2') Выполняется
+                              option(value='3') Завершено
+                              option(value='4') Не требуется
+                          .lk-field.lk-col.lk-col_md_12()
+                            label
+                              span(style='color:red') *
+                              |  Строительно-монтажные работы
+                            select.js-select.chosen_wide(name="constructionStatus" data-entity="STAGE_STATUS" required )
+                              option
+                              option(value='1') Не начато
+                              option(value='2') Выполняется
+                              option(value='3') Завершено
+                              option(value='4') Не требуется
+                          .lk-field.lk-col.lk-col_md_12()
+                            label
+                              span(style='color:red') *
+                              |  Приобретение оборудования и материалов
+                            select.js-select.chosen_wide(name="equipmentPurchaseStatus" data-entity="STAGE_STATUS" required )
+                              option
+                              option(value='1') Не начато
+                              option(value='2') Выполняется
+                              option(value='3') Завершено
+                              option(value='4') Не требуется
+                          .lk-field.lk-col.lk-col_md_12()
+                            label
+                              span(style='color:red') *
+                              |  Ввод в эксплуатацию объекта капитального строительства/ реконструкции
+                            select.js-select.chosen_wide(name="commissioningStatus" data-entity="STAGE_STATUS" required )
+                              option
+                              option(value='1') Не начато
+                              option(value='2') Выполняется
+                              option(value='3') Завершено
+                              option(value='4') Не требуется
+                          .lk-field.lk-col.lk-col_md_12()
+                            label
+                              span(style='color:red') *
+                              |  Запуск производства / начало оказания услуг
+                            select.js-select.chosen_wide(name="productionLaunchStatus" data-entity="STAGE_STATUS" required )
+                              option
+                              option(value='1') Не начато
+                              option(value='2') Выполняется
+                              option(value='3') Завершено
+                              option(value='4') Не требуется
+
+                .lk-box.lk-box_odd
+                  .lk-form
+                    .lk-box__header.lk-box__header_plain
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        .lk-title.lk-ttu 4. ОБЪЕМ ОСУЩЕСТВЛЕННЫХ ИНВЕСТИЦИЙ
+                    .lk-box__body
+                      fieldset
+                        .lk-row
+                          .lk-field.lk-col.lk-col_md_12 
+                            label
+                              span(style='color:red') *
+                              |  Финансирование капитальных вложений (строительство, оборудование, ПИРы и пр.) накопительным итогом с даты заключения соглашения, руб. (без НДС)
+                            input(type="text" name="actualCapitalInvestment" value="" placeholder='0.00' pattern="^[0-9]*[.,]?[0-9]{1,2}$" required)
+                          .lk-field.lk-col.lk-col_md_12 
+                            label
+                              span(style='color:red') *
+                              |  Освоение капитальных вложений (строительство, оборудование, ПИРы и пр.) накопительным итогом с даты заключения соглашения, руб. (без НДС)
+                            input(type="text" name="actualMasteringCapitalInvestment" value="" placeholder='0.00' pattern="^[0-9]*[.,]?[0-9]{1,2}$" required)
+
+                .lk-box.lk-box_odd
+                  .lk-form
+                    .lk-box__header.lk-box__header_plain
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        .lk-title.lk-ttu 5. РАБОЧИЕ МЕСТА
+                    .lk-box__body
+                      fieldset
+                        .lk-row
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              |  Количество создаваемых рабочих мест (в соотв. со штатным расписанием)
+                            .lk-row
+                              .lk-field.lk-col.lk-col_md_6 
+                                label
+                                  |  Планируемые (в соответствии с соглашением), ед.
+                                input(type="text" name="JOBS_ALL[plannedWorkplaces][]" value="" placeholder='0.0' pattern="^[0-9]*[.,]?[0-9]{1,2}$" required)
+                              .lk-field.lk-col.lk-col_md_6 
+                                label
+                                  span(style='color:red') *
+                                  |  Созданные на конец отчетного периода (по проекту)
+                                input(type="text" name="JOBS_ALL[actualWorkplaces][]" value="" placeholder='0.0' pattern="^[0-9]*[.,]?[0-9]{1,2}$" required)
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              |  Количество трудоустроенных сотрудников
+                            .lk-row
+                              .lk-field.lk-col.lk-col_md_6 
+                                label
+                                  |  Планируемые (в соответствии с соглашением), ед.
+                                input(type="text" name="JOBS_EMPLOYED[plannedEmployed][]" value="" placeholder='0' pattern='^[\d]*$' required)
+                              .lk-field.lk-col.lk-col_md_6 
+                                label
+                                  span(style='color:red') *
+                                  | Трудоустроенные на конец отчетного периода (по проекту)
+                                input(type="text" name="JOBS_EMPLOYED[actualEmployed][]" value="" placeholder='0' pattern='^[\d]*$' required)
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              |  В т.ч. высокопроизводительных сотрудников
+                            .lk-row
+                              .lk-field.lk-col.lk-col_md_6 
+                                label
+                                  |  Планируемые (с даты заключения соглашения), ед.
+                                input(type="text" name="JOBS_HI_PERF[plannedHighPerformanceJobs][]" value="" placeholder='0' pattern='^[\d]*$' required)
+                              .lk-field.lk-col.lk-col_md_6 
+                                label
+                                  span(style='color:red') *
+                                  |  Созданные на конец отчетного периода (по проекту)
+                                input(type="text" name="JOBS_HI_PERF[actualHighPerformanceJobs][]" value="" placeholder='0' pattern='^[\d]*$' required)
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              | В т.ч. сотрудников, замещенных иностранной рабочей силой
+                            .lk-row
+                              .lk-field.lk-col.lk-col_md_6 
+                                label
+                                  |  Планируемые (с даты заключения соглашения), ед.
+                                input(type="text" name="JOBS_FOREIGN[plannedForeignWorkers][]" value="" placeholder='0' pattern='^[\d]*$' required)
+                              .lk-field.lk-col.lk-col_md_6 
+                                label
+                                  span(style='color:red') *
+                                  |  Трудоустроенные на конец отчетного периода (по проекту)
+                                input(type="text" name="JOBS_FOREIGN[actualForeignWorkers][]" value="" placeholder='0' pattern='^[\d]*$' required)
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              span(style='color:red') *
+                              | В т.ч. сотрудников, замещенных иностранной рабочей силой
+                            input(type="text" name="averageSalarySize" value="" placeholder='0.0' pattern="^[0-9]*[.,]?[0-9]{1,2}$" required)
+
+                .lk-box.lk-box_odd
+                  .lk-form
+                    .lk-box__header.lk-box__header_plain
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        .lk-title.lk-ttu 6. ОБЪЕМ ПРОИЗВОДСТВА
+                    .lk-box__body
+                      fieldset
+                        .lk-row
+                          .lk-field.lk-col.lk-col_md_12 
+                            label
+                              span(style='color:red') *
+                              |  Выручка от реализации товаров и услуг за отчетный квартал, руб.
+                            input(type="text" name="salesVolume" value="" placeholder='0.00' pattern="^[0-9]*[.,]?[0-9]{1,2}$" required)
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              |  в том числе на экспорт, руб.
+                            input(type="text" name="exportVolume" value="" placeholder='0.00' pattern="^[0-9]*[.,]?[0-9]{1,2}$")
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              span(style='color:red') *
+                              | Расходы, связанные с производством и реализацией товаров, работ, услуг, за отчетный квартал (руб.)
+                            input(type="text" name="productionCosts" value="" placeholder='0.00' pattern="^[0-9]*[.,]?[0-9]{1,2}$" required)
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              | В т.ч. оплата труда, (руб.)
+                            input(type="text" name="laborCosts" value="" placeholder='0.00' pattern="^[0-9]*[.,]?[0-9]{1,2}$")
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              | В т.ч. амортизация, (руб.)
+                            input(type="text" name="depreciationCosts" value="" placeholder='0.00' pattern="^[0-9]*[.,]?[0-9]{1,2}$")
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              | Расходы, связанные с отчислением в гос.внебюджетные фонды, (руб.)
+                            input(type="text" name="extrabudgetaryCosts" value="" placeholder='0.00' pattern="^[0-9]*[.,]?[0-9]{1,2}$")
+
+                .lk-box.lk-box_odd
+                  .lk-form
+                    .lk-box__header.lk-box__header_plain
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        .lk-title.lk-ttu 7. ПРОБЛЕМНЫЕ ВОПРОСЫ
+                    .lk-box__body
+                      fieldset
+                        .lk-row
+                          .lk-field.lk-col.lk-col_md_12.multiply-table
+                            .lk-row
+                              .delete-btn.js-delete-founder(onclick='deleteRow(this);') Delete
+                              .lk-field.lk-col.lk-col_md_4
+                                label
+                                  | Категория
+                                select.js-select.chosen_wide(name="productionLaunchStatus" data-entity="STAGE_STATUS" required )
+                                  option
+                                  option(value='1') Не начато
+                                  option(value='2') Выполняется
+                                  option(value='3') Завершено
+                                  option(value='4') Не требуется
+
+                            a.lk-btn.lk-btn_i.lk-r.multiply-table-add(href='#')
+                              i.im.im-plus
+                              | Добавить
 
 
 
 
 
 
-    script(src='./assets/js/airdatepicker.js')
+
+
+
+script(src='./assets/js/airdatepicker.js')
     script(src='./assets/js/quarter-report-form-validation.js')
     script(src='./assets/js/request-form.js')
     script(src='./assets/js/tooltipster.js')

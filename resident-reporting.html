@@ -76,11 +76,11 @@
                     <div class="lk-box__body">
                       <fieldset>
                         <div class="lk-row">
-                          <div class="lk-field lk-col lk-col_md_6" xmlns="http://www.w3.org/1999/html">
+                          <div class="lk-field lk-col lk-col_md_6"> 
                             <label><span style="color:red">*</span> Отчетный квартал</label>
                             <input type="text" name="quarter" value="4" placeholder="" pattern="^.*$" required="required" readonly="readonly"/>
                           </div>
-                          <div class="lk-field lk-col lk-col_md_6" xmlns="http://www.w3.org/1999/html">
+                          <div class="lk-field lk-col lk-col_md_6"> 
                             <label><span style="color:red">*</span> Отчетный год</label>
                             <input type="text" name="year" value="2021" placeholder="гггг" pattern="^.*$" required="required" readonly="readonly"/>
                           </div>
@@ -99,15 +99,15 @@
                     <div class="lk-box__body">
                       <fieldset>
                         <div class="lk-row">
-                          <div class="lk-field lk-col lk-col_md_12" xmlns="http://www.w3.org/1999/html">
+                          <div class="lk-field lk-col lk-col_md_12"> 
                             <label><span style="color:red">*</span> ФИО представителя</label>
                             <input type="text" name="applicantFullName" value="Крылова Алена Шарипчановна" placeholder="" pattern="^.*$" required="required" readonly="readonly"/>
                           </div>
-                          <div class="lk-field lk-col lk-col_md_12" xmlns="http://www.w3.org/1999/html">
+                          <div class="lk-field lk-col lk-col_md_12"> 
                             <label><span style="color:red">*</span> Должность представителя</label>
                             <input type="text" name="applicantPosition" value="Главный бухгалтер" placeholder="" pattern="^.*$" required="required" readonly="readonly"/>
                           </div>
-                          <div class="lk-field lk-col lk-col_md_12" xmlns="http://www.w3.org/1999/html">
+                          <div class="lk-field lk-col lk-col_md_12"> 
                             <label><span style="color:red">*</span> Контактный номер телефона</label>
                             <input type="text" name="applicantPhone" value="8(4236)999999" placeholder="" pattern="^.*$" required="required" readonly="readonly"/>
                           </div>
@@ -126,7 +126,7 @@
                     <div class="lk-box__body">
                       <fieldset>
                         <div class="lk-row">
-                          <div class="lk-field lk-col lk-col_md_12" xmlns="http://www.w3.org/1999/html">
+                          <div class="lk-field lk-col lk-col_md_12"> 
                             <label><span style="color:red">*</span> Режим налогообложения</label>
                             <select class="js-select chosen_wide" name="taxRegime" data-entity="TAX_REGIME" required="required" style="display: none;">
                               <option></option>
@@ -138,10 +138,258 @@
                               <option value="6">ПСН</option>
                             </select>
                           </div>
-                          <div class="lk-field lk-col lk-col_md_12" xmlns="http://www.w3.org/1999/html">
+                          <div class="lk-field lk-col lk-col_md_12"> 
                             <label> Таможенная процедура: свободная таможенная зона</label>
                             <input id="radio_freeCustomsZone_1" type="checkbox" name="freeCustomsZone[]" value="1"/>
                             <label for="radio_freeCustomsZone_1">Применяется</label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-box lk-box_odd">
+                  <div class="lk-form">
+                    <div class="lk-box__header lk-box__header_plain">
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div class="lk-title lk-ttu">3. ИНФОРМАЦИЯ О ХОДЕ РЕАЛИЗАЦИИ ПРОЕКТА</div>
+                      </div>
+                    </div>
+                    <div class="lk-box__body">
+                      <fieldset>
+                        <div class="lk-row">
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label><span style="color:red">*</span> Подбор земельного участка</label>
+                            <select class="js-select chosen_wide" name="landSearchStatus" data-entity="STAGE_STATUS" required="required">
+                              <option></option>
+                              <option value="1">Не начато</option>
+                              <option value="2">Выполняется</option>
+                              <option value="3">Завершено</option>
+                              <option value="4">Не требуется</option>
+                            </select>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label><span style="color:red">*</span> Подготовка и оформление земельного участка, зданий/ сооружений</label>
+                            <select class="js-select chosen_wide" name="landRegistrationStatus" data-entity="STAGE_STATUS" required="required">
+                              <option></option>
+                              <option value="1">Не начато</option>
+                              <option value="2">Выполняется</option>
+                              <option value="3">Завершено</option>
+                              <option value="4">Не требуется</option>
+                            </select>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label><span style="color:red">*</span> Проектно-изыскательские работы</label>
+                            <select class="js-select chosen_wide" name="geotechnicalWorksStatus" data-entity="STAGE_STATUS" required="required">
+                              <option></option>
+                              <option value="1">Не начато</option>
+                              <option value="2">Выполняется</option>
+                              <option value="3">Завершено</option>
+                              <option value="4">Не требуется</option>
+                            </select>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label><span style="color:red">*</span> Строительно-монтажные работы</label>
+                            <select class="js-select chosen_wide" name="constructionStatus" data-entity="STAGE_STATUS" required="required">
+                              <option></option>
+                              <option value="1">Не начато</option>
+                              <option value="2">Выполняется</option>
+                              <option value="3">Завершено</option>
+                              <option value="4">Не требуется</option>
+                            </select>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label><span style="color:red">*</span> Приобретение оборудования и материалов</label>
+                            <select class="js-select chosen_wide" name="equipmentPurchaseStatus" data-entity="STAGE_STATUS" required="required">
+                              <option></option>
+                              <option value="1">Не начато</option>
+                              <option value="2">Выполняется</option>
+                              <option value="3">Завершено</option>
+                              <option value="4">Не требуется</option>
+                            </select>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label><span style="color:red">*</span> Ввод в эксплуатацию объекта капитального строительства/ реконструкции</label>
+                            <select class="js-select chosen_wide" name="commissioningStatus" data-entity="STAGE_STATUS" required="required">
+                              <option></option>
+                              <option value="1">Не начато</option>
+                              <option value="2">Выполняется</option>
+                              <option value="3">Завершено</option>
+                              <option value="4">Не требуется</option>
+                            </select>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label><span style="color:red">*</span> Запуск производства / начало оказания услуг</label>
+                            <select class="js-select chosen_wide" name="productionLaunchStatus" data-entity="STAGE_STATUS" required="required">
+                              <option></option>
+                              <option value="1">Не начато</option>
+                              <option value="2">Выполняется</option>
+                              <option value="3">Завершено</option>
+                              <option value="4">Не требуется</option>
+                            </select>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-box lk-box_odd">
+                  <div class="lk-form">
+                    <div class="lk-box__header lk-box__header_plain">
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div class="lk-title lk-ttu">4. ОБЪЕМ ОСУЩЕСТВЛЕННЫХ ИНВЕСТИЦИЙ</div>
+                      </div>
+                    </div>
+                    <div class="lk-box__body">
+                      <fieldset>
+                        <div class="lk-row">
+                          <div class="lk-field lk-col lk-col_md_12"> 
+                            <label><span style="color:red">*</span> Финансирование капитальных вложений (строительство, оборудование, ПИРы и пр.) накопительным итогом с даты заключения соглашения, руб. (без НДС)</label>
+                            <input type="text" name="actualCapitalInvestment" value="" placeholder="0.00" pattern="^[0-9]*[.,]?[0-9]{1,2}$" required="required"/>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12"> 
+                            <label><span style="color:red">*</span> Освоение капитальных вложений (строительство, оборудование, ПИРы и пр.) накопительным итогом с даты заключения соглашения, руб. (без НДС)</label>
+                            <input type="text" name="actualMasteringCapitalInvestment" value="" placeholder="0.00" pattern="^[0-9]*[.,]?[0-9]{1,2}$" required="required"/>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-box lk-box_odd">
+                  <div class="lk-form">
+                    <div class="lk-box__header lk-box__header_plain">
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div class="lk-title lk-ttu">5. РАБОЧИЕ МЕСТА</div>
+                      </div>
+                    </div>
+                    <div class="lk-box__body">
+                      <fieldset>
+                        <div class="lk-row">
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label> Количество создаваемых рабочих мест (в соотв. со штатным расписанием)</label>
+                            <div class="lk-row">
+                              <div class="lk-field lk-col lk-col_md_6"> 
+                                <label> Планируемые (в соответствии с соглашением), ед.</label>
+                                <input type="text" name="JOBS_ALL[plannedWorkplaces][]" value="" placeholder="0.0" pattern="^[0-9]*[.,]?[0-9]{1,2}$" required="required"/>
+                              </div>
+                              <div class="lk-field lk-col lk-col_md_6"> 
+                                <label><span style="color:red">*</span> Созданные на конец отчетного периода (по проекту)</label>
+                                <input type="text" name="JOBS_ALL[actualWorkplaces][]" value="" placeholder="0.0" pattern="^[0-9]*[.,]?[0-9]{1,2}$" required="required"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label> Количество трудоустроенных сотрудников</label>
+                            <div class="lk-row">
+                              <div class="lk-field lk-col lk-col_md_6"> 
+                                <label> Планируемые (в соответствии с соглашением), ед.</label>
+                                <input type="text" name="JOBS_EMPLOYED[plannedEmployed][]" value="" placeholder="0" pattern="^[d]*$" required="required"/>
+                              </div>
+                              <div class="lk-field lk-col lk-col_md_6"> 
+                                <label><span style="color:red">*</span>Трудоустроенные на конец отчетного периода (по проекту)</label>
+                                <input type="text" name="JOBS_EMPLOYED[actualEmployed][]" value="" placeholder="0" pattern="^[d]*$" required="required"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label> В т.ч. высокопроизводительных сотрудников</label>
+                            <div class="lk-row">
+                              <div class="lk-field lk-col lk-col_md_6"> 
+                                <label> Планируемые (с даты заключения соглашения), ед.</label>
+                                <input type="text" name="JOBS_HI_PERF[plannedHighPerformanceJobs][]" value="" placeholder="0" pattern="^[d]*$" required="required"/>
+                              </div>
+                              <div class="lk-field lk-col lk-col_md_6"> 
+                                <label><span style="color:red">*</span> Созданные на конец отчетного периода (по проекту)</label>
+                                <input type="text" name="JOBS_HI_PERF[actualHighPerformanceJobs][]" value="" placeholder="0" pattern="^[d]*$" required="required"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label>В т.ч. сотрудников, замещенных иностранной рабочей силой</label>
+                            <div class="lk-row">
+                              <div class="lk-field lk-col lk-col_md_6"> 
+                                <label> Планируемые (с даты заключения соглашения), ед.</label>
+                                <input type="text" name="JOBS_FOREIGN[plannedForeignWorkers][]" value="" placeholder="0" pattern="^[d]*$" required="required"/>
+                              </div>
+                              <div class="lk-field lk-col lk-col_md_6"> 
+                                <label><span style="color:red">*</span> Трудоустроенные на конец отчетного периода (по проекту)</label>
+                                <input type="text" name="JOBS_FOREIGN[actualForeignWorkers][]" value="" placeholder="0" pattern="^[d]*$" required="required"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label><span style="color:red">*</span>В т.ч. сотрудников, замещенных иностранной рабочей силой</label>
+                            <input type="text" name="averageSalarySize" value="" placeholder="0.0" pattern="^[0-9]*[.,]?[0-9]{1,2}$" required="required"/>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-box lk-box_odd">
+                  <div class="lk-form">
+                    <div class="lk-box__header lk-box__header_plain">
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div class="lk-title lk-ttu">6. ОБЪЕМ ПРОИЗВОДСТВА</div>
+                      </div>
+                    </div>
+                    <div class="lk-box__body">
+                      <fieldset>
+                        <div class="lk-row">
+                          <div class="lk-field lk-col lk-col_md_12"> 
+                            <label><span style="color:red">*</span> Выручка от реализации товаров и услуг за отчетный квартал, руб.</label>
+                            <input type="text" name="salesVolume" value="" placeholder="0.00" pattern="^[0-9]*[.,]?[0-9]{1,2}$" required="required"/>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label> в том числе на экспорт, руб.</label>
+                            <input type="text" name="exportVolume" value="" placeholder="0.00" pattern="^[0-9]*[.,]?[0-9]{1,2}$"/>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label><span style="color:red">*</span>Расходы, связанные с производством и реализацией товаров, работ, услуг, за отчетный квартал (руб.)</label>
+                            <input type="text" name="productionCosts" value="" placeholder="0.00" pattern="^[0-9]*[.,]?[0-9]{1,2}$" required="required"/>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label>В т.ч. оплата труда, (руб.)</label>
+                            <input type="text" name="laborCosts" value="" placeholder="0.00" pattern="^[0-9]*[.,]?[0-9]{1,2}$"/>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label>В т.ч. амортизация, (руб.)</label>
+                            <input type="text" name="depreciationCosts" value="" placeholder="0.00" pattern="^[0-9]*[.,]?[0-9]{1,2}$"/>
+                          </div>
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label>Расходы, связанные с отчислением в гос.внебюджетные фонды, (руб.)</label>
+                            <input type="text" name="extrabudgetaryCosts" value="" placeholder="0.00" pattern="^[0-9]*[.,]?[0-9]{1,2}$"/>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-box lk-box_odd">
+                  <div class="lk-form">
+                    <div class="lk-box__header lk-box__header_plain">
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div class="lk-title lk-ttu">7. ПРОБЛЕМНЫЕ ВОПРОСЫ</div>
+                      </div>
+                    </div>
+                    <div class="lk-box__body">
+                      <fieldset>
+                        <div class="lk-row">
+                          <div class="lk-field lk-col lk-col_md_12 multiply-table">
+                            <div class="lk-row">
+                              <div class="delete-btn js-delete-founder" onclick="deleteRow(this);">Delete</div>
+                              <div class="lk-field lk-col lk-col_md_4">
+                                <label>Категория</label>
+                                <select class="js-select chosen_wide" name="productionLaunchStatus" data-entity="STAGE_STATUS" required="required">
+                                  <option></option>
+                                  <option value="1">Не начато</option>
+                                  <option value="2">Выполняется</option>
+                                  <option value="3">Завершено</option>
+                                  <option value="4">Не требуется</option>
+                                </select>
+                              </div>
+                            </div><a class="lk-btn lk-btn_i lk-r multiply-table-add" href="#"><i class="im im-plus"></i>Добавить</a>
                           </div>
                         </div>
                       </fieldset>
@@ -154,9 +402,10 @@
         </div>
       </div>
     </div>
-    <script src="./assets/js/airdatepicker.js"></script>
-    <script src="./assets/js/quarter-report-form-validation.js"></script>
-    <script src="./assets/js/request-form.js"></script>
-    <script src="./assets/js/tooltipster.js"></script>
   </body>
 </html>
+<script src="./assets/js/airdatepicker.js">
+  <script src="./assets/js/quarter-report-form-validation.js"></script>
+  <script src="./assets/js/request-form.js"></script>
+  <script src="./assets/js/tooltipster.js"></script>
+</script>
