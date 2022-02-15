@@ -273,7 +273,7 @@
                             <div class="lk-row">
                               <div class="lk-field lk-col lk-col_md_6"> 
                                 <label> Планируемые (в соответствии с соглашением), ед.</label>
-                                <input type="text" name="JOBS_ALL[plannedWorkplaces][]" value="" placeholder="0.0" pattern="^[0-9]*[.,]?[0-9]{1,2}$" required="required"/>
+                                <input type="text" name="JOBS_ALL[plannedWorkplaces][]" value="" placeholder="0.0" pattern="^[0-9]*[.,]?[0-9]{1,2}$"/>
                               </div>
                               <div class="lk-field lk-col lk-col_md_6"> 
                                 <label><span style="color:red">*</span> Созданные на конец отчетного периода (по проекту)</label>
@@ -286,7 +286,7 @@
                             <div class="lk-row">
                               <div class="lk-field lk-col lk-col_md_6"> 
                                 <label> Планируемые (в соответствии с соглашением), ед.</label>
-                                <input type="text" name="JOBS_EMPLOYED[plannedEmployed][]" value="" placeholder="0" pattern="^[d]*$" required="required"/>
+                                <input type="text" name="JOBS_EMPLOYED[plannedEmployed][]" value="" placeholder="0" pattern="^[d]*$"/>
                               </div>
                               <div class="lk-field lk-col lk-col_md_6"> 
                                 <label><span style="color:red">*</span>Трудоустроенные на конец отчетного периода (по проекту)</label>
@@ -299,7 +299,7 @@
                             <div class="lk-row">
                               <div class="lk-field lk-col lk-col_md_6"> 
                                 <label> Планируемые (с даты заключения соглашения), ед.</label>
-                                <input type="text" name="JOBS_HI_PERF[plannedHighPerformanceJobs][]" value="" placeholder="0" pattern="^[d]*$" required="required"/>
+                                <input type="text" name="JOBS_HI_PERF[plannedHighPerformanceJobs][]" value="" placeholder="0" pattern="^[d]*$"/>
                               </div>
                               <div class="lk-field lk-col lk-col_md_6"> 
                                 <label><span style="color:red">*</span> Созданные на конец отчетного периода (по проекту)</label>
@@ -312,7 +312,7 @@
                             <div class="lk-row">
                               <div class="lk-field lk-col lk-col_md_6"> 
                                 <label> Планируемые (с даты заключения соглашения), ед.</label>
-                                <input type="text" name="JOBS_FOREIGN[plannedForeignWorkers][]" value="" placeholder="0" pattern="^[d]*$" required="required"/>
+                                <input type="text" name="JOBS_FOREIGN[plannedForeignWorkers][]" value="" placeholder="0" pattern="^[d]*$"/>
                               </div>
                               <div class="lk-field lk-col lk-col_md_6"> 
                                 <label><span style="color:red">*</span> Трудоустроенные на конец отчетного периода (по проекту)</label>
@@ -483,7 +483,7 @@
                 </div>
                 <div class="lk-box">
                   <div class="lk-form">
-                    <div class="lk-box__footer lk-box__footer_btn"><a class="lk-btn lk-btn_i send-request" href="javascript:"><i class="im im-check"></i>Отправить отчёт</a><a class="save-request" href="javascript:">Сохранить черновик</a></div>
+                    <div class="lk-box__footer lk-box__footer_btn"><a class="lk-btn lk-btn_i send-request"><i class="im im-check"></i>Отправить отчёт</a><a class="save-request" href="javascript:">Сохранить черновик</a></div>
                   </div>
                 </div>
               </div>
@@ -492,12 +492,17 @@
         </div>
       </div>
     </div>
-    <script src="./assets/js/jquery-3.2.1.min.js"></script>
-    <script src="./assets/js/lk.js"></script>
     <script src="./assets/js/lk-plugins.js"></script>
+    <script src="./assets/js/lk.js"></script>
     <script src="./assets/js/airdatepicker.js"></script>
     <script src="./assets/js/quarter-report-form-validation.js"></script>
     <script src="./assets/js/request-form.js"></script>
     <script src="./assets/js/tooltipster.js"></script>
+    <script type="text/javascript">
+      new window.app.requestForm("#request-residency",{
+      fieldToUpdate : [],
+      selectValues : {'NEED_FOR_LAND':{'1':'Не требуется','2':'Обеспечен','3':'Частично обеспечен','4':'Не обеспечен'},'STAGE_STATUS':{'4':'Не требуется','1':'Не начато','2':'Выполняется','3':'Завершено'},'TAX_REGIME':{'5':'Другое','6':'ПСН','1':'Общий','2':'УСН','3':'ЕСХН','4':'ЕНВД'},'PROBLEM_CATEGORY':{'0':'Нет','3':'Земельно-имущественные отношения','4':'Административные барьеры','5':'Налогообложение и применение преференций','7':'Финансирование','11':'Взаимодействие с АО КРДВ (УК ТОР)','14':'Инфраструктура','16':'Подрядчики','21':'Внутренние проблемы резидента','24':'Исполнение обязательств по соглашению','27':'Получение документов от ФОИВ, РОИВ, ведомств и т.д.','28':'Контрольно-надзорное давление','29':'Кадры','30':'Сбыт продукции','31':'Земля СПВ (отмена преференции 26.10.2021)'}},
+      selectValuesActive : {'taxRegime':[['3']],'landSearchStatus':[[]],'landRegistrationStatus':[[]],'geotechnicalWorksStatus':[[]],'constructionStatus':[[]],'equipmentPurchaseStatus':[[]],'commissioningStatus':[[]],'productionLaunchStatus':[[]],'PROBLEMATIC_ISSUES[problemCategory][]':['']}		});
+    </script>
   </body>
 </html>

@@ -148,7 +148,6 @@ var func = {
             });
         }
         if ($().chosen) {
-            console.log($('select.js-select'))
             $('select.js-select').chosen({
                 disable_search: true,
                 inherit_select_classes: true,
