@@ -1,5 +1,5 @@
 
-<html lang="ru">
+<html class="js" lang="ru">
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -7,6 +7,8 @@
     <!--link(href="./style.css" rel="stylesheet")-->
     <link href="./assets/css/app.min.css" rel="stylesheet"/>
     <link href="./assets/css/airdatepicker.css" rel="stylesheet"/>
+    <link href="./assets/css/lk-plugins.css" rel="stylesheet"/>
+    <link href="./assets/css/lk-fonts.css" rel="stylesheet"/>
     <link href="./assets/css/request-form.css" rel="stylesheet"/>
     <link href="./assets/css/tooltipster.css" rel="stylesheet"/>
     <style type="text/css">
@@ -381,13 +383,33 @@
                               <div class="delete-btn js-delete-founder" onclick="deleteRow(this);">Delete</div>
                               <div class="lk-field lk-col lk-col_md_4">
                                 <label>Категория</label>
-                                <select class="js-select chosen_wide" name="productionLaunchStatus" data-entity="STAGE_STATUS" required="required">
-                                  <option></option>
-                                  <option value="1">Не начато</option>
-                                  <option value="2">Выполняется</option>
-                                  <option value="3">Завершено</option>
-                                  <option value="4">Не требуется</option>
+                                <select class="js-select chosen_wide" name="PROBLEMATIC_ISSUES[problemCategory][]">
+                                  <option value="0" selected="selected">Нет</option>
+                                  <option value="3">Земельно-имущественные отношения</option>
+                                  <option value="4">Административные барьеры</option>
+                                  <option value="5">Налогообложение и применение преференций</option>
+                                  <option value="7">Финансирование</option>
+                                  <option value="8">Взаимодействие с АО КРДВ (УК ТОР)</option>
+                                  <option value="9">Инфраструктура</option>
+                                  <option value="10">Подрядчики</option>
+                                  <option value="11">Внутренние проблемы резидента</option>
+                                  <option value="12">Исполнение обязательств по соглашению</option>
+                                  <option value="13">Получение документов от ФОИВ, РОИВ, ведомств и т.д.</option>
+                                  <option value="14">Кадры</option>
+                                  <option value="15">Сбыт продукции</option>
+                                  <option value="16">Земля СПВ (отмена преференции 26.10.2021)</option>
                                 </select>
+                              </div>
+                              <div class="lk-field lk-col lk-col_md_4">
+                                <label>Суть вопроса</label>
+                                <textarea name="PROBLEMATIC_ISSUES[problemEssence][]" rows="2"></textarea>
+                              </div>
+                              <div class="lk-field lk-col lk-col_md_4">
+                                <label>Комментарий</label>
+                                <textarea name="PROBLEMATIC_ISSUES[problemEssence][]" rows="2"></textarea>
+                              </div>
+                              <div class="lk-field lk-col lk-col_md_12">
+                                <input name="PROBLEMATIC_ISSUES[problemComment][]" type="hidden" pattern="^.*$"/>
                               </div>
                             </div><a class="lk-btn lk-btn_i lk-r multiply-table-add" href="#"><i class="im im-plus"></i>Добавить</a>
                           </div>
@@ -396,16 +418,86 @@
                     </div>
                   </div>
                 </div>
+                <div class="lk-box lk-box_odd">
+                  <div class="lk-form">
+                    <div class="lk-box__body">
+                      <fieldset>
+                        <div class="lk-row">
+                          <div class="lk-field lk-col lk-col_md_12">
+                            <label><span style="color:red">*</span> Общий комментарий к отчёту</label>
+                            <textarea name="generalComment" rows="2"></textarea>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-box lk-box_odd">
+                  <div class="lk-box">
+                    <div class="lk-box__header lk-box__header_plain">
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div class="lk-title lk-ttu">Документы</div>
+                        <div class="lk-box__header__btns"></div>
+                      </div>
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div>Внимание! Общий объем прилагаемых фалов документов не должен привышать 20Мб!</div>
+                      </div>
+                      <div class="is-flexbox is-flexbox_center is-flexbox_justify">
+                        <div>Если общий размер загружаемых файлов превышает 20 Мб, необходимо направлять документы на info@erdc.ru (можно использовать ссылку на файлы в облаке).</div>
+                      </div>
+                    </div>
+                    <div class="lk-form">
+                      <div class="lk-box__body lk-bg_gray">
+                        <fieldset class="lk-uploader-flds">
+                          <div class="lk-col lk-col_md_12 js-lk-document-uploader has-advanced-upload" data-bp-uploader-action="/local/components/itrack/document.uploader/ajax.php">
+                            <div class="lk-uploader">
+                              <input type="file" name="file"/>
+                              <input type="hidden" name="project_id" value="26816"/>
+                              <input type="hidden" name="company_id" value="26815"/>
+                              <input type="hidden" name="parent_id" value="151567"/>
+                              <input type="hidden" name="type_id" value="26157"/>
+                              <input type="hidden" name="upload_action"/>
+                              <input type="hidden" name="upload_template" value="documents"/>
+                              <div class="lk-uploader__icon"></div>
+                              <div class="lk-uploader__info" style="position: relative">
+                                <div class="lk-uploader__title">Произвольный документ квартального отчёта</div>
+                                <div class="lk-uploader__descr">Документ отсутствует</div>
+                                <div class="lk-uploader__actions">
+                                  <div class="lk-btn lk-btn_i lk-btn_sm"><i class="im im-upload"></i>Загрузите документ</div>
+                                  <div class="lk-uploader__drag">или перетащите его сюда</div>
+                                  <div class="lk-uploader__progress">
+                                    <div class="lk-uploader__progress__bar" style="width:0%"></div>
+                                    <div class="lk-uploader__progress__legend lk-fw_500"><span class="lk-uploader__progress__text">из</span><span class="lk-uploader__progress__size"></span></div>
+                                  </div>
+                                  <div class="lk-uploader__error">
+                                    <div class="lk-uploader__error__legend lk-fw_500 js-lk-uploader-error">Ошибка!</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-box">
+                  <div class="lk-form">
+                    <div class="lk-box__footer lk-box__footer_btn"><a class="lk-btn lk-btn_i send-request" href="javascript:"><i class="im im-check"></i>Отправить отчёт</a><a class="save-request" href="javascript:">Сохранить черновик</a></div>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
         </div>
       </div>
     </div>
+    <script src="./assets/js/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/lk.js"></script>
+    <script src="./assets/js/lk-plugins.js"></script>
+    <script src="./assets/js/airdatepicker.js"></script>
+    <script src="./assets/js/quarter-report-form-validation.js"></script>
+    <script src="./assets/js/request-form.js"></script>
+    <script src="./assets/js/tooltipster.js"></script>
   </body>
 </html>
-<script src="./assets/js/airdatepicker.js">
-  <script src="./assets/js/quarter-report-form-validation.js"></script>
-  <script src="./assets/js/request-form.js"></script>
-  <script src="./assets/js/tooltipster.js"></script>
-</script>

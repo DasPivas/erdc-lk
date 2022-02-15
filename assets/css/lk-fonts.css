@@ -1,0 +1,173 @@
+@font-face {
+	font-family: 'im';
+	src: url('../fonts/im.eot?axqbyt');
+	src: url('../fonts/im.eot?axqbyt#iefix') format('embedded-opentype'),
+	url('../fonts/im.ttf?axqbyt') format('truetype'),
+	url('../fonts/im.woff?axqbyt') format('woff'),
+	url('../fonts/im.svg?axqbyt#im') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.im {
+	display: inline-block;
+	font-family: 'im' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.im-envelope:before {
+	content: "\e900";
+}
+
+.im-list:before {
+	content: "\e901";
+}
+
+.im-rarr:before {
+	content: "\e902";
+}
+
+.im-settings:before {
+	content: "\e903";
+}
+
+.im-basket:before {
+	content: "\e904";
+}
+
+.im-plus:before {
+	content: "\e905";
+}
+
+.im-target_blank {
+	padding: 0 0 4px 10px;
+	font-size: 10px;
+	text-decoration: none;
+}
+
+.im-target_blank:before {
+	content: "\e906";
+}
+
+.im-check:before {
+	content: "\e907";
+}
+
+.im-upload:before {
+	content: "\e908";
+}
+
+.im-close:before {
+	content: "\e909";
+}
+
+.im-pencil:before {
+	content: "\e90a";
+}
+
+.im-lock:before {
+	content: "\e90b";
+}
+
+.im-unlock:before {
+	content: "\e90c";
+}
+
+.im-phone:before {
+	content: "\e90d";
+}
+
+.im-chat:before {
+	content: "\e90e";
+}
+
+.im-case:before {
+	content: "\e90f";
+}
+
+.im-reload:before {
+	content: "\e910";
+}
+
+.im-report:before {
+	content: "\e911";
+}
+.im-faq:before {
+	content: "\e912";
+}
+.im-plan:before {
+	content: "\e913";
+}
+.im-consult:before {
+	content: "\e914";
+}
+.im-check2:before {
+	content: "\e915";
+}
+.im-search:before {
+	content: "\e916";
+}
+.im-charts:before {
+	content: "\e917";
+}
+.im-monitor:before {
+	content: "\e918";
+}
+.im-camera:before {
+	content: "\e919";
+}
+.im-search2:before {
+	content: "\e91a";
+}
+.im-star:before {
+	content: "\e91b";
+}
+.im-users:before {
+	content: "\e91c";
+}
+.im-doc:before {
+	content: "\e91d";
+}
+.im-structure:before {
+	content: "\e91e";
+}
+.im-pin:before {
+	content: "\e91f";
+}
+.im-storage:before {
+	content: "\e920";
+}
+.im-user:before {
+	content: "\e921";
+}
+.im-info:before {
+	content: "\e922";
+}
+.im-pin2:before {
+	content: "\e923";
+}
+.im-shield:before {
+	content: "\e924";
+}
+.im-light:before {
+	content: "\e925";
+}
+.im-gas:before {
+	content: "\e926";
+}
+.im-water:before {
+	content: "\e927";
+}
+.im-water2:before {
+	content: "\e928";
+}
+.im-heat:before {
+	content: "\e929";
+}

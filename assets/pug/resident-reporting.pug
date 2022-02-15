@@ -1,4 +1,4 @@
-html(lang="ru")
+html.js(lang="ru")
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
@@ -6,6 +6,8 @@ html(lang="ru")
     //link(href="./style.css" rel="stylesheet")
     link(href="./assets/css/app.min.css" rel="stylesheet")
     link(href="./assets/css/airdatepicker.css" rel="stylesheet")
+    link(href="./assets/css/lk-plugins.css" rel="stylesheet")
+    link(href="./assets/css/lk-fonts.css" rel="stylesheet")
     link(href="./assets/css/request-form.css" rel="stylesheet")
     link(href="./assets/css/tooltipster.css" rel="stylesheet")
     style(type='text/css').
@@ -336,17 +338,95 @@ html(lang="ru")
                               .lk-field.lk-col.lk-col_md_4
                                 label
                                   | Категория
-                                select.js-select.chosen_wide(name="productionLaunchStatus" data-entity="STAGE_STATUS" required )
-                                  option
-                                  option(value='1') Не начато
-                                  option(value='2') Выполняется
-                                  option(value='3') Завершено
-                                  option(value='4') Не требуется
+                                select.js-select.chosen_wide(name="PROBLEMATIC_ISSUES[problemCategory][]" )
+                                  option(value='0' selected) Нет
+                                  option(value='3') Земельно-имущественные отношения
+                                  option(value='4') Административные барьеры
+                                  option(value='5') Налогообложение и применение преференций
+                                  option(value='7') Финансирование
+                                  option(value='8') Взаимодействие с АО КРДВ (УК ТОР)
+                                  option(value='9') Инфраструктура
+                                  option(value='10') Подрядчики
+                                  option(value='11') Внутренние проблемы резидента
+                                  option(value='12') Исполнение обязательств по соглашению
+                                  option(value='13') Получение документов от ФОИВ, РОИВ, ведомств и т.д.
+                                  option(value='14') Кадры
+                                  option(value='15') Сбыт продукции
+                                  option(value='16') Земля СПВ (отмена преференции 26.10.2021)
+                              .lk-field.lk-col.lk-col_md_4
+                                label
+                                  | Суть вопроса
+                                textarea(name="PROBLEMATIC_ISSUES[problemEssence][]" rows="2")
+                              .lk-field.lk-col.lk-col_md_4
+                                label
+                                  | Комментарий
+                                textarea(name="PROBLEMATIC_ISSUES[problemEssence][]" rows="2")
+                              .lk-field.lk-col.lk-col_md_12
+                                input(name="PROBLEMATIC_ISSUES[problemComment][]" type="hidden" pattern="^.*$")
 
                             a.lk-btn.lk-btn_i.lk-r.multiply-table-add(href='#')
                               i.im.im-plus
                               | Добавить
 
+                .lk-box.lk-box_odd
+                  .lk-form
+                    .lk-box__body
+                      fieldset
+                        .lk-row
+                          .lk-field.lk-col.lk-col_md_12
+                            label
+                              span(style='color:red') *
+                              |  Общий комментарий к отчёту
+                            textarea(name="generalComment" rows="2")
+
+                .lk-box.lk-box_odd
+                  .lk-box
+                    .lk-box__header.lk-box__header_plain
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        .lk-title.lk-ttu Документы
+                        .lk-box__header__btns
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        div
+                          | Внимание! Общий объем прилагаемых фалов документов не должен привышать 20Мб!
+                      .is-flexbox.is-flexbox_center.is-flexbox_justify
+                        div
+                          | Если общий размер загружаемых файлов превышает 20 Мб, необходимо направлять документы на info@erdc.ru (можно использовать ссылку на файлы в облаке).
+                    .lk-form
+                      .lk-box__body.lk-bg_gray
+                        fieldset.lk-uploader-flds
+                          .lk-col.lk-col_md_12.js-lk-document-uploader.has-advanced-upload(data-bp-uploader-action='/local/components/itrack/document.uploader/ajax.php')
+                            .lk-uploader
+                              input(type="file" name="file")
+                              input(type="hidden" name="project_id" value="26816")
+                              input(type="hidden" name="company_id" value="26815")
+                              input(type="hidden" name="parent_id" value="151567")
+                              input(type="hidden" name="type_id" value="26157")
+                              input(type="hidden" name="upload_action")
+                              input(type="hidden" name="upload_template" value="documents")
+                              .lk-uploader__icon
+                              .lk-uploader__info(style="position: relative")
+                                .lk-uploader__title Произвольный документ квартального отчёта
+                                .lk-uploader__descr Документ отсутствует
+                                .lk-uploader__actions
+                                  .lk-btn.lk-btn_i.lk-btn_sm
+                                    i.im.im-upload
+                                    | Загрузите документ
+                                  .lk-uploader__drag или перетащите его сюда
+                                  .lk-uploader__progress
+                                    .lk-uploader__progress__bar(style="width:0%")
+                                    .lk-uploader__progress__legend.lk-fw_500
+                                      span.lk-uploader__progress__text из
+                                      span.lk-uploader__progress__size
+                                  .lk-uploader__error
+                                    .lk-uploader__error__legend.lk-fw_500.js-lk-uploader-error Ошибка!
+
+                .lk-box
+                  .lk-form
+                    .lk-box__footer.lk-box__footer_btn
+                      a.lk-btn.lk-btn_i.send-request(href="javascript:")
+                        i.im.im-check
+                        |Отправить отчёт
+                      a.save-request(href="javascript:") Сохранить черновик
 
 
 
@@ -355,7 +435,13 @@ html(lang="ru")
 
 
 
-script(src='./assets/js/airdatepicker.js')
+
+
+
+    script(src='./assets/js/jquery-3.2.1.min.js')
+    script(src='./assets/js/lk.js')
+    script(src='./assets/js/lk-plugins.js')
+    script(src='./assets/js/airdatepicker.js')
     script(src='./assets/js/quarter-report-form-validation.js')
     script(src='./assets/js/request-form.js')
     script(src='./assets/js/tooltipster.js')
