@@ -15,259 +15,149 @@
         <div class="lk-row">
           <div class="lk-aside lk-col lk-col_lg_3">
             <div class="lk-content lk-col lk-col_lg_9">
-              <div class="sanction-popup sanction-popup--active" data-popup="sanctions" data-proggres="1">
-                <div class="sanction-popup__wrapper">
-                  <button class="sanction-popup__close" data-js="popup-close"></button>
-                  <form class="sanction-popup__form" id="123456789">
-                    <div class="sanction-popup__tab" data-state="1">
-                      <div class="sanction-popup__header">
-                        <h3 class="sanction-popup__title"></h3>Влияют ли вводимые международные санкции и ограничения на реализацию Вашего проекта?
-                      </div>
-                      <div class="sanction-popup__body">
-                        <div class="sanction-popup__radio-title">Какие риски вы ожидаете?</div>
-                        <div class="sanction-popup__block">
-                          <label class="sanction-popup__label sanction-popup__label--radio">Оказывают критическое влияние (проект не будет реализован)
-                            <input class="sanction-popup__radio" type="radio" name="sanction-importance" value="1" required="required"/>
-                            <div class="sanction-popup__radio-mark"></div>
-                          </label>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <label class="sanction-popup__label sanction-popup__label--radio">Оказывают высокое негативное влияние (возможна приостановка проекта)
-                            <input class="sanction-popup__radio" type="radio" name="sanction-importance" value="2"/>
-                            <div class="sanction-popup__radio-mark"></div>
-                          </label>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <label class="sanction-popup__label sanction-popup__label--radio">Оказывают средне негативное влияние (проект будет реализован, но могут быть изменены параметры и сроки)
-                            <input class="sanction-popup__radio" type="radio" name="sanction-importance" value="3"/>
-                            <div class="sanction-popup__radio-mark"></div>
-                          </label>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <label class="sanction-popup__label sanction-popup__label--radio">Не оказывают влияние
-                            <input class="sanction-popup__radio" type="radio" name="sanction-importance" value="4"/>
-                            <div class="sanction-popup__radio-mark"></div>
-                          </label>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <label class="sanction-popup__label sanction-popup__label--radio">Не оценивал риски
-                            <input class="sanction-popup__radio" type="radio" name="sanction-importance" value="5"/>
-                            <div class="sanction-popup__radio-mark"></div>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="sanction-popup__tab" data-state="2">
-                      <div class="sanction-popup__header">
-                        <h3 class="sanction-popup__title"></h3>Ответьте на вопросы о рисках
-                      </div>
-                      <div class="sanction-popup__body">
-                        <div class="sanction-popup__block">
-                          <div class="sanction-popup__radio-title">1. Валютные риски (повышение обменного курса иностранных валют, трудности с переводом средств за рубеж и из-за рубежа)<span class="sanction-popup--required">*</span></div>
-                          <div class="sanction-popup__radio-section"><span class="sanction-popup__radio-info">Не влияет</span>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">1
-                              <input class="sanction-popup__radio" type="radio" name="currency-risks" value="1" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">2
-                              <input class="sanction-popup__radio" type="radio" name="currency-risks" value="2" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">3
-                              <input class="sanction-popup__radio" type="radio" name="currency-risks" value="3" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">4
-                              <input class="sanction-popup__radio" type="radio" name="currency-risks" value="4" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">5
-                              <input class="sanction-popup__radio" type="radio" name="currency-risks" value="5" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label><span class="sanction-popup__radio-info">Влияет</span>
-                          </div>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <div class="sanction-popup__radio-title">2. Ограничения на привлечение иностранных специалистов/подрядчиков<span class="sanction-popup--required">*</span></div>
-                          <div class="sanction-popup__radio-section"><span class="sanction-popup__radio-info">Не влияет</span>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">1
-                              <input class="sanction-popup__radio" type="radio" name="foreign-specialists" value="1" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">2
-                              <input class="sanction-popup__radio" type="radio" name="foreign-specialists" value="2" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">3
-                              <input class="sanction-popup__radio" type="radio" name="foreign-specialists" value="3" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">4
-                              <input class="sanction-popup__radio" type="radio" name="foreign-specialists" value="4" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">5
-                              <input class="sanction-popup__radio" type="radio" name="foreign-specialists" value="5" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label><span class="sanction-popup__radio-info">Влияет</span>
-                          </div>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <div class="sanction-popup__radio-title">3. Логистические риски (увеличение сроков или запрет на поставки товаров/услуг)<span class="sanction-popup--required">*</span></div>
-                          <div class="sanction-popup__radio-section"><span class="sanction-popup__radio-info">Не влияет</span>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">1
-                              <input class="sanction-popup__radio" type="radio" name="logistic-risks" value="1" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">2
-                              <input class="sanction-popup__radio" type="radio" name="logistic-risks" value="2" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">3
-                              <input class="sanction-popup__radio" type="radio" name="logistic-risks" value="3" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">4
-                              <input class="sanction-popup__radio" type="radio" name="logistic-risks" value="4" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">5
-                              <input class="sanction-popup__radio" type="radio" name="logistic-risks" value="5" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label><span class="sanction-popup__radio-info">Влияет</span>
-                          </div>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <div class="sanction-popup__radio-title">4. Рост цен на сырье, строительные материалы, оборудование, услуги<span class="sanction-popup--required">*</span></div>
-                          <div class="sanction-popup__radio-section"><span class="sanction-popup__radio-info">Не влияет</span>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">1
-                              <input class="sanction-popup__radio" type="radio" name="price-risks" value="1" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">2
-                              <input class="sanction-popup__radio" type="radio" name="price-risks" value="2" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">3
-                              <input class="sanction-popup__radio" type="radio" name="price-risks" value="3" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">4
-                              <input class="sanction-popup__radio" type="radio" name="price-risks" value="4" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">5
-                              <input class="sanction-popup__radio" type="radio" name="price-risks" value="5" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label><span class="sanction-popup__radio-info">Влияет</span>
-                          </div>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <div class="sanction-popup__radio-title">5. Ограничение заемного финансирования (в т.ч. рост процентных ставок)<span class="sanction-popup--required">*</span></div>
-                          <div class="sanction-popup__radio-section"><span class="sanction-popup__radio-info">Не влияет</span>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">1
-                              <input class="sanction-popup__radio" type="radio" name="funding-restrictions" value="1" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">2
-                              <input class="sanction-popup__radio" type="radio" name="funding-restrictions" value="2" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">3
-                              <input class="sanction-popup__radio" type="radio" name="funding-restrictions" value="3" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">4
-                              <input class="sanction-popup__radio" type="radio" name="funding-restrictions" value="4" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">5
-                              <input class="sanction-popup__radio" type="radio" name="funding-restrictions" value="5" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label><span class="sanction-popup__radio-info">Влияет</span>
-                          </div>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <div class="sanction-popup__radio-title">6. Проблемы с действующими инвесторами или привлечением новых<span class="sanction-popup--required">*</span></div>
-                          <div class="sanction-popup__radio-section"><span class="sanction-popup__radio-info">Не влияет</span>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">1
-                              <input class="sanction-popup__radio" type="radio" name="problems-with-investors" value="1" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">2
-                              <input class="sanction-popup__radio" type="radio" name="problems-with-investors" value="2" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">3
-                              <input class="sanction-popup__radio" type="radio" name="problems-with-investors" value="3" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">4
-                              <input class="sanction-popup__radio" type="radio" name="problems-with-investors" value="4" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">5
-                              <input class="sanction-popup__radio" type="radio" name="problems-with-investors" value="5" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label><span class="sanction-popup__radio-info">Влияет</span>
-                          </div>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <div class="sanction-popup__radio-title">7. Ограничения экспорта продукции<span class="sanction-popup--required">*</span></div>
-                          <div class="sanction-popup__radio-section"><span class="sanction-popup__radio-info">Не влияет</span>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">1
-                              <input class="sanction-popup__radio" type="radio" name="export-restrictions" value="1" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">2
-                              <input class="sanction-popup__radio" type="radio" name="export-restrictions" value="2" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">3
-                              <input class="sanction-popup__radio" type="radio" name="export-restrictions" value="3" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">4
-                              <input class="sanction-popup__radio" type="radio" name="export-restrictions" value="4" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label>
-                            <label class="sanction-popup__label sanction-popup__label--radio-section">5
-                              <input class="sanction-popup__radio" type="radio" name="export-restrictions" value="5" required="required"/>
-                              <div class="sanction-popup__radio-mark"></div>
-                            </label><span class="sanction-popup__radio-info">Влияет</span>
-                          </div>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <div class="sanction-popup__radio-title">8. Назовите 3 ключевые меры поддержки, которые вы бы хотели получить в рамках снижения влияния санкционных рисков?</div>
-                          <label class="sanction-popup__label">
-                            <textarea class="sanction-popup__textarea" name="support-measures" rows="3" placeholder="Мой ответ"></textarea>
-                          </label>
-                        </div>
-                        <div class="sanction-popup__block">
-                          <div class="sanction-popup__radio-title">9. Ваш комментарий по санкционным рискам и возможным мерам поддержки</div>
-                          <label class="sanction-popup__label">
-                            <textarea class="sanction-popup__textarea" name="comments" rows="3" placeholder="Мой ответ"></textarea>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="sanction-popup__tab" data-state="3">
-                      <div class="sanction-popup__header">
-                        <h3 class="sanction-popup__title"></h3>Анкета успешно отправлена
-                      </div>
-                    </div>
-                    <div class="sanction-popup__footer">
-                      <div class="sanction-popup__btns"><a class="sanction-popup__skip" href="#" data-js="skip-popup">Пройти позже</a>
-                        <input class="sanction-popup__btn" type="submit" value="Отправить"/>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
+              <!--.sanction-popup.sanction-popup--active(data-popup="sanctions" data-progress="1")-->
+              <!--  .sanction-popup__wrapper-->
+              <!--    button.sanction-popup__close(data-js="popup-close")-->
+              <!--    form.sanction-popup__form(id='123456789')-->
+              <!--      .sanction-popup__tab(data-state='1')-->
+              <!--        .sanction-popup__header-->
+              <!--          h3.sanction-popup__title-->
+              <!--          | Влияют ли вводимые международные санкции и ограничения на реализацию Вашего проекта?-->
+              <!--        .sanction-popup__body-->
+              <!--          .sanction-popup__radio-title-->
+              <!--            | Какие риски вы ожидаете?-->
+              <!--          .sanction-popup__block-->
+              <!--            label.sanction-popup__label.sanction-popup__label--radio Оказывают критическое влияние (проект не будет реализован)-->
+              <!--              input.sanction-popup__radio(type="radio" name="sanction-importance" value="1" required)-->
+              <!--              .sanction-popup__radio-mark-->
+              <!--          .sanction-popup__block-->
+              <!--            label.sanction-popup__label.sanction-popup__label--radio Оказывают высокое негативное влияние (возможна приостановка проекта)-->
+              <!--              input.sanction-popup__radio(type="radio" name="sanction-importance" value="2")-->
+              <!--              .sanction-popup__radio-mark-->
+              <!--          .sanction-popup__block-->
+              <!--            label.sanction-popup__label.sanction-popup__label--radio Оказывают средне негативное влияние (проект будет реализован, но могут быть изменены параметры и сроки)-->
+              <!--              input.sanction-popup__radio(type="radio" name="sanction-importance" value="3")-->
+              <!--              .sanction-popup__radio-mark-->
+              <!--          .sanction-popup__block-->
+              <!--            label.sanction-popup__label.sanction-popup__label--radio Не оказывают влияние-->
+              <!--              input.sanction-popup__radio(type="radio" name="sanction-importance" value="4")-->
+              <!--              .sanction-popup__radio-mark-->
+              <!--          .sanction-popup__block-->
+              <!--            label.sanction-popup__label.sanction-popup__label--radio Не оценивал риски-->
+              <!--              input.sanction-popup__radio(type="radio" name="sanction-importance" value="5")-->
+              <!--              .sanction-popup__radio-mark-->
+              <!---->
+              <!--      .sanction-popup__tab(data-state='2')-->
+              <!--        .sanction-popup__header-->
+              <!--          h3.sanction-popup__title-->
+              <!--          | Ответьте на вопросы о рисках-->
+              <!--        .sanction-popup__body-->
+              <!--          .sanction-popup__block-->
+              <!--            .sanction-popup__alert-->
+              <!--              .sanction-popup__alert-title Влияние рисков-->
+              <!--              .sanction-popup__alert-desc Оцените уровень влияния отдельных санкционных рисков на Ваш проект по 5-бальной шкале (5 - критически влияют на реализацию проекта, 1 - не влияют на реализацию проекта)-->
+              <!--          .sanction-popup__block-->
+              <!--            .sanction-popup__radio-title-->
+              <!--              | 1. Валютные риски (повышение обменного курса иностранных валют, трудности с переводом средств за рубеж и из-за рубежа)-->
+              <!--              span.sanction-popup--required *-->
+              <!--            .sanction-popup__radio-section-->
+              <!--              span.sanction-popup__radio-info Не влияет-->
+              <!--              each val in [1, 2, 3, 4, 5]-->
+              <!--                label.sanction-popup__label.sanction-popup__label--radio-section= val-->
+              <!--                  input.sanction-popup__radio(type="radio" name="currency-risks" value=val required)-->
+              <!--                  .sanction-popup__radio-mark-->
+              <!--              span.sanction-popup__radio-info Влияет-->
+              <!--          .sanction-popup__block-->
+              <!--            .sanction-popup__radio-title-->
+              <!--              | 2. Ограничения на привлечение иностранных специалистов/подрядчиков-->
+              <!--              span.sanction-popup--required *-->
+              <!--            .sanction-popup__radio-section-->
+              <!--              span.sanction-popup__radio-info Не влияет-->
+              <!--              each val in [1, 2, 3, 4, 5]-->
+              <!--                label.sanction-popup__label.sanction-popup__label--radio-section= val-->
+              <!--                  input.sanction-popup__radio(type="radio" name="foreign-specialists" value=val required)-->
+              <!--                  .sanction-popup__radio-mark-->
+              <!--              span.sanction-popup__radio-info Влияет-->
+              <!--          .sanction-popup__block-->
+              <!--            .sanction-popup__radio-title-->
+              <!--              | 3. Логистические риски (увеличение сроков или запрет на поставки товаров/услуг)-->
+              <!--              span.sanction-popup--required *-->
+              <!--            .sanction-popup__radio-section-->
+              <!--              span.sanction-popup__radio-info Не влияет-->
+              <!--              each val in [1, 2, 3, 4, 5]-->
+              <!--                label.sanction-popup__label.sanction-popup__label--radio-section= val-->
+              <!--                  input.sanction-popup__radio(type="radio" name="logistic-risks" value=val required)-->
+              <!--                  .sanction-popup__radio-mark-->
+              <!--              span.sanction-popup__radio-info Влияет-->
+              <!--          .sanction-popup__block-->
+              <!--            .sanction-popup__radio-title-->
+              <!--              | 4. Рост цен на сырье, строительные материалы, оборудование, услуги-->
+              <!--              span.sanction-popup--required *-->
+              <!--            .sanction-popup__radio-section-->
+              <!--              span.sanction-popup__radio-info Не влияет-->
+              <!--              each val in [1, 2, 3, 4, 5]-->
+              <!--                label.sanction-popup__label.sanction-popup__label--radio-section= val-->
+              <!--                  input.sanction-popup__radio(type="radio" name="price-risks" value=val required)-->
+              <!--                  .sanction-popup__radio-mark-->
+              <!--              span.sanction-popup__radio-info Влияет-->
+              <!--          .sanction-popup__block-->
+              <!--            .sanction-popup__radio-title-->
+              <!--              | 5. Ограничение заемного финансирования (в т.ч. рост процентных ставок)-->
+              <!--              span.sanction-popup--required *-->
+              <!--            .sanction-popup__radio-section-->
+              <!--              span.sanction-popup__radio-info Не влияет-->
+              <!--              each val in [1, 2, 3, 4, 5]-->
+              <!--                label.sanction-popup__label.sanction-popup__label--radio-section= val-->
+              <!--                  input.sanction-popup__radio(type="radio" name="funding-restrictions" value=val required)-->
+              <!--                  .sanction-popup__radio-mark-->
+              <!--              span.sanction-popup__radio-info Влияет-->
+              <!--          .sanction-popup__block-->
+              <!--            .sanction-popup__radio-title-->
+              <!--              | 6. Проблемы с действующими инвесторами или привлечением новых-->
+              <!--              span.sanction-popup--required *-->
+              <!--            .sanction-popup__radio-section-->
+              <!--              span.sanction-popup__radio-info Не влияет-->
+              <!--              each val in [1, 2, 3, 4, 5]-->
+              <!--                label.sanction-popup__label.sanction-popup__label--radio-section= val-->
+              <!--                  input.sanction-popup__radio(type="radio" name="problems-with-investors" value=val required)-->
+              <!--                  .sanction-popup__radio-mark-->
+              <!--              span.sanction-popup__radio-info Влияет-->
+              <!--          .sanction-popup__block-->
+              <!--            .sanction-popup__radio-title-->
+              <!--              | 7. Ограничения экспорта продукции-->
+              <!--              span.sanction-popup--required *-->
+              <!--            .sanction-popup__radio-section-->
+              <!--              span.sanction-popup__radio-info Не влияет-->
+              <!--              each val in [1, 2, 3, 4, 5]-->
+              <!--                label.sanction-popup__label.sanction-popup__label--radio-section= val-->
+              <!--                  input.sanction-popup__radio(type="radio" name="export-restrictions" value=val required)-->
+              <!--                  .sanction-popup__radio-mark-->
+              <!--              span.sanction-popup__radio-info Влияет-->
+              <!--          .sanction-popup__block-->
+              <!--            .sanction-popup__radio-title-->
+              <!--              | 8. Назовите 3 ключевые меры поддержки, которые вы бы хотели получить в рамках снижения влияния санкционных рисков?-->
+              <!--            label.sanction-popup__label-->
+              <!--              textarea.sanction-popup__textarea(name="support-measures" rows="3" placeholder="Мой ответ" maxlength="4000")-->
+              <!--          .sanction-popup__block-->
+              <!--            .sanction-popup__radio-title-->
+              <!--              | 9. Ваш комментарий по санкционным рискам и возможным мерам поддержки-->
+              <!--            label.sanction-popup__label-->
+              <!--              textarea.sanction-popup__textarea(name="comments" rows="3" placeholder="Мой ответ" maxlength="4000")-->
+              <!---->
+              <!--      .sanction-popup__tab(data-state='3')-->
+              <!--        .sanction-popup__header-->
+              <!--          h3.sanction-popup__title-->
+              <!--          | Анкета успешно отправлена-->
+              <!---->
+              <!--      .sanction-popup__footer-->
+              <!--        .sanction-popup__btns-->
+              <!--          a.sanction-popup__skip(href="#" data-js="skip-popup") Пройти позже-->
+              <!--          input.sanction-popup__btn(type="submit" value="Отправить")-->
             </div>
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script src="./sanctions-popup.js"></script>
 </html>

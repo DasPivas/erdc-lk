@@ -31,12 +31,18 @@
   &__tab {
     display: none;
   }
-
-  &[data-proggres="1"] [data-state="1"] {
-    display: block;
+  
+  [data-js='switch-state'] {
+    display: none;
+  }
+  
+  &[data-progress="1"] {
+    [data-state="1"] {
+      display: block;
+    }
   }
 
-  &[data-proggres="2"] {
+  &[data-progress="2"] {
 
     [data-state="2"] {
       display: block;
@@ -50,7 +56,7 @@
     //}
   }
 
-  &[data-proggres="3"] {
+  &[data-progress="3"] {
 
     [data-state="3"] {
       display: block;
@@ -71,10 +77,16 @@
     font-size: 22px;
     line-height: 28px;
     color: #333333;
-
-    &--big {
-      font-size: 30px;
-      line-height: 36px;
+  }
+  
+  &__alert {
+    background: #d9e8fb;
+    border-radius: 4px;
+    padding: 8px;
+    
+    &-title {
+      font-weight: 600;
+      font-size: 16px;
     }
   }
 
@@ -134,6 +146,7 @@
 
   &__radio {
     position: absolute;
+    z-index: -1;
     height: 1px;
     width: 1px;
     left: 8px;
@@ -155,13 +168,14 @@
 
     &-mark {
       position: absolute;
+      z-index: 5;
       top: 2px;
       left: 0;
       width: 16px;
       height: 16px;
       border: 1px solid #777;
       border-radius: 50%;
-      background: transparent;
+      background: white;
       box-shadow: 0px 0px 1px 1px #fff inset;
       transition: .2s;
     }
@@ -230,6 +244,10 @@
     &:hover {
       background: #B8126A;
     }
+    
+    &:disabled {
+      background: #777;
+    }
   }
 
   &__skip {
@@ -245,4 +263,5 @@
   &--required {
     color: red;
   }
+  
 }
