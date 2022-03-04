@@ -79,6 +79,12 @@
     color: #333333;
   }
   
+  &__subtitle {
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 400;
+  }
+  
   &__alert {
     background: #d9e8fb;
     border-radius: 4px;
@@ -98,7 +104,7 @@
     right: 32px;
     border: none;
     box-shadow: none;
-    background: url('../../local/templates/lk/components/bitrix/catalog/recruitment/assets/img/icons/close.svg');
+    background: url('../../components/bitrix/catalog/recruitment/assets/img/icons/close.svg');
     cursor: pointer;
   }
 
