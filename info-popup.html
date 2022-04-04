@@ -1,0 +1,27 @@
+
+<html lang="ru">
+  <head>
+    <title>Информационные попапы</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="./lk.css" rel="stylesheet"/>
+    <link href="./style.css" rel="stylesheet"/>
+    <link href="/assets/css/info-popup.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div style="height: 100vh; background: rgba(0, 0, 255, .1); display: flex; justify-content: center; align-items: center;">
+      <button class="sucsessBTN" onclick="infoPopupOpen(sucsessBtn)" style="height: fit-content; padding: 10px; background-color: #1ac783; border-radius: 5px; cursor: pointer; border: none">Успешная отправка</button>
+    </div>
+    <div style="height: 100vh; background: rgba(0, 255, 0, .1)"></div>
+    <script src="assets/js/info-popup.js"></script>
+    <script>
+      const sucsessBtn = {
+        type: 'SUCCESS',
+        title: 'Сообщение отправлено!',
+        message: 'Ваше сообщение №160579 успешно отправлено. Наши специалисты <br> свяжутся с вами в ближайшее время.',
+        linkTitle: 'На главную страницу',
+        linkHref: '/'
+      }
+    </script>
+  </body>
+</html>
