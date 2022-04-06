@@ -1,7 +1,6 @@
 
 <html lang="ru">
   <head>
-    <title>Информационные попапы</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="./lk.css" rel="stylesheet"/>
@@ -9,16 +8,26 @@
     <link href="/assets/css/info-popup.css" rel="stylesheet"/>
   </head>
   <body>
-    <div style="height: 100vh; background: rgba(0, 0, 255, .1); display: flex; justify-content: center; align-items: center;">
-      <button class="sucsessBTN" onclick="infoPopupOpen(sucsessBtn)" style="height: fit-content; padding: 10px; background-color: #1ac783; border-radius: 5px; cursor: pointer; border: none">Успешная отправка</button>
+    <div style="height: 100vh; background: rgba(0, 0, 255, .2); display: flex; justify-content: center; align-items: center;">
+      <button class="sucsessBTN" onclick="infoPopupOpen(successBtn)" style="height: fit-content;">Успешная отправка</button>
     </div>
-    <div style="height: 100vh; background: rgba(0, 255, 0, .1)"></div>
+    <div style="height: 100vh; background: rgba(0, 255, 0, .2); display: flex; justify-content: center; align-items: center;">
+      <button class="sucsessBTN" onclick="infoPopupOpen(errorBtn)" style="height: fit-content;">Ошибка</button>
+    </div>
     <script src="assets/js/info-popup.js"></script>
     <script>
-      const sucsessBtn = {
+      const successBtn = {
         type: 'SUCCESS',
         title: 'Сообщение отправлено!',
         message: 'Ваше сообщение №160579 успешно отправлено. Наши специалисты <br> свяжутся с вами в ближайшее время.',
+        linkTitle: 'На главную страницу',
+        linkHref: '/',
+        afterClose: () => console.log('afterClose'),
+      }
+      const errorBtn = {
+        type: 'ERROR',
+        title: 'Возникла ошибка!',
+        message: 'Произошла ошибка при отправке',
         linkTitle: 'На главную страницу',
         linkHref: '/'
       }

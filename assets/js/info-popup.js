@@ -1,7 +1,7 @@
 function infoPopupOpen(param) {
   if (!param) return
 
-  const popuptType = param.type || 'SUCCESS'
+  const popupType = param.type || 'SUCCESS'
 
   const infoPopup = document.createElement('div')
   infoPopup.classList.add('info-popup')
@@ -31,7 +31,7 @@ function infoPopupOpen(param) {
 
   const infoPopupLink = document.createElement('a')
   infoPopupLink.classList.add('info-popup__link')
-  infoPopupLink.innerHTML = param.linkTitle || 'На главную страницу'
+  infoPopupLink.innerHTML = param.linkTitle || 'To the main page'
   infoPopupLink.setAttribute('href', param.linkHref || '/')
   infoPopupContent.appendChild(infoPopupLink)
 
@@ -43,13 +43,21 @@ function infoPopupOpen(param) {
     '</svg>'
   infoPopupContent.appendChild(infoPopupCloseBtn)
 
-  switch (popuptType) {
+  switch (popupType) {
     case 'SUCCESS':
       infoPopupIconWrapper.innerHTML = '<svg  viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
         '<path d="M0 32C0 14.3269 14.3269 0 32 0C49.6731 0 64 14.3269 64 32C64 49.6731 49.6731 64 32 64C14.3269 64 0 49.6731 0 32Z" fill="#F6EDF2"/>\n' +
         '<path d="M44 32C44 38.6275 38.6275 44 32 44C25.3726 44 20 38.6275 20 32C20 25.3726 25.3726 20 32 20C33.9823 20 35.8524 20.4807 37.5 21.3318" stroke="black" stroke-width="2" stroke-linecap="round"/>\n' +
         '<path d="M26 30L30.1144 34.1144C31.1557 35.1557 32.8443 35.1557 33.8856 34.1144L42 26" stroke="black" stroke-width="2" stroke-linecap="round"/>\n' +
-        '</svg>\n'
+        '</svg>'
+      break
+    case 'ERROR':
+      infoPopupIconWrapper.innerHTML = '<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+        '<rect width="63.1716" height="63.1716" rx="31.5858" fill="#D51A1A" fill-opacity="0.08"/>\n' +
+        '<path d="M30.8787 16.2929C31.2692 15.9024 31.9024 15.9024 32.2929 16.2929L46.8787 30.8787C47.2692 31.2692 47.2692 31.9024 46.8787 32.2929L32.2929 46.8787C31.9024 47.2692 31.2692 47.2692 30.8787 46.8787L16.2929 32.2929C15.9024 31.9024 15.9024 31.2692 16.2929 30.8787L30.8787 16.2929Z" fill="#D51A1A"/>\n' +
+        '<path d="M30.0859 35.5857H33.0859V38.5857H30.0859V35.5857Z" fill="white"/>\n' +
+        '<path d="M30.0859 23.5857H33.0859V32.5857H30.0859V23.5857Z" fill="white"/>\n' +
+        '</svg>'
       break
   }
 
@@ -58,13 +66,28 @@ function infoPopupOpen(param) {
   infoPopup.appendChild(infoPopupWrapper)
   document.body.appendChild(infoPopup)
 
-  infoPopupCloseBtn.addEventListener('click', function () {
+  const closeInfoPopup = function () {
     infoPopup.remove()
+
+    if (!param.afterClose) return
+
+    param.afterClose()
+  }
+
+  infoPopupCloseBtn.addEventListener('click', function () {
+    closeInfoPopup()
   })
+
+  document.addEventListener('keydown', function closePopupOnEsc(event) {
+    if(event.key === 'Escape') {
+      closeInfoPopup()
+      this.removeEventListener('keydown', closePopupOnEsc);
+    }
+  });
 
   infoPopup.addEventListener('click', function (event) {
     if (event.target.classList.contains('info-popup')) {
-      infoPopup.remove()
+      closeInfoPopup()
     }
   })
 }
