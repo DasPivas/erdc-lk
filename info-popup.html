@@ -8,11 +8,17 @@
     <link href="/assets/css/info-popup.css" rel="stylesheet"/>
   </head>
   <body>
-    <div style="height: 100vh; background: rgba(0, 0, 255, .2); display: flex; justify-content: center; align-items: center;">
-      <button class="sucsessBTN" onclick="infoPopupOpen(successBtn)" style="height: fit-content;">Успешная отправка</button>
+    <div style="height: 50vh; background: rgba(0, 255, 0, .2); display: flex; justify-content: center; align-items: center;">
+      <button class="sucsessBTN" onclick="infoPopupOpen(successBtn)" style="height: fit-content;">SUCCESS</button>
     </div>
-    <div style="height: 100vh; background: rgba(0, 255, 0, .2); display: flex; justify-content: center; align-items: center;">
-      <button class="sucsessBTN" onclick="infoPopupOpen(errorBtn)" style="height: fit-content;">Ошибка</button>
+    <div style="height: 50vh; background: rgba(255, 0, 0, .2); display: flex; justify-content: center; align-items: center;">
+      <button class="sucsessBTN" onclick="infoPopupOpen(errorBtn)" style="height: fit-content;">ERROR</button>
+    </div>
+    <div style="height: 50vh; background: rgba(255, 255, 0, .2); display: flex; justify-content: center; align-items: center;">
+      <button class="sucsessBTN" onclick="infoPopupOpen(infoBtn)" style="height: fit-content;">INFO</button>
+    </div>
+    <div style="height: 50vh; background: rgba(0, 10, 255, .2); display: flex; justify-content: center; align-items: center;">
+      <button class="sucsessBTN" onclick="infoPopupOpen(warningBtn)" style="height: fit-content;">WARNING</button>
     </div>
     <script src="assets/js/info-popup.js"></script>
     <script>
@@ -28,6 +34,20 @@
         type: 'ERROR',
         title: 'Возникла ошибка!',
         message: 'Произошла ошибка при отправке',
+        linkTitle: 'На главную страницу',
+        linkHref: '/'
+      }
+      const infoBtn = {
+        type: 'INFO',
+        title: 'Информация',
+        message: 'Иноформационное сообщение',
+        linkTitle: 'На главную страницу',
+        linkHref: '/'
+      }
+      const warningBtn = {
+        type: 'WARNING',
+        title: 'Предупреждение',
+        message: 'Предупреждение о событии',
         linkTitle: 'На главную страницу',
         linkHref: '/'
       }

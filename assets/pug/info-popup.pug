@@ -7,11 +7,17 @@ html(lang="ru")
     link(href="/assets/css/info-popup.css" rel="stylesheet")
 
   body
-    div(style='height: 100vh; background: rgba(0, 0, 255, .2); display: flex; justify-content: center; align-items: center;')
-      button.sucsessBTN(onclick="infoPopupOpen(successBtn)" style='height: fit-content;') Успешная отправка
+    div(style='height: 50vh; background: rgba(0, 255, 0, .2); display: flex; justify-content: center; align-items: center;')
+      button.sucsessBTN(onclick="infoPopupOpen(successBtn)" style='height: fit-content;') SUCCESS
 
-    div(style='height: 100vh; background: rgba(0, 255, 0, .2); display: flex; justify-content: center; align-items: center;')
-      button.sucsessBTN(onclick="infoPopupOpen(errorBtn)" style='height: fit-content;') Ошибка
+    div(style='height: 50vh; background: rgba(255, 0, 0, .2); display: flex; justify-content: center; align-items: center;')
+      button.sucsessBTN(onclick="infoPopupOpen(errorBtn)" style='height: fit-content;') ERROR
+
+    div(style='height: 50vh; background: rgba(255, 255, 0, .2); display: flex; justify-content: center; align-items: center;')
+      button.sucsessBTN(onclick="infoPopupOpen(infoBtn)" style='height: fit-content;') INFO
+
+    div(style='height: 50vh; background: rgba(0, 10, 255, .2); display: flex; justify-content: center; align-items: center;')
+      button.sucsessBTN(onclick="infoPopupOpen(warningBtn)" style='height: fit-content;') WARNING
 
     script(src='assets/js/info-popup.js')
     script.
@@ -27,6 +33,20 @@ html(lang="ru")
         type: 'ERROR',
         title: 'Возникла ошибка!',
         message: 'Произошла ошибка при отправке',
+        linkTitle: 'На главную страницу',
+        linkHref: '/'
+      }
+      const infoBtn = {
+        type: 'INFO',
+        title: 'Информация',
+        message: 'Иноформационное сообщение',
+        linkTitle: 'На главную страницу',
+        linkHref: '/'
+      }
+      const warningBtn = {
+        type: 'WARNING',
+        title: 'Предупреждение',
+        message: 'Предупреждение о событии',
         linkTitle: 'На главную страницу',
         linkHref: '/'
       }

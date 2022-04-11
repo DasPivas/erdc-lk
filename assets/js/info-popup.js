@@ -59,6 +59,22 @@ function infoPopupOpen(param) {
         '<path d="M30.0859 23.5857H33.0859V32.5857H30.0859V23.5857Z" fill="white"/>\n' +
         '</svg>'
       break
+    case 'INFO':
+      infoPopupIconWrapper.innerHTML = '<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+        '<rect width="64" height="64" rx="32" fill="#2D55B2" fill-opacity="0.08"/>\n' +
+        '<circle cx="32" cy="32" r="16" fill="#2D55B2"/>\n' +
+        '<path d="M30.1543 23.3846H33.8466V27.0769H30.1543V23.3846Z" fill="white"/>\n' +
+        '<path d="M30.1543 30.7692H33.8466V40.6154H30.1543V30.7692Z" fill="white"/>\n' +
+        '</svg>'
+      break
+    case 'WARNING':
+      infoPopupIconWrapper.innerHTML = '<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+        '<rect width="64" height="64" rx="32" fill="#FF9500" fill-opacity="0.08"/>\n' +
+        '<path d="M31.1415 20.4408C31.5294 19.7902 32.4716 19.7902 32.8594 20.4408L47.0986 44.3267C47.496 44.9932 47.0157 45.8387 46.2397 45.8387H17.7604C16.9844 45.8387 16.5041 44.9932 16.9015 44.3266L31.1415 20.4408Z" fill="#FF9500"/>\n' +
+        '<path d="M30.4512 39.6452H33.5479V42.7419H30.4512V39.6452Z" fill="white"/>\n' +
+        '<path d="M30.4512 27.2581H33.5479V36.5484H30.4512V27.2581Z" fill="white"/>\n' +
+        '</svg>'
+      break
   }
 
   infoPopupWrapper.appendChild(infoPopupIconWrapper)
@@ -79,7 +95,7 @@ function infoPopupOpen(param) {
   })
 
   document.addEventListener('keydown', function closePopupOnEsc(event) {
-    if(event.key === 'Escape') {
+    if (event.key === 'Escape') {
       closeInfoPopup()
       this.removeEventListener('keydown', closePopupOnEsc);
     }
